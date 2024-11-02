@@ -1,0 +1,19 @@
+{
+  "name": "withu-discord-bot",
+  "version": "1.0.0",
+  "description": "this repo is discord BOT for withU project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "discord",
+    "withU"
+  ],
+  "author": "Hoshimikan6490",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5"
+  }
+}
