@@ -1,10 +1,5 @@
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
-const fetch = (...args) =>
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 require("dotenv").config();
-const fs = require("fs");
-
-const url_check_api = process.env["url_check_api"];
 
 module.exports = async (client, message) => {
   try {
