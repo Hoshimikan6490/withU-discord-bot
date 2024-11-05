@@ -21,48 +21,50 @@ module.exports = async (client, message) => {
   }
 
   //メッセージ展開
-  const MESSAGE_URL_REGEX =
-    /https?:\/\/discord\.com\/channels\/(\d+)\/(\d+)\/(\d+)/g;
-  const matches = MESSAGE_URL_REGEX.exec(message.content);
-  const [url, guildId, channelId, messageId] = matches;
   const activeGuildIDs = process.env.activeGuildIDs;
-  if (matches && guildId == activeGuildIDs) {
-    try {
-      const channel = await client.channels.fetch(channelId);
-      const fetchedMessage = await channel.messages.fetch(messageId);
+  if (activeGuildIDs.includes(message.guild.id)) {
+    const MESSAGE_URL_REGEX =
+      /https?:\/\/discord\.com\/channels\/(\d+)\/(\d+)\/(\d+)/g;
+    const matches = MESSAGE_URL_REGEX.exec(message.content);
+    if (matches) {
+      const [url, guildId, channelId, messageId] = matches;
+      try {
+        const channel = await client.channels.fetch(channelId);
+        const fetchedMessage = await channel.messages.fetch(messageId);
 
-      let buttons = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("メッセージを見る")
-          .setURL(fetchedMessage.url)
-          .setStyle(ButtonStyle.Link),
-        new ButtonBuilder()
-          .setCustomId("cancel")
-          .setEmoji("🗑️")
-          .setStyle(ButtonStyle.Secondary)
-      );
+        let buttons = new ActionRowBuilder().addComponents(
+          new ButtonBuilder()
+            .setLabel("メッセージを見る")
+            .setURL(fetchedMessage.url)
+            .setStyle(ButtonStyle.Link),
+          new ButtonBuilder()
+            .setCustomId("cancel")
+            .setEmoji("🗑️")
+            .setStyle(ButtonStyle.Secondary)
+        );
 
-      message.channel.send({
-        embeds: [
-          {
-            description: fetchedMessage.content,
-            author: {
-              name: fetchedMessage.author.tag,
-              iconURL: fetchedMessage.author.displayAvatarURL(),
+        message.channel.send({
+          embeds: [
+            {
+              description: fetchedMessage.content,
+              author: {
+                name: fetchedMessage.author.tag,
+                iconURL: fetchedMessage.author.displayAvatarURL(),
+              },
+              color: 0x4d4df7,
+              timestamp: new Date(fetchedMessage.createdTimestamp),
             },
-            color: 0x4d4df7,
-            timestamp: new Date(fetchedMessage.createdTimestamp),
-          },
-        ],
-        components: [buttons],
-      });
+          ],
+          components: [buttons],
+        });
 
-      //メッセージリンクだけが投稿された場合の処理
-      if (url == message.content) {
-        message.delete();
+        //メッセージリンクだけが投稿された場合の処理
+        if (url == message.content) {
+          message.delete().catch((err) => {});
+        }
+      } catch (err) {
+        return;
       }
-    } catch (err) {
-      return;
     }
   }
 };
