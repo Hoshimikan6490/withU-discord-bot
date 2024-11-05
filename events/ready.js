@@ -3,7 +3,8 @@ const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v10");
 require("dotenv").config();
 
-const token = process.env["bot_token"];
+const token = process.env.bot_token;
+const consoleChannelID = process.env.consoleChannelID;
 
 module.exports = async (client) => {
   const rest = new REST({ version: "10" }).setToken(token);
@@ -29,5 +30,5 @@ module.exports = async (client) => {
     );
   }, 10000);
 
-  client.channels.cache.get("").send("koyeb.comで起動しました！");
+  client.channels.cache.get(consoleChannelID).send("起動しました！");
 };
