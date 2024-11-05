@@ -30,6 +30,10 @@ module.exports = async (client, interaction) => {
 
     if (interaction?.type == InteractionType.MessageComponent) {
       // button 処理
+      let buttonId = interaction.customId;
+      if (buttonId == "cancel" || buttonId == "delete") {
+        await interaction.message.delete();
+      }
     }
   }
 };
