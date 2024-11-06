@@ -4,7 +4,7 @@
   "description": "this repo is discord BOT for withU project.",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js && npm run sentry:sourcemaps",
+    "main": "node index.js && npm run sentry:sourcemaps",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org planet-bot-project --project withu-discord-bot ./index.js && sentry-cli sourcemaps upload --org planet-bot-project --project withu-discord-bot ./index.js"
   },
   "keywords": [
