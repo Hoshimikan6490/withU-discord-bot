@@ -14,7 +14,7 @@ require("dotenv").config();
 
 //機密情報取得
 const token = process.env.bot_token;
-const PORT = process.env.PORT | 8000;
+const PORT = process.env.PORT ? process.env.PORT : 8000;
 
 //サイト立ち上げ
 app.get("/", function (req, res) {
