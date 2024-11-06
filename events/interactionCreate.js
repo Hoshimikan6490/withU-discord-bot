@@ -1,3 +1,7 @@
+// for using sentry
+require("../instrument");
+const Sentry = require("@sentry/node");
+
 const { InteractionType } = require("discord.js");
 const fs = require("fs");
 
@@ -18,6 +22,7 @@ module.exports = async (client, interaction) => {
             try {
               return props.run(client, interaction);
             } catch (err) {
+              Sentry.captureException(err);
               return interaction?.reply({
                 content: `❌ 何らかのエラーが発生しました。`,
                 ephemeral: true,

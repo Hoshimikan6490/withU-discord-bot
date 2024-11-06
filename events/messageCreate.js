@@ -1,3 +1,7 @@
+// for using sentry
+require("../instrument");
+const Sentry = require("@sentry/node");
+
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
 require("dotenv").config();
 
@@ -63,7 +67,7 @@ module.exports = async (client, message) => {
           message.delete().catch((err) => {});
         }
       } catch (err) {
-        return;
+        Sentry.captureException(err);
       }
     }
   }

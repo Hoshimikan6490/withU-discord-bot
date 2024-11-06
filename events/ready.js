@@ -1,3 +1,7 @@
+// for using sentry
+require("../instrument");
+const Sentry = require("@sentry/node");
+
 const { ActivityType } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v10");
@@ -15,6 +19,7 @@ module.exports = async (client) => {
       });
       console.log("スラッシュコマンドの再読み込みに成功しました。");
     } catch (err) {
+      Sentry.captureException(err);
       console.log(
         `❌ スラッシュコマンドの再読み込み時にエラーが発生しました。：\n${err}`
       );
