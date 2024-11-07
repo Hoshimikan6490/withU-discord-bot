@@ -1,8 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "group:all"],
+  "extends": [
+    "config:recommended",
+    "group:all"
+  ],
   "separateMultipleMajor": false,
-  "schedule": ["before 4am"],
+  "schedule": [
+    "before 4am"
+  ],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "timezone": "Asia/Tokyo"
