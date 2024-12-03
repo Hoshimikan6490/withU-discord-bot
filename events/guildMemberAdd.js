@@ -8,7 +8,7 @@ const {
 module.exports = async (client, member) => {
   let joinedMember = await client.users.fetch(member.id);
   // 処罰後の連絡先を決める！
-  let guildJoinContinue = new ActionRowBuilder(
+  let guildJoinContinue = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
       .setCustomId("guildJoinContinue")
       .setEmoji("✅")
@@ -41,6 +41,6 @@ module.exports = async (client, member) => {
 
   (await joinedMember).send({
     embeds: [embed1, embed2, embed3],
-    compornents: [guildJoinContinue],
+    components: [guildJoinContinue],
   });
 };
