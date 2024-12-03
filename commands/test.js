@@ -15,7 +15,7 @@ module.exports = {
     try {
       let joinedMember = await client.users.fetch(interaction.user.id);
       // 処罰後の連絡先を決める！
-      let guildJoinContinue = new ActionRowBuilder(
+      let guildJoinContinue = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId("guildJoinContinue")
           .setEmoji("✅")
