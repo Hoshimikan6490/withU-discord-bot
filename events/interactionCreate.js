@@ -2,7 +2,15 @@
 require("../instrument");
 const Sentry = require("@sentry/node");
 
-const { InteractionType } = require("discord.js");
+const {
+  InteractionType,
+  EmbedBuilder,
+  StringSelectMenuBuilder,
+  StringSelectMenuOptionBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+} = require("discord.js");
 const fs = require("fs");
 
 module.exports = async (client, interaction) => {
@@ -38,7 +46,32 @@ module.exports = async (client, interaction) => {
     // button 処理
     let buttonId = interaction.customId;
     if (buttonId == "guildJoinContinue") {
-      await interaction.reply("OK");
+      let embed = new EmbedBuilder()
+        .setTitle("所属大学/組織名登録")
+        .setDescription(
+          "まずは、あなたが所属している大学または組織の名前を1つだけ登録してください。\nなお、このリストの中にあなたの所属している大学名または組織名が無い場合は何も選ばずに「この中にない」ボタンを押してください。"
+        );
+      let universitySelectMenu = new StringSelectMenuBuilder()
+        .setCustomId("universitySelectMenu")
+        .setPlaceholder("大学名を選んでください")
+        .addOptions(
+          new StringSelectMenuOptionBuilder()
+            .setLabel("[IPUT]国際工科専門職大学")
+            .setValue("IPUT")
+        );
+      let universitySelectComponents = new ActionRowBuilder().addComponents(
+        universitySelectMenu
+      );
+      let universitySelectButton = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel("この中にはない")
+          .setCustomId("universityNameNotListed")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      await interaction.reply({
+        embeds: [embed],
+        components: [universitySelectComponents, universitySelectButton],
+      });
     } else if (buttonId == "cancel" || buttonId == "delete") {
       await interaction.message.delete();
     }
