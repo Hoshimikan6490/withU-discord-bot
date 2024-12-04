@@ -42,3 +42,6 @@ use this command.
 ```
 npm run main
 ```
+
+# school name database
+学校名は、https://edu-data.jp/ の情報を使用している。 
