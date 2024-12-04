@@ -1,3322 +1,1924 @@
 [
   {
     "schoolID": "F101110100029",
-    "schoolName": "北海道教育大学"
+    "schoolName": "北海道教育大学",
+    "used": false
   },
-  {
-    "schoolID": "F101110100047",
-    "schoolName": "小樽商科大学"
-  },
-  {
-    "schoolID": "F101110100038",
-    "schoolName": "室蘭工業大学"
-  },
-  {
-    "schoolID": "F101110100010",
-    "schoolName": "北海道大学"
-  },
-  {
-    "schoolID": "F101110100074",
-    "schoolName": "旭川医科大学"
-  },
-  {
-    "schoolID": "F101110100056",
-    "schoolName": "帯広畜産大学"
-  },
-  {
-    "schoolID": "F101110100065",
-    "schoolName": "北見工業大学"
-  },
-  {
-    "schoolID": "F101210100125",
-    "schoolName": "札幌市立大学"
-  },
+  { "schoolID": "F101110100047", "schoolName": "小樽商科大学", "used": false },
+  { "schoolID": "F101110100038", "schoolName": "室蘭工業大学", "used": false },
+  { "schoolID": "F101110100010", "schoolName": "北海道大学", "used": false },
+  { "schoolID": "F101110100074", "schoolName": "旭川医科大学", "used": false },
+  { "schoolID": "F101110100056", "schoolName": "帯広畜産大学", "used": false },
+  { "schoolID": "F101110100065", "schoolName": "北見工業大学", "used": false },
+  { "schoolID": "F101210100125", "schoolName": "札幌市立大学", "used": false },
   {
     "schoolID": "F101210100090",
-    "schoolName": "公立はこだて未来大学"
+    "schoolName": "公立はこだて未来大学",
+    "used": false
   },
-  {
-    "schoolID": "F101210100081",
-    "schoolName": "札幌医科大学"
-  },
+  { "schoolID": "F101210100081", "schoolName": "札幌医科大学", "used": false },
   {
     "schoolID": "F101210100134",
-    "schoolName": "公立千歳科学技術大学"
+    "schoolName": "公立千歳科学技術大学",
+    "used": false
   },
-  {
-    "schoolID": "F101210100143",
-    "schoolName": "旭川市立大学"
-  },
-  {
-    "schoolID": "F101210100107",
-    "schoolName": "釧路公立大学"
-  },
-  {
-    "schoolID": "F101210100116",
-    "schoolName": "名寄市立大学"
-  },
-  {
-    "schoolID": "F101310100178",
-    "schoolName": "藤女子大学"
-  },
+  { "schoolID": "F101210100143", "schoolName": "旭川市立大学", "used": false },
+  { "schoolID": "F101210100107", "schoolName": "釧路公立大学", "used": false },
+  { "schoolID": "F101210100116", "schoolName": "名寄市立大学", "used": false },
+  { "schoolID": "F101310100178", "schoolName": "藤女子大学", "used": false },
   {
     "schoolID": "F101310100383",
-    "schoolName": "北海道武蔵女子大学"
+    "schoolName": "北海道武蔵女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F101310100276",
-    "schoolName": "札幌国際大学"
-  },
-  {
-    "schoolID": "F101310100187",
-    "schoolName": "北星学園大学"
-  },
+  { "schoolID": "F101310100276", "schoolName": "札幌国際大学", "used": false },
+  { "schoolID": "F101310100187", "schoolName": "北星学園大学", "used": false },
   {
     "schoolID": "F101310100203",
-    "schoolName": "北海道科学大学"
+    "schoolName": "北海道科学大学",
+    "used": false
   },
   {
     "schoolID": "F101310100356",
-    "schoolName": "札幌保健医療大学"
+    "schoolName": "札幌保健医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F101310100169",
-    "schoolName": "函館大学"
-  },
-  {
-    "schoolID": "F101310100294",
-    "schoolName": "北洋大学"
-  },
+  { "schoolID": "F101310100169", "schoolName": "函館大学", "used": false },
+  { "schoolID": "F101310100294", "schoolName": "北洋大学", "used": false },
   {
     "schoolID": "F101310100230",
-    "schoolName": "北海道医療大学"
+    "schoolName": "北海道医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F101310100258",
-    "schoolName": "星槎道都大学"
-  },
+  { "schoolID": "F101310100258", "schoolName": "星槎道都大学", "used": false },
   {
     "schoolID": "F101310100310",
-    "schoolName": "北海道文教大学"
+    "schoolName": "北海道文教大学",
+    "used": false
   },
-  {
-    "schoolID": "F101310100365",
-    "schoolName": "日本医療大学"
-  },
-  {
-    "schoolID": "F101310100141",
-    "schoolName": "札幌大学"
-  },
-  {
-    "schoolID": "F101310100196",
-    "schoolName": "北海学園大学"
-  },
-  {
-    "schoolID": "F101310100249",
-    "schoolName": "北海商科大学"
-  },
-  {
-    "schoolID": "F101310100329",
-    "schoolName": "天使大学"
-  },
-  {
-    "schoolID": "F101310100347",
-    "schoolName": "札幌大谷大学"
-  },
+  { "schoolID": "F101310100365", "schoolName": "日本医療大学", "used": false },
+  { "schoolID": "F101310100141", "schoolName": "札幌大学", "used": false },
+  { "schoolID": "F101310100196", "schoolName": "北海学園大学", "used": false },
+  { "schoolID": "F101310100249", "schoolName": "北海商科大学", "used": false },
+  { "schoolID": "F101310100329", "schoolName": "天使大学", "used": false },
+  { "schoolID": "F101310100347", "schoolName": "札幌大谷大学", "used": false },
   {
     "schoolID": "F101310100374",
-    "schoolName": "北海道千歳リハビリテーション大学"
+    "schoolName": "北海道千歳リハビリテーション大学",
+    "used": false
   },
-  {
-    "schoolID": "F101310100212",
-    "schoolName": "酪農学園大学"
-  },
-  {
-    "schoolID": "F101310100285",
-    "schoolName": "北翔大学"
-  },
-  {
-    "schoolID": "F101310100150",
-    "schoolName": "札幌学院大学"
-  },
+  { "schoolID": "F101310100212", "schoolName": "酪農学園大学", "used": false },
+  { "schoolID": "F101310100285", "schoolName": "北翔大学", "used": false },
+  { "schoolID": "F101310100150", "schoolName": "札幌学院大学", "used": false },
   {
     "schoolID": "F101310100267",
-    "schoolName": "北海道情報大学"
+    "schoolName": "北海道情報大学",
+    "used": false
   },
-  {
-    "schoolID": "F101310100221",
-    "schoolName": "旭川大学"
-  },
+  { "schoolID": "F101310100221", "schoolName": "旭川大学", "used": false },
   {
     "schoolID": "F101310100301",
-    "schoolName": "日本赤十字北海道看護大学"
+    "schoolName": "日本赤十字北海道看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F101310100338",
-    "schoolName": "育英館大学"
-  },
-  {
-    "schoolID": "F102110100572",
-    "schoolName": "弘前大学"
-  },
-  {
-    "schoolID": "F102210100589",
-    "schoolName": "青森公立大学"
-  },
+  { "schoolID": "F101310100338", "schoolName": "育英館大学", "used": false },
+  { "schoolID": "F102110100572", "schoolName": "弘前大学", "used": false },
+  { "schoolID": "F102210100589", "schoolName": "青森公立大学", "used": false },
   {
     "schoolID": "F102210100598",
-    "schoolName": "青森県立保健大学"
+    "schoolName": "青森県立保健大学",
+    "used": false
   },
   {
     "schoolID": "F102310100658",
-    "schoolName": "青森中央学院大学"
+    "schoolName": "青森中央学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F102310100603",
-    "schoolName": "青森大学"
-  },
-  {
-    "schoolID": "F102310100630",
-    "schoolName": "八戸工業大学"
-  },
-  {
-    "schoolID": "F102310100649",
-    "schoolName": "八戸学院大学"
-  },
+  { "schoolID": "F102310100603", "schoolName": "青森大学", "used": false },
+  { "schoolID": "F102310100630", "schoolName": "八戸工業大学", "used": false },
+  { "schoolID": "F102310100649", "schoolName": "八戸学院大学", "used": false },
   {
     "schoolID": "F102310100667",
-    "schoolName": "弘前医療福祉大学"
+    "schoolName": "弘前医療福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F102310100612",
-    "schoolName": "柴田学園大学"
-  },
-  {
-    "schoolID": "F102310100621",
-    "schoolName": "弘前学院大学"
-  },
-  {
-    "schoolID": "F103110100731",
-    "schoolName": "岩手大学"
-  },
-  {
-    "schoolID": "F103210100748",
-    "schoolName": "岩手県立大学"
-  },
+  { "schoolID": "F102310100612", "schoolName": "柴田学園大学", "used": false },
+  { "schoolID": "F102310100621", "schoolName": "弘前学院大学", "used": false },
+  { "schoolID": "F103110100731", "schoolName": "岩手大学", "used": false },
+  { "schoolID": "F103210100748", "schoolName": "岩手県立大学", "used": false },
   {
     "schoolID": "F103310100782",
-    "schoolName": "岩手保健医療大学"
+    "schoolName": "岩手保健医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F103310100773",
-    "schoolName": "盛岡大学"
-  },
-  {
-    "schoolID": "F103310100764",
-    "schoolName": "富士大学"
-  },
-  {
-    "schoolID": "F103310100755",
-    "schoolName": "岩手医科大学"
-  },
-  {
-    "schoolID": "F104110100865",
-    "schoolName": "宮城教育大学"
-  },
-  {
-    "schoolID": "F104110100856",
-    "schoolName": "東北大学"
-  },
-  {
-    "schoolID": "F104210100872",
-    "schoolName": "宮城大学"
-  },
-  {
-    "schoolID": "F104310100898",
-    "schoolName": "東北学院大学"
-  },
-  {
-    "schoolID": "F104310100987",
-    "schoolName": "尚絅学院大学"
-  },
+  { "schoolID": "F103310100773", "schoolName": "盛岡大学", "used": false },
+  { "schoolID": "F103310100764", "schoolName": "富士大学", "used": false },
+  { "schoolID": "F103310100755", "schoolName": "岩手医科大学", "used": false },
+  { "schoolID": "F104110100865", "schoolName": "宮城教育大学", "used": false },
+  { "schoolID": "F104110100856", "schoolName": "東北大学", "used": false },
+  { "schoolID": "F104210100872", "schoolName": "宮城大学", "used": false },
+  { "schoolID": "F104310100898", "schoolName": "東北学院大学", "used": false },
+  { "schoolID": "F104310100987", "schoolName": "尚絅学院大学", "used": false },
   {
     "schoolID": "F104310100969",
-    "schoolName": "仙台白百合女子大学"
+    "schoolName": "仙台白百合女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F104310100914",
-    "schoolName": "東北福祉大学"
-  },
+  { "schoolID": "F104310100914", "schoolName": "東北福祉大学", "used": false },
   {
     "schoolID": "F104310100978",
-    "schoolName": "東北文化学園大学"
+    "schoolName": "東北文化学園大学",
+    "used": false
   },
   {
     "schoolID": "F104310100941",
-    "schoolName": "宮城学院女子大学"
+    "schoolName": "宮城学院女子大学",
+    "used": false
   },
   {
     "schoolID": "F104310100923",
-    "schoolName": "東北医科薬科大学"
+    "schoolName": "東北医科薬科大学",
+    "used": false
   },
   {
     "schoolID": "F104310100932",
-    "schoolName": "東北生活文化大学"
+    "schoolName": "東北生活文化大学",
+    "used": false
   },
-  {
-    "schoolID": "F104310100905",
-    "schoolName": "東北工業大学"
-  },
+  { "schoolID": "F104310100905", "schoolName": "東北工業大学", "used": false },
   {
     "schoolID": "F104310100996",
-    "schoolName": "仙台青葉学院大学"
+    "schoolName": "仙台青葉学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F104310100950",
-    "schoolName": "石巻専修大学"
-  },
-  {
-    "schoolID": "F104310100889",
-    "schoolName": "仙台大学"
-  },
-  {
-    "schoolID": "F105110101051",
-    "schoolName": "秋田大学"
-  },
-  {
-    "schoolID": "F105210101068",
-    "schoolName": "秋田県立大学"
-  },
-  {
-    "schoolID": "F105210101077",
-    "schoolName": "国際教養大学"
-  },
+  { "schoolID": "F104310100950", "schoolName": "石巻専修大学", "used": false },
+  { "schoolID": "F104310100889", "schoolName": "仙台大学", "used": false },
+  { "schoolID": "F105110101051", "schoolName": "秋田大学", "used": false },
+  { "schoolID": "F105210101068", "schoolName": "秋田県立大学", "used": false },
+  { "schoolID": "F105210101077", "schoolName": "国際教養大学", "used": false },
   {
     "schoolID": "F105210101086",
-    "schoolName": "秋田公立美術大学"
+    "schoolName": "秋田公立美術大学",
+    "used": false
   },
   {
     "schoolID": "F105310101119",
-    "schoolName": "日本赤十字秋田看護大学"
+    "schoolName": "日本赤十字秋田看護大学",
+    "used": false
   },
   {
     "schoolID": "F105310101093",
-    "schoolName": "ノースアジア大学"
+    "schoolName": "ノースアジア大学",
+    "used": false
   },
   {
     "schoolID": "F105310101100",
-    "schoolName": "秋田看護福祉大学"
+    "schoolName": "秋田看護福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F106110101176",
-    "schoolName": "山形大学"
-  },
+  { "schoolID": "F106110101176", "schoolName": "山形大学", "used": false },
   {
     "schoolID": "F106210101183",
-    "schoolName": "山形県立保健医療大学"
+    "schoolName": "山形県立保健医療大学",
+    "used": false
   },
   {
     "schoolID": "F106210101192",
-    "schoolName": "山形県立米沢栄養大学"
+    "schoolName": "山形県立米沢栄養大学",
+    "used": false
   },
   {
     "schoolID": "F106210101209",
-    "schoolName": "東北農林専門職大学"
+    "schoolName": "東北農林専門職大学",
+    "used": false
   },
-  {
-    "schoolID": "F106310101225",
-    "schoolName": "東北文教大学"
-  },
+  { "schoolID": "F106310101225", "schoolName": "東北文教大学", "used": false },
   {
     "schoolID": "F106310101207",
-    "schoolName": "東北芸術工科大学"
+    "schoolName": "東北芸術工科大学",
+    "used": false
   },
   {
     "schoolID": "F106310101216",
-    "schoolName": "東北公益文科大学"
+    "schoolName": "東北公益文科大学",
+    "used": false
   },
   {
     "schoolID": "F106310101234",
-    "schoolName": "電動モビリティシステム専門職大学"
+    "schoolName": "電動モビリティシステム専門職大学",
+    "used": false
   },
-  {
-    "schoolID": "F107110101273",
-    "schoolName": "福島大学"
-  },
+  { "schoolID": "F107110101273", "schoolName": "福島大学", "used": false },
   {
     "schoolID": "F107210101280",
-    "schoolName": "福島県立医科大学"
+    "schoolName": "福島県立医科大学",
+    "used": false
   },
-  {
-    "schoolID": "F107210101299",
-    "schoolName": "会津大学"
-  },
-  {
-    "schoolID": "F107310101340",
-    "schoolName": "福島学院大学"
-  },
-  {
-    "schoolID": "F107310101313",
-    "schoolName": "奥羽大学"
-  },
-  {
-    "schoolID": "F107310101304",
-    "schoolName": "郡山女子大学"
-  },
+  { "schoolID": "F107210101299", "schoolName": "会津大学", "used": false },
+  { "schoolID": "F107310101340", "schoolName": "福島学院大学", "used": false },
+  { "schoolID": "F107310101313", "schoolName": "奥羽大学", "used": false },
+  { "schoolID": "F107310101304", "schoolName": "郡山女子大学", "used": false },
   {
     "schoolID": "F107310101331",
-    "schoolName": "東日本国際大学"
+    "schoolName": "東日本国際大学",
+    "used": false
   },
-  {
-    "schoolID": "F107310101322",
-    "schoolName": "医療創生大学"
-  },
-  {
-    "schoolID": "F108110101432",
-    "schoolName": "筑波技術大学"
-  },
-  {
-    "schoolID": "F108110101423",
-    "schoolName": "筑波大学"
-  },
-  {
-    "schoolID": "F108110101414",
-    "schoolName": "茨城大学"
-  },
+  { "schoolID": "F107310101322", "schoolName": "医療創生大学", "used": false },
+  { "schoolID": "F108110101432", "schoolName": "筑波技術大学", "used": false },
+  { "schoolID": "F108110101423", "schoolName": "筑波大学", "used": false },
+  { "schoolID": "F108110101414", "schoolName": "茨城大学", "used": false },
   {
     "schoolID": "F108210101449",
-    "schoolName": "茨城県立医療大学"
+    "schoolName": "茨城県立医療大学",
+    "used": false
   },
   {
     "schoolID": "F108310111971",
-    "schoolName": "アール医療専門職大学"
+    "schoolName": "アール医療専門職大学",
+    "used": false
   },
   {
     "schoolID": "F108310101483",
-    "schoolName": "つくば国際大学"
+    "schoolName": "つくば国際大学",
+    "used": false
   },
   {
     "schoolID": "F108310101508",
-    "schoolName": "日本ウェルネススポーツ大学"
+    "schoolName": "日本ウェルネススポーツ大学",
+    "used": false
   },
-  {
-    "schoolID": "F108310101465",
-    "schoolName": "流通経済大学"
-  },
+  { "schoolID": "F108310101465", "schoolName": "流通経済大学", "used": false },
   {
     "schoolID": "F108310101492",
-    "schoolName": "日本国際学園大学"
+    "schoolName": "日本国際学園大学",
+    "used": false
   },
-  {
-    "schoolID": "F108310101474",
-    "schoolName": "常磐大学"
-  },
+  { "schoolID": "F108310101474", "schoolName": "常磐大学", "used": false },
   {
     "schoolID": "F108310101456",
-    "schoolName": "茨城キリスト教大学"
+    "schoolName": "茨城キリスト教大学",
+    "used": false
   },
-  {
-    "schoolID": "F109110101556",
-    "schoolName": "宇都宮大学"
-  },
-  {
-    "schoolID": "F109310101614",
-    "schoolName": "文星芸術大学"
-  },
+  { "schoolID": "F109110101556", "schoolName": "宇都宮大学", "used": false },
+  { "schoolID": "F109310101614", "schoolName": "文星芸術大学", "used": false },
   {
     "schoolID": "F109310101605",
-    "schoolName": "宇都宮共和大学"
+    "schoolName": "宇都宮共和大学",
+    "used": false
   },
-  {
-    "schoolID": "F109310101632",
-    "schoolName": "獨協医科大学"
-  },
-  {
-    "schoolID": "F109310101589",
-    "schoolName": "作新学院大学"
-  },
-  {
-    "schoolID": "F109310101570",
-    "schoolName": "白鴎大学"
-  },
+  { "schoolID": "F109310101632", "schoolName": "獨協医科大学", "used": false },
+  { "schoolID": "F109310101589", "schoolName": "作新学院大学", "used": false },
+  { "schoolID": "F109310101570", "schoolName": "白鴎大学", "used": false },
   {
     "schoolID": "F109310101598",
-    "schoolName": "国際医療福祉大学"
+    "schoolName": "国際医療福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F109310101561",
-    "schoolName": "足利大学"
-  },
-  {
-    "schoolID": "F109310101623",
-    "schoolName": "自治医科大学"
-  },
-  {
-    "schoolID": "F110110101713",
-    "schoolName": "群馬大学"
-  },
-  {
-    "schoolID": "F110210101720",
-    "schoolName": "高崎経済大学"
-  },
+  { "schoolID": "F109310101561", "schoolName": "足利大学", "used": false },
+  { "schoolID": "F109310101623", "schoolName": "自治医科大学", "used": false },
+  { "schoolID": "F110110101713", "schoolName": "群馬大学", "used": false },
+  { "schoolID": "F110210101720", "schoolName": "高崎経済大学", "used": false },
   {
     "schoolID": "F110210101748",
-    "schoolName": "群馬県立女子大学"
+    "schoolName": "群馬県立女子大学",
+    "used": false
   },
   {
     "schoolID": "F110210101757",
-    "schoolName": "群馬県立県民健康科学大学"
+    "schoolName": "群馬県立県民健康科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F110210101739",
-    "schoolName": "前橋工科大学"
-  },
+  { "schoolID": "F110210101739", "schoolName": "前橋工科大学", "used": false },
   {
     "schoolID": "F110310101782",
-    "schoolName": "群馬パース大学"
+    "schoolName": "群馬パース大学",
+    "used": false
   },
-  {
-    "schoolID": "F110310101764",
-    "schoolName": "育英大学"
-  },
+  { "schoolID": "F110310101764", "schoolName": "育英大学", "used": false },
   {
     "schoolID": "F110310101808",
-    "schoolName": "高崎健康福祉大学"
+    "schoolName": "高崎健康福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F110310101817",
-    "schoolName": "高崎商科大学"
-  },
+  { "schoolID": "F110310101817", "schoolName": "高崎商科大学", "used": false },
   {
     "schoolID": "F110310101791",
-    "schoolName": "群馬医療福祉大学"
+    "schoolName": "群馬医療福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F110310102843",
-    "schoolName": "東京福祉大学"
-  },
-  {
-    "schoolID": "F110310101826",
-    "schoolName": "上武大学"
-  },
-  {
-    "schoolID": "F110310101835",
-    "schoolName": "関東学園大学"
-  },
+  { "schoolID": "F110310102843", "schoolName": "東京福祉大学", "used": false },
+  { "schoolID": "F110310101826", "schoolName": "上武大学", "used": false },
+  { "schoolID": "F110310101835", "schoolName": "関東学園大学", "used": false },
   {
     "schoolID": "F110310101844",
-    "schoolName": "共愛学園前橋国際大学"
+    "schoolName": "共愛学園前橋国際大学",
+    "used": false
   },
-  {
-    "schoolID": "F110310101773",
-    "schoolName": "桐生大学"
-  },
-  {
-    "schoolID": "F111110101945",
-    "schoolName": "埼玉大学"
-  },
-  {
-    "schoolID": "F111210101952",
-    "schoolName": "埼玉県立大学"
-  },
-  {
-    "schoolID": "F111310102021",
-    "schoolName": "埼玉学園大学"
-  },
-  {
-    "schoolID": "F111310101996",
-    "schoolName": "浦和大学"
-  },
+  { "schoolID": "F110310101773", "schoolName": "桐生大学", "used": false },
+  { "schoolID": "F111110101945", "schoolName": "埼玉大学", "used": false },
+  { "schoolID": "F111210101952", "schoolName": "埼玉県立大学", "used": false },
+  { "schoolID": "F111310102021", "schoolName": "埼玉学園大学", "used": false },
+  { "schoolID": "F111310101996", "schoolName": "浦和大学", "used": false },
   {
     "schoolID": "F111310102049",
-    "schoolName": "人間総合科学大学"
+    "schoolName": "人間総合科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F111310102110",
-    "schoolName": "獨協大学"
-  },
+  { "schoolID": "F111310102110", "schoolName": "獨協大学", "used": false },
   {
     "schoolID": "F111310102209",
-    "schoolName": "日本保健医療大学"
+    "schoolName": "日本保健医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F111310102860",
-    "schoolName": "文教大学"
-  },
-  {
-    "schoolID": "F111310102012",
-    "schoolName": "共栄大学"
-  },
-  {
-    "schoolID": "F111310102129",
-    "schoolName": "日本工業大学"
-  },
-  {
-    "schoolID": "F111310102076",
-    "schoolName": "平成国際大学"
-  },
-  {
-    "schoolID": "F111310102101",
-    "schoolName": "東邦音楽大学"
-  },
-  {
-    "schoolID": "F111310102138",
-    "schoolName": "明海大学"
-  },
-  {
-    "schoolID": "F111310102183",
-    "schoolName": "女子栄養大学"
-  },
-  {
-    "schoolID": "F111310102094",
-    "schoolName": "城西大学"
-  },
+  { "schoolID": "F111310102860", "schoolName": "文教大学", "used": false },
+  { "schoolID": "F111310102012", "schoolName": "共栄大学", "used": false },
+  { "schoolID": "F111310102129", "schoolName": "日本工業大学", "used": false },
+  { "schoolID": "F111310102076", "schoolName": "平成国際大学", "used": false },
+  { "schoolID": "F111310102101", "schoolName": "東邦音楽大学", "used": false },
+  { "schoolID": "F111310102138", "schoolName": "明海大学", "used": false },
+  { "schoolID": "F111310102183", "schoolName": "女子栄養大学", "used": false },
+  { "schoolID": "F111310102094", "schoolName": "城西大学", "used": false },
   {
     "schoolID": "F111310101969",
-    "schoolName": "日本医療科学大学"
+    "schoolName": "日本医療科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F111310102147",
-    "schoolName": "埼玉医科大学"
-  },
-  {
-    "schoolID": "F111310102030",
-    "schoolName": "尚美学園大学"
-  },
-  {
-    "schoolID": "F111310102085",
-    "schoolName": "東京国際大学"
-  },
+  { "schoolID": "F111310102147", "schoolName": "埼玉医科大学", "used": false },
+  { "schoolID": "F111310102030", "schoolName": "尚美学園大学", "used": false },
+  { "schoolID": "F111310102085", "schoolName": "東京国際大学", "used": false },
   {
     "schoolID": "F111310101987",
-    "schoolName": "武蔵野学院大学"
+    "schoolName": "武蔵野学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F111310102058",
-    "schoolName": "西武文理大学"
-  },
+  { "schoolID": "F111310102058", "schoolName": "西武文理大学", "used": false },
   {
     "schoolID": "F111310102067",
-    "schoolName": "十文字学園女子大学"
+    "schoolName": "十文字学園女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F111310102165",
-    "schoolName": "駿河台大学"
-  },
+  { "schoolID": "F111310102165", "schoolName": "駿河台大学", "used": false },
   {
     "schoolID": "F111310102003",
-    "schoolName": "ものつくり大学"
+    "schoolName": "ものつくり大学",
+    "used": false
   },
-  {
-    "schoolID": "F111310101978",
-    "schoolName": "日本薬科大学"
-  },
-  {
-    "schoolID": "F111310102174",
-    "schoolName": "聖学院大学"
-  },
-  {
-    "schoolID": "F111310102192",
-    "schoolName": "東都大学"
-  },
-  {
-    "schoolID": "F111310102156",
-    "schoolName": "埼玉工業大学"
-  },
-  {
-    "schoolID": "F112110102337",
-    "schoolName": "千葉大学"
-  },
+  { "schoolID": "F111310101978", "schoolName": "日本薬科大学", "used": false },
+  { "schoolID": "F111310102174", "schoolName": "聖学院大学", "used": false },
+  { "schoolID": "F111310102192", "schoolName": "東都大学", "used": false },
+  { "schoolID": "F111310102156", "schoolName": "埼玉工業大学", "used": false },
+  { "schoolID": "F112110102337", "schoolName": "千葉大学", "used": false },
   {
     "schoolID": "F112210102353",
-    "schoolName": "千葉県立保健医療大学"
+    "schoolName": "千葉県立保健医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F112310102495",
-    "schoolName": "神田外語大学"
-  },
-  {
-    "schoolID": "F112310102413",
-    "schoolName": "淑徳大学"
-  },
-  {
-    "schoolID": "F112310102342",
-    "schoolName": "放送大学"
-  },
-  {
-    "schoolID": "F112310102501",
-    "schoolName": "千葉経済大学"
-  },
-  {
-    "schoolID": "F112310102422",
-    "schoolName": "敬愛大学"
-  },
-  {
-    "schoolID": "F112310102583",
-    "schoolName": "植草学園大学"
-  },
-  {
-    "schoolID": "F112310102538",
-    "schoolName": "東京情報大学"
-  },
-  {
-    "schoolID": "F112310102565",
-    "schoolName": "江戸川大学"
-  },
+  { "schoolID": "F112310102495", "schoolName": "神田外語大学", "used": false },
+  { "schoolID": "F112310102413", "schoolName": "淑徳大学", "used": false },
+  { "schoolID": "F112310102342", "schoolName": "放送大学", "used": false },
+  { "schoolID": "F112310102501", "schoolName": "千葉経済大学", "used": false },
+  { "schoolID": "F112310102422", "schoolName": "敬愛大学", "used": false },
+  { "schoolID": "F112310102583", "schoolName": "植草学園大学", "used": false },
+  { "schoolID": "F112310102538", "schoolName": "東京情報大学", "used": false },
+  { "schoolID": "F112310102565", "schoolName": "江戸川大学", "used": false },
   {
     "schoolID": "F112310102529",
-    "schoolName": "川村学園女子大学"
+    "schoolName": "川村学園女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F112310102459",
-    "schoolName": "中央学院大学"
-  },
+  { "schoolID": "F112310102459", "schoolName": "中央学院大学", "used": false },
   {
     "schoolID": "F112310102547",
-    "schoolName": "東京基督教大学"
+    "schoolName": "東京基督教大学",
+    "used": false
   },
-  {
-    "schoolID": "F112310102556",
-    "schoolName": "聖徳大学"
-  },
-  {
-    "schoolID": "F112310102440",
-    "schoolName": "千葉商科大学"
-  },
-  {
-    "schoolID": "F112310102477",
-    "schoolName": "和洋女子大学"
-  },
-  {
-    "schoolID": "F112310102431",
-    "schoolName": "千葉工業大学"
-  },
-  {
-    "schoolID": "F112310102510",
-    "schoolName": "秀明大学"
-  },
-  {
-    "schoolID": "F112310102388",
-    "schoolName": "開智国際大学"
-  },
-  {
-    "schoolID": "F112310102468",
-    "schoolName": "麗澤大学"
-  },
+  { "schoolID": "F112310102556", "schoolName": "聖徳大学", "used": false },
+  { "schoolID": "F112310102440", "schoolName": "千葉商科大学", "used": false },
+  { "schoolID": "F112310102477", "schoolName": "和洋女子大学", "used": false },
+  { "schoolID": "F112310102431", "schoolName": "千葉工業大学", "used": false },
+  { "schoolID": "F112310102510", "schoolName": "秀明大学", "used": false },
+  { "schoolID": "F112310102388", "schoolName": "開智国際大学", "used": false },
+  { "schoolID": "F112310102468", "schoolName": "麗澤大学", "used": false },
   {
     "schoolID": "F112310102574",
-    "schoolName": "ＳＢＣ東京医療大学"
+    "schoolName": "ＳＢＣ東京医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F112310102404",
-    "schoolName": "城西国際大学"
-  },
-  {
-    "schoolID": "F112310102379",
-    "schoolName": "愛国学園大学"
-  },
-  {
-    "schoolID": "F112310102360",
-    "schoolName": "千葉科学大学"
-  },
-  {
-    "schoolID": "F112310102397",
-    "schoolName": "清和大学"
-  },
-  {
-    "schoolID": "F112310102609",
-    "schoolName": "亀田医療大学"
-  },
-  {
-    "schoolID": "F112310102592",
-    "schoolName": "三育学院大学"
-  },
-  {
-    "schoolID": "F112310102486",
-    "schoolName": "国際武道大学"
-  },
+  { "schoolID": "F112310102404", "schoolName": "城西国際大学", "used": false },
+  { "schoolID": "F112310102379", "schoolName": "愛国学園大学", "used": false },
+  { "schoolID": "F112310102360", "schoolName": "千葉科学大学", "used": false },
+  { "schoolID": "F112310102397", "schoolName": "清和大学", "used": false },
+  { "schoolID": "F112310102609", "schoolName": "亀田医療大学", "used": false },
+  { "schoolID": "F112310102592", "schoolName": "三育学院大学", "used": false },
+  { "schoolID": "F112310102486", "schoolName": "国際武道大学", "used": false },
   {
     "schoolID": "F113110102808",
-    "schoolName": "政策研究大学院大学"
+    "schoolName": "政策研究大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113110102817",
-    "schoolName": "東京海洋大学"
-  },
-  {
-    "schoolID": "F113110102737",
-    "schoolName": "東京芸術大学"
-  },
+  { "schoolID": "F113110102817", "schoolName": "東京海洋大学", "used": false },
+  { "schoolID": "F113110102737", "schoolName": "東京芸術大学", "used": false },
   {
     "schoolID": "F113110102755",
-    "schoolName": "お茶の水女子大学"
+    "schoolName": "お茶の水女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F113110102700",
-    "schoolName": "東京大学"
-  },
+  { "schoolID": "F113110102700", "schoolName": "東京大学", "used": false },
   {
     "schoolID": "F113110102719",
-    "schoolName": "東京医科歯科大学"
+    "schoolName": "東京医科歯科大学",
+    "used": false
   },
-  {
-    "schoolID": "F113110102746",
-    "schoolName": "東京工業大学"
-  },
-  {
-    "schoolID": "F113110102782",
-    "schoolName": "電気通信大学"
-  },
+  { "schoolID": "F113110102746", "schoolName": "東京工業大学", "used": false },
+  { "schoolID": "F113110102782", "schoolName": "電気通信大学", "used": false },
   {
     "schoolID": "F113110102728",
-    "schoolName": "東京外国語大学"
+    "schoolName": "東京外国語大学",
+    "used": false
   },
-  {
-    "schoolID": "F113110102773",
-    "schoolName": "東京農工大学"
-  },
-  {
-    "schoolID": "F113110102764",
-    "schoolName": "東京学芸大学"
-  },
-  {
-    "schoolID": "F113110102791",
-    "schoolName": "一橋大学"
-  },
+  { "schoolID": "F113110102773", "schoolName": "東京農工大学", "used": false },
+  { "schoolID": "F113110102764", "schoolName": "東京学芸大学", "used": false },
+  { "schoolID": "F113110102791", "schoolName": "一橋大学", "used": false },
   {
     "schoolID": "F113210102833",
-    "schoolName": "東京都立産業技術大学院大学"
+    "schoolName": "東京都立産業技術大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113210102824",
-    "schoolName": "東京都立大学"
-  },
-  {
-    "schoolID": "F113310103279",
-    "schoolName": "東京歯科大学"
-  },
+  { "schoolID": "F113210102824", "schoolName": "東京都立大学", "used": false },
+  { "schoolID": "F113310103279", "schoolName": "東京歯科大学", "used": false },
   {
     "schoolID": "F113310103974",
-    "schoolName": "ＬＥＣ東京リーガルマインド大学院大学"
+    "schoolName": "ＬＥＣ東京リーガルマインド大学院大学",
+    "used": false
   },
   {
     "schoolID": "F113310103983",
-    "schoolName": "デジタルハリウッド大学"
+    "schoolName": "デジタルハリウッド大学",
+    "used": false
   },
   {
     "schoolID": "F113310104054",
-    "schoolName": "大原大学院大学"
+    "schoolName": "大原大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103536",
-    "schoolName": "明治大学"
-  },
-  {
-    "schoolID": "F113310103162",
-    "schoolName": "専修大学"
-  },
-  {
-    "schoolID": "F113310102975",
-    "schoolName": "共立女子大学"
-  },
-  {
-    "schoolID": "F113310103411",
-    "schoolName": "日本歯科大学"
-  },
+  { "schoolID": "F113310103536", "schoolName": "明治大学", "used": false },
+  { "schoolID": "F113310103162", "schoolName": "専修大学", "used": false },
+  { "schoolID": "F113310102975", "schoolName": "共立女子大学", "used": false },
+  { "schoolID": "F113310103411", "schoolName": "日本歯科大学", "used": false },
   {
     "schoolID": "F113310104036",
-    "schoolName": "グロービス経営大学院大学"
+    "schoolName": "グロービス経営大学院大学",
+    "used": false
   },
   {
     "schoolID": "F113310104027",
-    "schoolName": "ビジネス・ブレークスルー大学"
+    "schoolName": "ビジネス・ブレークスルー大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103484",
-    "schoolName": "法政大学"
-  },
-  {
-    "schoolID": "F113310103395",
-    "schoolName": "日本大学"
-  },
-  {
-    "schoolID": "F113310103386",
-    "schoolName": "二松学舎大学"
-  },
+  { "schoolID": "F113310103484", "schoolName": "法政大学", "used": false },
+  { "schoolID": "F113310103395", "schoolName": "日本大学", "used": false },
+  { "schoolID": "F113310103386", "schoolName": "二松学舎大学", "used": false },
   {
     "schoolID": "F113310103260",
-    "schoolName": "東京家政学院大学"
+    "schoolName": "東京家政学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310102948",
-    "schoolName": "大妻女子大学"
-  },
-  {
-    "schoolID": "F113310103064",
-    "schoolName": "上智大学"
-  },
+  { "schoolID": "F113310102948", "schoolName": "大妻女子大学", "used": false },
+  { "schoolID": "F113310103064", "schoolName": "上智大学", "used": false },
   {
     "schoolID": "F113310103643",
-    "schoolName": "大学院大学至善館"
+    "schoolName": "大学院大学至善館",
+    "used": false
   },
   {
     "schoolID": "F113310103153",
-    "schoolName": "聖路加国際大学"
+    "schoolName": "聖路加国際大学",
+    "used": false
   },
   {
     "schoolID": "F113310103288",
-    "schoolName": "東京慈恵会医科大学"
+    "schoolName": "東京慈恵会医科大学",
+    "used": false
   },
   {
     "schoolID": "F113310104072",
-    "schoolName": "ハリウッド大学院大学"
+    "schoolName": "ハリウッド大学院大学",
+    "used": false
   },
   {
     "schoolID": "F113310104081",
-    "schoolName": "ＳＢＩ大学院大学"
+    "schoolName": "ＳＢＩ大学院大学",
+    "used": false
   },
   {
     "schoolID": "F113310104152",
-    "schoolName": "事業構想大学院大学"
+    "schoolName": "事業構想大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310102984",
-    "schoolName": "慶應義塾大学"
-  },
-  {
-    "schoolID": "F113310103545",
-    "schoolName": "明治学院大学"
-  },
-  {
-    "schoolID": "F113310102966",
-    "schoolName": "北里大学"
-  },
-  {
-    "schoolID": "F113310102939",
-    "schoolName": "上野学園大学"
-  },
-  {
-    "schoolID": "F113310103368",
-    "schoolName": "東洋大学"
-  },
+  { "schoolID": "F113310102984", "schoolName": "慶應義塾大学", "used": false },
+  { "schoolID": "F113310103545", "schoolName": "明治学院大学", "used": false },
+  { "schoolID": "F113310102966", "schoolName": "北里大学", "used": false },
+  { "schoolID": "F113310102939", "schoolName": "上野学園大学", "used": false },
+  { "schoolID": "F113310103368", "schoolName": "東洋大学", "used": false },
   {
     "schoolID": "F113310103590",
-    "schoolName": "国際仏教学大学院大学"
+    "schoolName": "国際仏教学大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103206",
-    "schoolName": "拓殖大学"
-  },
-  {
-    "schoolID": "F113310103439",
-    "schoolName": "日本女子大学"
-  },
+  { "schoolID": "F113310103206", "schoolName": "拓殖大学", "used": false },
+  { "schoolID": "F113310103439", "schoolName": "日本女子大学", "used": false },
   {
     "schoolID": "F113310102859",
-    "schoolName": "跡見学園女子大学"
+    "schoolName": "跡見学園女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310102902",
-    "schoolName": "東洋学園大学"
-  },
-  {
-    "schoolID": "F113310103055",
-    "schoolName": "順天堂大学"
-  },
-  {
-    "schoolID": "F113310103402",
-    "schoolName": "日本医科大学"
-  },
-  {
-    "schoolID": "F113310102877",
-    "schoolName": "文京学院大学"
-  },
-  {
-    "schoolID": "F113310102895",
-    "schoolName": "東京成徳大学"
-  },
-  {
-    "schoolID": "F113310104063",
-    "schoolName": "東京未来大学"
-  },
-  {
-    "schoolID": "F113310103313",
-    "schoolName": "東京電機大学"
-  },
-  {
-    "schoolID": "F113310104170",
-    "schoolName": "帝京科学大学"
-  },
-  {
-    "schoolID": "F113310104018",
-    "schoolName": "東京聖栄大学"
-  },
+  { "schoolID": "F113310102902", "schoolName": "東洋学園大学", "used": false },
+  { "schoolID": "F113310103055", "schoolName": "順天堂大学", "used": false },
+  { "schoolID": "F113310103402", "schoolName": "日本医科大学", "used": false },
+  { "schoolID": "F113310102877", "schoolName": "文京学院大学", "used": false },
+  { "schoolID": "F113310102895", "schoolName": "東京成徳大学", "used": false },
+  { "schoolID": "F113310104063", "schoolName": "東京未来大学", "used": false },
+  { "schoolID": "F113310103313", "schoolName": "東京電機大学", "used": false },
+  { "schoolID": "F113310104170", "schoolName": "帝京科学大学", "used": false },
+  { "schoolID": "F113310104018", "schoolName": "東京聖栄大学", "used": false },
   {
     "schoolID": "F113310103634",
-    "schoolName": "情報経営イノベーション専門職大学"
+    "schoolName": "情報経営イノベーション専門職大学",
+    "used": false
   },
   {
     "schoolID": "F113310104189",
-    "schoolName": "東京情報デザイン専門職大学"
+    "schoolName": "東京情報デザイン専門職大学",
+    "used": false
   },
   {
     "schoolID": "F113310103625",
-    "schoolName": "東京保健医療専門職大学"
+    "schoolName": "東京保健医療専門職大学",
+    "used": false
   },
   {
     "schoolID": "F113310104107",
-    "schoolName": "東京有明医療大学"
+    "schoolName": "東京有明医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103830",
-    "schoolName": "武蔵野大学"
-  },
-  {
-    "schoolID": "F113310103046",
-    "schoolName": "芝浦工業大学"
-  },
-  {
-    "schoolID": "F113310103117",
-    "schoolName": "杉野服飾大学"
-  },
-  {
-    "schoolID": "F113310103144",
-    "schoolName": "清泉女子大学"
-  },
-  {
-    "schoolID": "F113310103572",
-    "schoolName": "立正大学"
-  },
+  { "schoolID": "F113310103830", "schoolName": "武蔵野大学", "used": false },
+  { "schoolID": "F113310103046", "schoolName": "芝浦工業大学", "used": false },
+  { "schoolID": "F113310103117", "schoolName": "杉野服飾大学", "used": false },
+  { "schoolID": "F113310103144", "schoolName": "清泉女子大学", "used": false },
+  { "schoolID": "F113310103572", "schoolName": "立正大学", "used": false },
   {
     "schoolID": "F113310104009",
-    "schoolName": "東京医療保健大学"
+    "schoolName": "東京医療保健大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103493",
-    "schoolName": "星薬科大学"
-  },
-  {
-    "schoolID": "F113310102868",
-    "schoolName": "文教大学"
-  },
-  {
-    "schoolID": "F113310103073",
-    "schoolName": "昭和大学"
-  },
-  {
-    "schoolID": "F113310103359",
-    "schoolName": "東邦大学"
-  },
-  {
-    "schoolID": "F113310102920",
-    "schoolName": "青山学院大学"
-  },
-  {
-    "schoolID": "F113310103135",
-    "schoolName": "聖心女子大学"
-  },
+  { "schoolID": "F113310103493", "schoolName": "星薬科大学", "used": false },
+  { "schoolID": "F113310102868", "schoolName": "文教大学", "used": false },
+  { "schoolID": "F113310103073", "schoolName": "昭和大学", "used": false },
+  { "schoolID": "F113310103359", "schoolName": "東邦大学", "used": false },
+  { "schoolID": "F113310102920", "schoolName": "青山学院大学", "used": false },
+  { "schoolID": "F113310103135", "schoolName": "聖心女子大学", "used": false },
   {
     "schoolID": "F113310103910",
-    "schoolName": "日本赤十字看護大学"
+    "schoolName": "日本赤十字看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103000",
-    "schoolName": "國學院大學"
-  },
+  { "schoolID": "F113310103000", "schoolName": "國學院大學", "used": false },
   {
     "schoolID": "F113310104045",
-    "schoolName": "文化ファッション大学院大学"
+    "schoolName": "文化ファッション大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103475",
-    "schoolName": "文化学園大学"
-  },
-  {
-    "schoolID": "F113310103233",
-    "schoolName": "東海大学"
-  },
-  {
-    "schoolID": "F113310103377",
-    "schoolName": "東京音楽大学"
-  },
-  {
-    "schoolID": "F113310103028",
-    "schoolName": "駒澤大学"
-  },
-  {
-    "schoolID": "F113310103019",
-    "schoolName": "国士舘大学"
-  },
-  {
-    "schoolID": "F113310103082",
-    "schoolName": "昭和女子大学"
-  },
-  {
-    "schoolID": "F113310103322",
-    "schoolName": "東京農業大学"
-  },
-  {
-    "schoolID": "F113310103126",
-    "schoolName": "成城大学"
-  },
+  { "schoolID": "F113310103475", "schoolName": "文化学園大学", "used": false },
+  { "schoolID": "F113310103233", "schoolName": "東海大学", "used": false },
+  { "schoolID": "F113310103377", "schoolName": "東京音楽大学", "used": false },
+  { "schoolID": "F113310103028", "schoolName": "駒澤大学", "used": false },
+  { "schoolID": "F113310103019", "schoolName": "国士舘大学", "used": false },
+  { "schoolID": "F113310103082", "schoolName": "昭和女子大学", "used": false },
+  { "schoolID": "F113310103322", "schoolName": "東京農業大学", "used": false },
+  { "schoolID": "F113310103126", "schoolName": "成城大学", "used": false },
   {
     "schoolID": "F113310103448",
-    "schoolName": "日本女子体育大学"
+    "schoolName": "日本女子体育大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103457",
-    "schoolName": "日本体育大学"
-  },
-  {
-    "schoolID": "F113310103518",
-    "schoolName": "東京都市大学"
-  },
-  {
-    "schoolID": "F113310103215",
-    "schoolName": "多摩美術大学"
-  },
-  {
-    "schoolID": "F113310104125",
-    "schoolName": "産業能率大学"
-  },
-  {
-    "schoolID": "F113310103652",
-    "schoolName": "東京通信大学"
-  },
+  { "schoolID": "F113310103457", "schoolName": "日本体育大学", "used": false },
+  { "schoolID": "F113310103518", "schoolName": "東京都市大学", "used": false },
+  { "schoolID": "F113310103215", "schoolName": "多摩美術大学", "used": false },
+  { "schoolID": "F113310104125", "schoolName": "産業能率大学", "used": false },
+  { "schoolID": "F113310103652", "schoolName": "東京通信大学", "used": false },
   {
     "schoolID": "F113310103616",
-    "schoolName": "東京国際工科専門職大学"
+    "schoolName": "東京国際工科専門職大学",
+    "used": false
   },
   {
     "schoolID": "F113310103661",
-    "schoolName": "国際ファッション専門職大学"
+    "schoolName": "国際ファッション専門職大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103242",
-    "schoolName": "東京医科大学"
-  },
-  {
-    "schoolID": "F113310102886",
-    "schoolName": "目白大学"
-  },
-  {
-    "schoolID": "F113310103965",
-    "schoolName": "東京富士大学"
-  },
+  { "schoolID": "F113310103242", "schoolName": "東京医科大学", "used": false },
+  { "schoolID": "F113310102886", "schoolName": "目白大学", "used": false },
+  { "schoolID": "F113310103965", "schoolName": "東京富士大学", "used": false },
   {
     "schoolID": "F113310103607",
-    "schoolName": "学習院女子大学"
+    "schoolName": "学習院女子大学",
+    "used": false
   },
   {
     "schoolID": "F113310103304",
-    "schoolName": "東京女子医科大学"
+    "schoolName": "東京女子医科大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103340",
-    "schoolName": "東京理科大学"
-  },
-  {
-    "schoolID": "F113310102993",
-    "schoolName": "工学院大学"
-  },
+  { "schoolID": "F113310103340", "schoolName": "東京理科大学", "used": false },
+  { "schoolID": "F113310102993", "schoolName": "工学院大学", "used": false },
   {
     "schoolID": "F113310104090",
-    "schoolName": "こども教育宝仙大学"
+    "schoolName": "こども教育宝仙大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310104116",
-    "schoolName": "東京工芸大学"
-  },
-  {
-    "schoolID": "F113310103108",
-    "schoolName": "女子美術大学"
-  },
-  {
-    "schoolID": "F113310103297",
-    "schoolName": "東京女子大学"
-  },
-  {
-    "schoolID": "F113310103199",
-    "schoolName": "高千穂大学"
-  },
-  {
-    "schoolID": "F113310103581",
-    "schoolName": "早稲田大学"
-  },
+  { "schoolID": "F113310104116", "schoolName": "東京工芸大学", "used": false },
+  { "schoolID": "F113310103108", "schoolName": "女子美術大学", "used": false },
+  { "schoolID": "F113310103297", "schoolName": "東京女子大学", "used": false },
+  { "schoolID": "F113310103199", "schoolName": "高千穂大学", "used": false },
+  { "schoolID": "F113310103581", "schoolName": "早稲田大学", "used": false },
   {
     "schoolID": "F113310104161",
-    "schoolName": "社会構想大学院大学"
+    "schoolName": "社会構想大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103171",
-    "schoolName": "大正大学"
-  },
-  {
-    "schoolID": "F113310104198",
-    "schoolName": "東京国際大学"
-  },
-  {
-    "schoolID": "F113310102840",
-    "schoolName": "東京福祉大学"
-  },
-  {
-    "schoolID": "F113310102911",
-    "schoolName": "帝京平成大学"
-  },
-  {
-    "schoolID": "F113310103563",
-    "schoolName": "立教大学"
-  },
-  {
-    "schoolID": "F113310102957",
-    "schoolName": "学習院大学"
-  },
-  {
-    "schoolID": "F113310103251",
-    "schoolName": "東京家政大学"
-  },
-  {
-    "schoolID": "F113310103769",
-    "schoolName": "帝京大学"
-  },
-  {
-    "schoolID": "F113310103180",
-    "schoolName": "大東文化大学"
-  },
+  { "schoolID": "F113310103171", "schoolName": "大正大学", "used": false },
+  { "schoolID": "F113310104198", "schoolName": "東京国際大学", "used": false },
+  { "schoolID": "F113310102840", "schoolName": "東京福祉大学", "used": false },
+  { "schoolID": "F113310102911", "schoolName": "帝京平成大学", "used": false },
+  { "schoolID": "F113310103563", "schoolName": "立教大学", "used": false },
+  { "schoolID": "F113310102957", "schoolName": "学習院大学", "used": false },
+  { "schoolID": "F113310103251", "schoolName": "東京家政大学", "used": false },
+  { "schoolID": "F113310103769", "schoolName": "帝京大学", "used": false },
+  { "schoolID": "F113310103180", "schoolName": "大東文化大学", "used": false },
   {
     "schoolID": "F113310103527",
-    "schoolName": "武蔵野音楽大学"
+    "schoolName": "武蔵野音楽大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103509",
-    "schoolName": "武蔵大学"
-  },
-  {
-    "schoolID": "F113310103689",
-    "schoolName": "亜細亜大学"
-  },
+  { "schoolID": "F113310103509", "schoolName": "武蔵大学", "used": false },
+  { "schoolID": "F113310103689", "schoolName": "亜細亜大学", "used": false },
   {
     "schoolID": "F113310103821",
-    "schoolName": "日本獣医生命科学大学"
+    "schoolName": "日本獣医生命科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103732",
-    "schoolName": "成蹊大学"
-  },
-  {
-    "schoolID": "F113310103876",
-    "schoolName": "杏林大学"
-  },
-  {
-    "schoolID": "F113310103796",
-    "schoolName": "東京神学大学"
-  },
+  { "schoolID": "F113310103732", "schoolName": "成蹊大学", "used": false },
+  { "schoolID": "F113310103876", "schoolName": "杏林大学", "used": false },
+  { "schoolID": "F113310103796", "schoolName": "東京神学大学", "used": false },
   {
     "schoolID": "F113310103466",
-    "schoolName": "ルーテル学院大学"
+    "schoolName": "ルーテル学院大学",
+    "used": false
   },
   {
     "schoolID": "F113310103714",
-    "schoolName": "国際基督教大学"
+    "schoolName": "国際基督教大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103812",
-    "schoolName": "桐朋学園大学"
-  },
+  { "schoolID": "F113310103812", "schoolName": "桐朋学園大学", "used": false },
   {
     "schoolID": "F113310103723",
-    "schoolName": "白百合女子大学"
+    "schoolName": "白百合女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103778",
-    "schoolName": "東京経済大学"
-  },
+  { "schoolID": "F113310103778", "schoolName": "東京経済大学", "used": false },
   {
     "schoolID": "F113310103787",
-    "schoolName": "東京女子体育大学"
+    "schoolName": "東京女子体育大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103992",
-    "schoolName": "白梅学園大学"
-  },
+  { "schoolID": "F113310103992", "schoolName": "白梅学園大学", "used": false },
   {
     "schoolID": "F113310103849",
-    "schoolName": "武蔵野美術大学"
+    "schoolName": "武蔵野美術大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103750",
-    "schoolName": "津田塾大学"
-  },
-  {
-    "schoolID": "F113310103956",
-    "schoolName": "嘉悦大学"
-  },
-  {
-    "schoolID": "F113310103705",
-    "schoolName": "国立音楽大学"
-  },
-  {
-    "schoolID": "F113310103037",
-    "schoolName": "実践女子大学"
-  },
-  {
-    "schoolID": "F113310103858",
-    "schoolName": "明星大学"
-  },
-  {
-    "schoolID": "F113310103947",
-    "schoolName": "東京純心大学"
-  },
+  { "schoolID": "F113310103750", "schoolName": "津田塾大学", "used": false },
+  { "schoolID": "F113310103956", "schoolName": "嘉悦大学", "used": false },
+  { "schoolID": "F113310103705", "schoolName": "国立音楽大学", "used": false },
+  { "schoolID": "F113310103037", "schoolName": "実践女子大学", "used": false },
+  { "schoolID": "F113310103858", "schoolName": "明星大学", "used": false },
+  { "schoolID": "F113310103947", "schoolName": "東京純心大学", "used": false },
   {
     "schoolID": "F113310104134",
-    "schoolName": "ヤマザキ動物看護大学"
+    "schoolName": "ヤマザキ動物看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103331",
-    "schoolName": "東京薬科大学"
-  },
-  {
-    "schoolID": "F113310103224",
-    "schoolName": "中央大学"
-  },
-  {
-    "schoolID": "F113310103901",
-    "schoolName": "東京工科大学"
-  },
-  {
-    "schoolID": "F113310103894",
-    "schoolName": "日本文化大学"
-  },
-  {
-    "schoolID": "F113310103803",
-    "schoolName": "東京造形大学"
-  },
-  {
-    "schoolID": "F113310103885",
-    "schoolName": "創価大学"
-  },
-  {
-    "schoolID": "F113310103698",
-    "schoolName": "桜美林大学"
-  },
-  {
-    "schoolID": "F113310103091",
-    "schoolName": "昭和薬科大学"
-  },
-  {
-    "schoolID": "F113310103741",
-    "schoolName": "玉川大学"
-  },
-  {
-    "schoolID": "F113310103867",
-    "schoolName": "和光大学"
-  },
+  { "schoolID": "F113310103331", "schoolName": "東京薬科大学", "used": false },
+  { "schoolID": "F113310103224", "schoolName": "中央大学", "used": false },
+  { "schoolID": "F113310103901", "schoolName": "東京工科大学", "used": false },
+  { "schoolID": "F113310103894", "schoolName": "日本文化大学", "used": false },
+  { "schoolID": "F113310103803", "schoolName": "東京造形大学", "used": false },
+  { "schoolID": "F113310103885", "schoolName": "創価大学", "used": false },
+  { "schoolID": "F113310103698", "schoolName": "桜美林大学", "used": false },
+  { "schoolID": "F113310103091", "schoolName": "昭和薬科大学", "used": false },
+  { "schoolID": "F113310103741", "schoolName": "玉川大学", "used": false },
+  { "schoolID": "F113310103867", "schoolName": "和光大学", "used": false },
   {
     "schoolID": "F113310103420",
-    "schoolName": "日本社会事業大学"
+    "schoolName": "日本社会事業大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103554",
-    "schoolName": "明治薬科大学"
-  },
-  {
-    "schoolID": "F113310103938",
-    "schoolName": "多摩大学"
-  },
+  { "schoolID": "F113310103554", "schoolName": "明治薬科大学", "used": false },
+  { "schoolID": "F113310103938", "schoolName": "多摩大学", "used": false },
   {
     "schoolID": "F113310103929",
-    "schoolName": "恵泉女学園大学"
+    "schoolName": "恵泉女学園大学",
+    "used": false
   },
   {
     "schoolID": "F113310104143",
-    "schoolName": "東京医療学院大学"
+    "schoolName": "東京医療学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F113310103670",
-    "schoolName": "駒沢女子大学"
-  },
+  { "schoolID": "F113310103670", "schoolName": "駒沢女子大学", "used": false },
   {
     "schoolID": "F114110104609",
-    "schoolName": "総合研究大学院大学"
+    "schoolName": "総合研究大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F114110104592",
-    "schoolName": "横浜国立大学"
-  },
+  { "schoolID": "F114110104592", "schoolName": "横浜国立大学", "used": false },
   {
     "schoolID": "F114210111993",
-    "schoolName": "川崎市立看護大学"
+    "schoolName": "川崎市立看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F114210104616",
-    "schoolName": "横浜市立大学"
-  },
+  { "schoolID": "F114210104616", "schoolName": "横浜市立大学", "used": false },
   {
     "schoolID": "F114210104625",
-    "schoolName": "神奈川県立保健福祉大学"
+    "schoolName": "神奈川県立保健福祉大学",
+    "used": false
   },
   {
     "schoolID": "F114310104918",
-    "schoolName": "グローバルＢｉｚ専門職大学"
+    "schoolName": "グローバルＢｉｚ専門職大学",
+    "used": false
   },
   {
     "schoolID": "F114310104776",
-    "schoolName": "洗足学園音楽大学"
+    "schoolName": "洗足学園音楽大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104865",
-    "schoolName": "日本映画大学"
-  },
+  { "schoolID": "F114310104865", "schoolName": "日本映画大学", "used": false },
   {
     "schoolID": "F114310104847",
-    "schoolName": "田園調布学園大学"
+    "schoolName": "田園調布学園大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104801",
-    "schoolName": "昭和音楽大学"
-  },
+  { "schoolID": "F114310104801", "schoolName": "昭和音楽大学", "used": false },
   {
     "schoolID": "F114310104785",
-    "schoolName": "聖マリアンナ医科大学"
+    "schoolName": "聖マリアンナ医科大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104696",
-    "schoolName": "八洲学園大学"
-  },
+  { "schoolID": "F114310104696", "schoolName": "八洲学園大学", "used": false },
   {
     "schoolID": "F114310104703",
-    "schoolName": "情報セキュリティ大学院大学"
+    "schoolName": "情報セキュリティ大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104641",
-    "schoolName": "神奈川大学"
-  },
+  { "schoolID": "F114310104641", "schoolName": "神奈川大学", "used": false },
   {
     "schoolID": "F114310104909",
-    "schoolName": "ビューティ＆ウェルネス専門職大学"
+    "schoolName": "ビューティ＆ウェルネス専門職大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104810",
-    "schoolName": "桐蔭横浜大学"
-  },
-  {
-    "schoolID": "F114310104874",
-    "schoolName": "横浜創英大学"
-  },
+  { "schoolID": "F114310104810", "schoolName": "桐蔭横浜大学", "used": false },
+  { "schoolID": "F114310104874", "schoolName": "横浜創英大学", "used": false },
   {
     "schoolID": "F114310104829",
-    "schoolName": "東洋英和女学院大学"
+    "schoolName": "東洋英和女学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104856",
-    "schoolName": "横浜美術大学"
-  },
-  {
-    "schoolID": "F114310104669",
-    "schoolName": "鶴見大学"
-  },
-  {
-    "schoolID": "F114310104687",
-    "schoolName": "横浜商科大学"
-  },
-  {
-    "schoolID": "F114310104650",
-    "schoolName": "関東学院大学"
-  },
+  { "schoolID": "F114310104856", "schoolName": "横浜美術大学", "used": false },
+  { "schoolID": "F114310104669", "schoolName": "鶴見大学", "used": false },
+  { "schoolID": "F114310104687", "schoolName": "横浜商科大学", "used": false },
+  { "schoolID": "F114310104650", "schoolName": "関東学院大学", "used": false },
   {
     "schoolID": "F114310104730",
-    "schoolName": "神奈川歯科大学"
+    "schoolName": "神奈川歯科大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104838",
-    "schoolName": "松蔭大学"
-  },
+  { "schoolID": "F114310104838", "schoolName": "松蔭大学", "used": false },
   {
     "schoolID": "F114310104794",
-    "schoolName": "神奈川工科大学"
+    "schoolName": "神奈川工科大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104883",
-    "schoolName": "湘南医療大学"
-  },
-  {
-    "schoolID": "F114310104712",
-    "schoolName": "横浜薬科大学"
-  },
+  { "schoolID": "F114310104883", "schoolName": "湘南医療大学", "used": false },
+  { "schoolID": "F114310104712", "schoolName": "横浜薬科大学", "used": false },
   {
     "schoolID": "F114310104678",
-    "schoolName": "フェリス女学院大学"
+    "schoolName": "フェリス女学院大学",
+    "used": false
   },
   {
     "schoolID": "F114310104892",
-    "schoolName": "湘南鎌倉医療大学"
+    "schoolName": "湘南鎌倉医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F114310104749",
-    "schoolName": "鎌倉女子大学"
-  },
-  {
-    "schoolID": "F114310104632",
-    "schoolName": "星槎大学"
-  },
-  {
-    "schoolID": "F114310104758",
-    "schoolName": "湘南工科大学"
-  },
-  {
-    "schoolID": "F114310104767",
-    "schoolName": "相模女子大学"
-  },
-  {
-    "schoolID": "F114310104721",
-    "schoolName": "麻布大学"
-  },
+  { "schoolID": "F114310104749", "schoolName": "鎌倉女子大学", "used": false },
+  { "schoolID": "F114310104632", "schoolName": "星槎大学", "used": false },
+  { "schoolID": "F114310104758", "schoolName": "湘南工科大学", "used": false },
+  { "schoolID": "F114310104767", "schoolName": "相模女子大学", "used": false },
+  { "schoolID": "F114310104721", "schoolName": "麻布大学", "used": false },
   {
     "schoolID": "F115110105055",
-    "schoolName": "長岡技術科学大学"
+    "schoolName": "長岡技術科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F115110105064",
-    "schoolName": "上越教育大学"
-  },
-  {
-    "schoolID": "F115110105046",
-    "schoolName": "新潟大学"
-  },
-  {
-    "schoolID": "F115210105099",
-    "schoolName": "長岡造形大学"
-  },
+  { "schoolID": "F115110105064", "schoolName": "上越教育大学", "used": false },
+  { "schoolID": "F115110105046", "schoolName": "新潟大学", "used": false },
+  { "schoolID": "F115210105099", "schoolName": "長岡造形大学", "used": false },
   {
     "schoolID": "F115210105071",
-    "schoolName": "新潟県立看護大学"
+    "schoolName": "新潟県立看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F115210105080",
-    "schoolName": "新潟県立大学"
-  },
-  {
-    "schoolID": "F115210111849",
-    "schoolName": "三条市立大学"
-  },
-  {
-    "schoolID": "F115310105104",
-    "schoolName": "長岡大学"
-  },
-  {
-    "schoolID": "F115310105248",
-    "schoolName": "長岡崇徳大学"
-  },
-  {
-    "schoolID": "F115310105131",
-    "schoolName": "新潟工科大学"
-  },
-  {
-    "schoolID": "F115310105195",
-    "schoolName": "新潟産業大学"
-  },
-  {
-    "schoolID": "F115310105186",
-    "schoolName": "国際大学"
-  },
+  { "schoolID": "F115210105080", "schoolName": "新潟県立大学", "used": false },
+  { "schoolID": "F115210111849", "schoolName": "三条市立大学", "used": false },
+  { "schoolID": "F115310105104", "schoolName": "長岡大学", "used": false },
+  { "schoolID": "F115310105248", "schoolName": "長岡崇徳大学", "used": false },
+  { "schoolID": "F115310105131", "schoolName": "新潟工科大学", "used": false },
+  { "schoolID": "F115310105195", "schoolName": "新潟産業大学", "used": false },
+  { "schoolID": "F115310105186", "schoolName": "国際大学", "used": false },
   {
     "schoolID": "F115310105239",
-    "schoolName": "開志専門職大学"
+    "schoolName": "開志専門職大学",
+    "used": false
   },
   {
     "schoolID": "F115310105202",
-    "schoolName": "事業創造大学院大学"
+    "schoolName": "事業創造大学院大学",
+    "used": false
   },
   {
     "schoolID": "F115310105159",
-    "schoolName": "新潟国際情報大学"
+    "schoolName": "新潟国際情報大学",
+    "used": false
   },
   {
     "schoolID": "F115310105220",
-    "schoolName": "新潟食料農業大学"
+    "schoolName": "新潟食料農業大学",
+    "used": false
   },
   {
     "schoolID": "F115310105113",
-    "schoolName": "新潟医療福祉大学"
+    "schoolName": "新潟医療福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F115310105122",
-    "schoolName": "新潟青陵大学"
-  },
-  {
-    "schoolID": "F115310105177",
-    "schoolName": "新潟薬科大学"
-  },
-  {
-    "schoolID": "F115310105168",
-    "schoolName": "敬和学園大学"
-  },
+  { "schoolID": "F115310105122", "schoolName": "新潟青陵大学", "used": false },
+  { "schoolID": "F115310105177", "schoolName": "新潟薬科大学", "used": false },
+  { "schoolID": "F115310105168", "schoolName": "敬和学園大学", "used": false },
   {
     "schoolID": "F115310105211",
-    "schoolName": "新潟リハビリテーション大学"
+    "schoolName": "新潟リハビリテーション大学",
+    "used": false
   },
-  {
-    "schoolID": "F115310105140",
-    "schoolName": "新潟経営大学"
-  },
-  {
-    "schoolID": "F116110105312",
-    "schoolName": "富山大学"
-  },
-  {
-    "schoolID": "F116210105329",
-    "schoolName": "富山県立大学"
-  },
+  { "schoolID": "F115310105140", "schoolName": "新潟経営大学", "used": false },
+  { "schoolID": "F116110105312", "schoolName": "富山大学", "used": false },
+  { "schoolID": "F116210105329", "schoolName": "富山県立大学", "used": false },
   {
     "schoolID": "F116310105354",
-    "schoolName": "桐朋学園大学院大学"
+    "schoolName": "桐朋学園大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F116310105345",
-    "schoolName": "富山国際大学"
-  },
-  {
-    "schoolID": "F116310105336",
-    "schoolName": "高岡法科大学"
-  },
-  {
-    "schoolID": "F117110105393",
-    "schoolName": "金沢大学"
-  },
+  { "schoolID": "F116310105345", "schoolName": "富山国際大学", "used": false },
+  { "schoolID": "F116310105336", "schoolName": "高岡法科大学", "used": false },
+  { "schoolID": "F117110105393", "schoolName": "金沢大学", "used": false },
   {
     "schoolID": "F117110105400",
-    "schoolName": "北陸先端科学技術大学院大学"
+    "schoolName": "北陸先端科学技術大学院大学",
+    "used": false
   },
   {
     "schoolID": "F117210105435",
-    "schoolName": "金沢美術工芸大学"
+    "schoolName": "金沢美術工芸大学",
+    "used": false
   },
-  {
-    "schoolID": "F117210105426",
-    "schoolName": "石川県立大学"
-  },
-  {
-    "schoolID": "F117210105417",
-    "schoolName": "公立小松大学"
-  },
+  { "schoolID": "F117210105426", "schoolName": "石川県立大学", "used": false },
+  { "schoolID": "F117210105417", "schoolName": "公立小松大学", "used": false },
   {
     "schoolID": "F117210105444",
-    "schoolName": "石川県立看護大学"
+    "schoolName": "石川県立看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F117310105479",
-    "schoolName": "金沢医科大学"
-  },
-  {
-    "schoolID": "F117310105488",
-    "schoolName": "北陸大学"
-  },
-  {
-    "schoolID": "F117310105497",
-    "schoolName": "金沢学院大学"
-  },
-  {
-    "schoolID": "F117310105512",
-    "schoolName": "北陸学院大学"
-  },
-  {
-    "schoolID": "F117310105451",
-    "schoolName": "金沢星稜大学"
-  },
-  {
-    "schoolID": "F117310105460",
-    "schoolName": "金沢工業大学"
-  },
+  { "schoolID": "F117310105479", "schoolName": "金沢医科大学", "used": false },
+  { "schoolID": "F117310105488", "schoolName": "北陸大学", "used": false },
+  { "schoolID": "F117310105497", "schoolName": "金沢学院大学", "used": false },
+  { "schoolID": "F117310105512", "schoolName": "北陸学院大学", "used": false },
+  { "schoolID": "F117310105451", "schoolName": "金沢星稜大学", "used": false },
+  { "schoolID": "F117310105460", "schoolName": "金沢工業大学", "used": false },
   {
     "schoolID": "F117310111854",
-    "schoolName": "かなざわ食マネジメント専門職大学"
+    "schoolName": "かなざわ食マネジメント専門職大学",
+    "used": false
   },
-  {
-    "schoolID": "F117310105503",
-    "schoolName": "金城大学"
-  },
-  {
-    "schoolID": "F118110105597",
-    "schoolName": "福井大学"
-  },
-  {
-    "schoolID": "F118210105602",
-    "schoolName": "福井県立大学"
-  },
+  { "schoolID": "F117310105503", "schoolName": "金城大学", "used": false },
+  { "schoolID": "F118110105597", "schoolName": "福井大学", "used": false },
+  { "schoolID": "F118210105602", "schoolName": "福井県立大学", "used": false },
   {
     "schoolID": "F118210105611",
-    "schoolName": "敦賀市立看護大学"
+    "schoolName": "敦賀市立看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F118310105628",
-    "schoolName": "福井工業大学"
-  },
-  {
-    "schoolID": "F118310105646",
-    "schoolName": "福井医療大学"
-  },
-  {
-    "schoolID": "F118310105637",
-    "schoolName": "仁愛大学"
-  },
-  {
-    "schoolID": "F119110105676",
-    "schoolName": "山梨大学"
-  },
-  {
-    "schoolID": "F119210105692",
-    "schoolName": "山梨県立大学"
-  },
-  {
-    "schoolID": "F119210105683",
-    "schoolName": "都留文科大学"
-  },
-  {
-    "schoolID": "F119310105725",
-    "schoolName": "山梨英和大学"
-  },
-  {
-    "schoolID": "F119310105707",
-    "schoolName": "山梨学院大学"
-  },
-  {
-    "schoolID": "F119310105734",
-    "schoolName": "健康科学大学"
-  },
-  {
-    "schoolID": "F119310105716",
-    "schoolName": "身延山大学"
-  },
-  {
-    "schoolID": "F120110105771",
-    "schoolName": "信州大学"
-  },
-  {
-    "schoolID": "F120210105797",
-    "schoolName": "長野県立大学"
-  },
-  {
-    "schoolID": "F120210105813",
-    "schoolName": "長野大学"
-  },
+  { "schoolID": "F118310105628", "schoolName": "福井工業大学", "used": false },
+  { "schoolID": "F118310105646", "schoolName": "福井医療大学", "used": false },
+  { "schoolID": "F118310105637", "schoolName": "仁愛大学", "used": false },
+  { "schoolID": "F119110105676", "schoolName": "山梨大学", "used": false },
+  { "schoolID": "F119210105692", "schoolName": "山梨県立大学", "used": false },
+  { "schoolID": "F119210105683", "schoolName": "都留文科大学", "used": false },
+  { "schoolID": "F119310105725", "schoolName": "山梨英和大学", "used": false },
+  { "schoolID": "F119310105707", "schoolName": "山梨学院大学", "used": false },
+  { "schoolID": "F119310105734", "schoolName": "健康科学大学", "used": false },
+  { "schoolID": "F119310105716", "schoolName": "身延山大学", "used": false },
+  { "schoolID": "F120110105771", "schoolName": "信州大学", "used": false },
+  { "schoolID": "F120210105797", "schoolName": "長野県立大学", "used": false },
+  { "schoolID": "F120210105813", "schoolName": "長野大学", "used": false },
   {
     "schoolID": "F120210105788",
-    "schoolName": "公立諏訪東京理科大学"
+    "schoolName": "公立諏訪東京理科大学",
+    "used": false
   },
   {
     "schoolID": "F120210105804",
-    "schoolName": "長野県看護大学"
+    "schoolName": "長野県看護大学",
+    "used": false
   },
   {
     "schoolID": "F120310105848",
-    "schoolName": "清泉女学院大学"
+    "schoolName": "清泉女学院大学",
+    "used": false
   },
   {
     "schoolID": "F120310105866",
-    "schoolName": "長野保健医療大学"
+    "schoolName": "長野保健医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F120310105857",
-    "schoolName": "佐久大学"
-  },
-  {
-    "schoolID": "F120310105839",
-    "schoolName": "松本大学"
-  },
-  {
-    "schoolID": "F120310111868",
-    "schoolName": "松本看護大学"
-  },
-  {
-    "schoolID": "F120310105820",
-    "schoolName": "松本歯科大学"
-  },
-  {
-    "schoolID": "F121110105976",
-    "schoolName": "岐阜大学"
-  },
-  {
-    "schoolID": "F121210105983",
-    "schoolName": "岐阜薬科大学"
-  },
+  { "schoolID": "F120310105857", "schoolName": "佐久大学", "used": false },
+  { "schoolID": "F120310105839", "schoolName": "松本大学", "used": false },
+  { "schoolID": "F120310111868", "schoolName": "松本看護大学", "used": false },
+  { "schoolID": "F120310105820", "schoolName": "松本歯科大学", "used": false },
+  { "schoolID": "F121110105976", "schoolName": "岐阜大学", "used": false },
+  { "schoolID": "F121210105983", "schoolName": "岐阜薬科大学", "used": false },
   {
     "schoolID": "F121210105992",
-    "schoolName": "岐阜県立看護大学"
+    "schoolName": "岐阜県立看護大学",
+    "used": false
   },
   {
     "schoolID": "F121210106009",
-    "schoolName": "情報科学芸術大学院大学"
+    "schoolName": "情報科学芸術大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F121310106098",
-    "schoolName": "岐阜保健大学"
-  },
-  {
-    "schoolID": "F121310106043",
-    "schoolName": "朝日大学"
-  },
-  {
-    "schoolID": "F121310106034",
-    "schoolName": "岐阜女子大学"
-  },
+  { "schoolID": "F121310106098", "schoolName": "岐阜保健大学", "used": false },
+  { "schoolID": "F121310106043", "schoolName": "朝日大学", "used": false },
+  { "schoolID": "F121310106034", "schoolName": "岐阜女子大学", "used": false },
   {
     "schoolID": "F121310106089",
-    "schoolName": "岐阜医療科学大学"
+    "schoolName": "岐阜医療科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F121310106070",
-    "schoolName": "中部学院大学"
-  },
+  { "schoolID": "F121310106070", "schoolName": "中部学院大学", "used": false },
   {
     "schoolID": "F121310106052",
-    "schoolName": "岐阜聖徳学園大学"
+    "schoolName": "岐阜聖徳学園大学",
+    "used": false
   },
-  {
-    "schoolID": "F121310106025",
-    "schoolName": "岐阜協立大学"
-  },
-  {
-    "schoolID": "F121310106061",
-    "schoolName": "東海学院大学"
-  },
-  {
-    "schoolID": "F121310106016",
-    "schoolName": "中京学院大学"
-  },
-  {
-    "schoolID": "F122110106224",
-    "schoolName": "静岡大学"
-  },
-  {
-    "schoolID": "F122110106233",
-    "schoolName": "浜松医科大学"
-  },
+  { "schoolID": "F121310106025", "schoolName": "岐阜協立大学", "used": false },
+  { "schoolID": "F121310106061", "schoolName": "東海学院大学", "used": false },
+  { "schoolID": "F121310106016", "schoolName": "中京学院大学", "used": false },
+  { "schoolID": "F122110106224", "schoolName": "静岡大学", "used": false },
+  { "schoolID": "F122110106233", "schoolName": "浜松医科大学", "used": false },
   {
     "schoolID": "F122210111877",
-    "schoolName": "静岡社会健康医学大学院大学"
+    "schoolName": "静岡社会健康医学大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F122210106259",
-    "schoolName": "静岡県立大学"
-  },
+  { "schoolID": "F122210106259", "schoolName": "静岡県立大学", "used": false },
   {
     "schoolID": "F122210106268",
-    "schoolName": "静岡文化芸術大学"
+    "schoolName": "静岡文化芸術大学",
+    "used": false
   },
   {
     "schoolID": "F122210106240",
-    "schoolName": "静岡県立農林環境専門職大学"
+    "schoolName": "静岡県立農林環境専門職大学",
+    "used": false
   },
   {
     "schoolID": "F122310106300",
-    "schoolName": "静岡英和学院大学"
+    "schoolName": "静岡英和学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F122310106319",
-    "schoolName": "常葉大学"
-  },
-  {
-    "schoolID": "F122310106284",
-    "schoolName": "静岡福祉大学"
-  },
-  {
-    "schoolID": "F122310106346",
-    "schoolName": "静岡産業大学"
-  },
+  { "schoolID": "F122310106319", "schoolName": "常葉大学", "used": false },
+  { "schoolID": "F122310106284", "schoolName": "静岡福祉大学", "used": false },
+  { "schoolID": "F122310106346", "schoolName": "静岡産業大学", "used": false },
   {
     "schoolID": "F122310106275",
-    "schoolName": "光産業創成大学院大学"
+    "schoolName": "光産業創成大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F122310106293",
-    "schoolName": "浜松学院大学"
-  },
+  { "schoolID": "F122310106293", "schoolName": "浜松学院大学", "used": false },
   {
     "schoolID": "F122310106337",
-    "schoolName": "聖隷クリストファー大学"
+    "schoolName": "聖隷クリストファー大学",
+    "used": false
   },
   {
     "schoolID": "F122310106328",
-    "schoolName": "静岡理工科大学"
+    "schoolName": "静岡理工科大学",
+    "used": false
   },
   {
     "schoolID": "F123110106456",
-    "schoolName": "豊橋技術科学大学"
+    "schoolName": "豊橋技術科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F123110106447",
-    "schoolName": "愛知教育大学"
-  },
-  {
-    "schoolID": "F123110106429",
-    "schoolName": "名古屋大学"
-  },
+  { "schoolID": "F123110106447", "schoolName": "愛知教育大学", "used": false },
+  { "schoolID": "F123110106429", "schoolName": "名古屋大学", "used": false },
   {
     "schoolID": "F123110106438",
-    "schoolName": "名古屋工業大学"
+    "schoolName": "名古屋工業大学",
+    "used": false
   },
   {
     "schoolID": "F123210106463",
-    "schoolName": "名古屋市立大学"
+    "schoolName": "名古屋市立大学",
+    "used": false
   },
   {
     "schoolID": "F123210106472",
-    "schoolName": "愛知県立芸術大学"
+    "schoolName": "愛知県立芸術大学",
+    "used": false
   },
-  {
-    "schoolID": "F123210106481",
-    "schoolName": "愛知県立大学"
-  },
-  {
-    "schoolID": "F123310106737",
-    "schoolName": "豊橋創造大学"
-  },
-  {
-    "schoolID": "F123310106782",
-    "schoolName": "愛知大学"
-  },
-  {
-    "schoolID": "F123310106498",
-    "schoolName": "愛知工科大学"
-  },
-  {
-    "schoolID": "F123310106719",
-    "schoolName": "愛知産業大学"
-  },
-  {
-    "schoolID": "F123310106906",
-    "schoolName": "岡崎女子大学"
-  },
-  {
-    "schoolID": "F123310106513",
-    "schoolName": "人間環境大学"
-  },
-  {
-    "schoolID": "F123310106791",
-    "schoolName": "愛知学泉大学"
-  },
+  { "schoolID": "F123210106481", "schoolName": "愛知県立大学", "used": false },
+  { "schoolID": "F123310106737", "schoolName": "豊橋創造大学", "used": false },
+  { "schoolID": "F123310106782", "schoolName": "愛知大学", "used": false },
+  { "schoolID": "F123310106498", "schoolName": "愛知工科大学", "used": false },
+  { "schoolID": "F123310106719", "schoolName": "愛知産業大学", "used": false },
+  { "schoolID": "F123310106906", "schoolName": "岡崎女子大学", "used": false },
+  { "schoolID": "F123310106513", "schoolName": "人間環境大学", "used": false },
+  { "schoolID": "F123310106791", "schoolName": "愛知学泉大学", "used": false },
   {
     "schoolID": "F123310111883",
-    "schoolName": "名古屋国際工科専門職大学"
+    "schoolName": "名古屋国際工科専門職大学",
+    "used": false
   },
   {
     "schoolID": "F123310112016",
-    "schoolName": "愛知医療学院大学"
+    "schoolName": "愛知医療学院大学",
+    "used": false
   },
   {
     "schoolID": "F123310106675",
-    "schoolName": "名古屋音楽大学"
+    "schoolName": "名古屋音楽大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106602",
-    "schoolName": "同朋大学"
-  },
+  { "schoolID": "F123310106602", "schoolName": "同朋大学", "used": false },
   {
     "schoolID": "F123310106611",
-    "schoolName": "名古屋学院大学"
+    "schoolName": "名古屋学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106586",
-    "schoolName": "大同大学"
-  },
+  { "schoolID": "F123310106586", "schoolName": "大同大学", "used": false },
   {
     "schoolID": "F123310106700",
-    "schoolName": "名古屋造形大学"
+    "schoolName": "名古屋造形大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106568",
-    "schoolName": "金城学院大学"
-  },
+  { "schoolID": "F123310106568", "schoolName": "金城学院大学", "used": false },
   {
     "schoolID": "F123310106577",
-    "schoolName": "椙山女学園大学"
+    "schoolName": "椙山女学園大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106746",
-    "schoolName": "愛知東邦大学"
-  },
+  { "schoolID": "F123310106746", "schoolName": "愛知東邦大学", "used": false },
   {
     "schoolID": "F123310106924",
-    "schoolName": "名古屋柳城女子大学"
+    "schoolName": "名古屋柳城女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106595",
-    "schoolName": "中京大学"
-  },
-  {
-    "schoolID": "F123310106648",
-    "schoolName": "南山大学"
-  },
+  { "schoolID": "F123310106595", "schoolName": "中京大学", "used": false },
+  { "schoolID": "F123310106648", "schoolName": "南山大学", "used": false },
   {
     "schoolID": "F123310106531",
-    "schoolName": "愛知みずほ大学"
+    "schoolName": "愛知みずほ大学",
+    "used": false
   },
   {
     "schoolID": "F123310106639",
-    "schoolName": "名古屋女子大学"
+    "schoolName": "名古屋女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106666",
-    "schoolName": "名城大学"
-  },
-  {
-    "schoolID": "F123310106684",
-    "schoolName": "豊田工業大学"
-  },
+  { "schoolID": "F123310106666", "schoolName": "名城大学", "used": false },
+  { "schoolID": "F123310106684", "schoolName": "豊田工業大学", "used": false },
   {
     "schoolID": "F123310106620",
-    "schoolName": "名古屋商科大学"
+    "schoolName": "名古屋商科大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106540",
-    "schoolName": "愛知学院大学"
-  },
+  { "schoolID": "F123310106540", "schoolName": "愛知学院大学", "used": false },
   {
     "schoolID": "F123310106871",
-    "schoolName": "名古屋学芸大学"
+    "schoolName": "名古屋学芸大学",
+    "used": false
   },
   {
     "schoolID": "F123310106693",
-    "schoolName": "名古屋外国語大学"
+    "schoolName": "名古屋外国語大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106728",
-    "schoolName": "東海学園大学"
-  },
-  {
-    "schoolID": "F123310106559",
-    "schoolName": "愛知工業大学"
-  },
-  {
-    "schoolID": "F123310106826",
-    "schoolName": "藤田医科大学"
-  },
-  {
-    "schoolID": "F123310106773",
-    "schoolName": "桜花学園大学"
-  },
-  {
-    "schoolID": "F123310106657",
-    "schoolName": "日本福祉大学"
-  },
+  { "schoolID": "F123310106728", "schoolName": "東海学園大学", "used": false },
+  { "schoolID": "F123310106559", "schoolName": "愛知工業大学", "used": false },
+  { "schoolID": "F123310106826", "schoolName": "藤田医科大学", "used": false },
+  { "schoolID": "F123310106773", "schoolName": "桜花学園大学", "used": false },
+  { "schoolID": "F123310106657", "schoolName": "日本福祉大学", "used": false },
   {
     "schoolID": "F123310106880",
-    "schoolName": "日本赤十字豊田看護大学"
+    "schoolName": "日本赤十字豊田看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106808",
-    "schoolName": "至学館大学"
-  },
-  {
-    "schoolID": "F123310106755",
-    "schoolName": "星城大学"
-  },
-  {
-    "schoolID": "F123310106844",
-    "schoolName": "愛知医科大学"
-  },
-  {
-    "schoolID": "F123310106853",
-    "schoolName": "愛知淑徳大学"
-  },
+  { "schoolID": "F123310106808", "schoolName": "至学館大学", "used": false },
+  { "schoolID": "F123310106755", "schoolName": "星城大学", "used": false },
+  { "schoolID": "F123310106844", "schoolName": "愛知医科大学", "used": false },
+  { "schoolID": "F123310106853", "schoolName": "愛知淑徳大学", "used": false },
   {
     "schoolID": "F123310106835",
-    "schoolName": "名古屋芸術大学"
+    "schoolName": "名古屋芸術大学",
+    "used": false
   },
   {
     "schoolID": "F123310106862",
-    "schoolName": "名古屋経済大学"
+    "schoolName": "名古屋経済大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106764",
-    "schoolName": "愛知文教大学"
-  },
-  {
-    "schoolID": "F123310106817",
-    "schoolName": "中部大学"
-  },
+  { "schoolID": "F123310106764", "schoolName": "愛知文教大学", "used": false },
+  { "schoolID": "F123310106817", "schoolName": "中部大学", "used": false },
   {
     "schoolID": "F123310106504",
-    "schoolName": "名古屋産業大学"
+    "schoolName": "名古屋産業大学",
+    "used": false
   },
-  {
-    "schoolID": "F123310106915",
-    "schoolName": "一宮研伸大学"
-  },
-  {
-    "schoolID": "F123310106899",
-    "schoolName": "修文大学"
-  },
+  { "schoolID": "F123310106915", "schoolName": "一宮研伸大学", "used": false },
+  { "schoolID": "F123310106899", "schoolName": "修文大学", "used": false },
   {
     "schoolID": "F123310106522",
-    "schoolName": "名古屋文理大学"
+    "schoolName": "名古屋文理大学",
+    "used": false
   },
-  {
-    "schoolID": "F124110107141",
-    "schoolName": "三重大学"
-  },
+  { "schoolID": "F124110107141", "schoolName": "三重大学", "used": false },
   {
     "schoolID": "F124210107158",
-    "schoolName": "三重県立看護大学"
+    "schoolName": "三重県立看護大学",
+    "used": false
   },
   {
     "schoolID": "F124310107183",
-    "schoolName": "鈴鹿医療科学大学"
+    "schoolName": "鈴鹿医療科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F124310107192",
-    "schoolName": "鈴鹿大学"
-  },
+  { "schoolID": "F124310107192", "schoolName": "鈴鹿大学", "used": false },
   {
     "schoolID": "F124310107209",
-    "schoolName": "四日市看護医療大学"
+    "schoolName": "四日市看護医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F124310107165",
-    "schoolName": "四日市大学"
-  },
-  {
-    "schoolID": "F124310107174",
-    "schoolName": "皇學館大学"
-  },
-  {
-    "schoolID": "F125110107293",
-    "schoolName": "滋賀医科大学"
-  },
-  {
-    "schoolID": "F125110107284",
-    "schoolName": "滋賀大学"
-  },
-  {
-    "schoolID": "F125210107308",
-    "schoolName": "滋賀県立大学"
-  },
-  {
-    "schoolID": "F125310107315",
-    "schoolName": "成安造形大学"
-  },
+  { "schoolID": "F124310107165", "schoolName": "四日市大学", "used": false },
+  { "schoolID": "F124310107174", "schoolName": "皇學館大学", "used": false },
+  { "schoolID": "F125110107293", "schoolName": "滋賀医科大学", "used": false },
+  { "schoolID": "F125110107284", "schoolName": "滋賀大学", "used": false },
+  { "schoolID": "F125210107308", "schoolName": "滋賀県立大学", "used": false },
+  { "schoolID": "F125310107315", "schoolName": "成安造形大学", "used": false },
   {
     "schoolID": "F125310107342",
-    "schoolName": "びわこ成蹊スポーツ大学"
+    "schoolName": "びわこ成蹊スポーツ大学",
+    "used": false
   },
-  {
-    "schoolID": "F125310107324",
-    "schoolName": "聖泉大学"
-  },
+  { "schoolID": "F125310107324", "schoolName": "聖泉大学", "used": false },
   {
     "schoolID": "F125310107333",
-    "schoolName": "長浜バイオ大学"
+    "schoolName": "長浜バイオ大学",
+    "used": false
   },
   {
     "schoolID": "F125310107351",
-    "schoolName": "びわこ学院大学"
+    "schoolName": "びわこ学院大学",
+    "used": false
   },
   {
     "schoolID": "F125310107360",
-    "schoolName": "びわこリハビリテーション専門職大学"
+    "schoolName": "びわこリハビリテーション専門職大学",
+    "used": false
   },
   {
     "schoolID": "F126110107425",
-    "schoolName": "京都工芸繊維大学"
+    "schoolName": "京都工芸繊維大学",
+    "used": false
   },
-  {
-    "schoolID": "F126110107407",
-    "schoolName": "京都大学"
-  },
-  {
-    "schoolID": "F126110107416",
-    "schoolName": "京都教育大学"
-  },
+  { "schoolID": "F126110107407", "schoolName": "京都大学", "used": false },
+  { "schoolID": "F126110107416", "schoolName": "京都教育大学", "used": false },
   {
     "schoolID": "F126210107432",
-    "schoolName": "京都市立芸術大学"
+    "schoolName": "京都市立芸術大学",
+    "used": false
   },
   {
     "schoolID": "F126210107450",
-    "schoolName": "京都府立医科大学"
+    "schoolName": "京都府立医科大学",
+    "used": false
   },
-  {
-    "schoolID": "F126210107441",
-    "schoolName": "京都府立大学"
-  },
+  { "schoolID": "F126210107441", "schoolName": "京都府立大学", "used": false },
   {
     "schoolID": "F126210107469",
-    "schoolName": "福知山公立大学"
+    "schoolName": "福知山公立大学",
+    "used": false
   },
-  {
-    "schoolID": "F126310107564",
-    "schoolName": "同志社大学"
-  },
+  { "schoolID": "F126310107564", "schoolName": "同志社大学", "used": false },
   {
     "schoolID": "F126310107476",
-    "schoolName": "平安女学院大学"
+    "schoolName": "平安女学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F126310107485",
-    "schoolName": "大谷大学"
-  },
-  {
-    "schoolID": "F126310107608",
-    "schoolName": "佛教大学"
-  },
-  {
-    "schoolID": "F126310107500",
-    "schoolName": "京都産業大学"
-  },
-  {
-    "schoolID": "F126310107591",
-    "schoolName": "花園大学"
-  },
-  {
-    "schoolID": "F126310107617",
-    "schoolName": "立命館大学"
-  },
-  {
-    "schoolID": "F126310107733",
-    "schoolName": "京都看護大学"
-  },
-  {
-    "schoolID": "F126310107715",
-    "schoolName": "京都華頂大学"
-  },
+  { "schoolID": "F126310107485", "schoolName": "大谷大学", "used": false },
+  { "schoolID": "F126310107608", "schoolName": "佛教大学", "used": false },
+  { "schoolID": "F126310107500", "schoolName": "京都産業大学", "used": false },
+  { "schoolID": "F126310107591", "schoolName": "花園大学", "used": false },
+  { "schoolID": "F126310107617", "schoolName": "立命館大学", "used": false },
+  { "schoolID": "F126310107733", "schoolName": "京都看護大学", "used": false },
+  { "schoolID": "F126310107715", "schoolName": "京都華頂大学", "used": false },
   {
     "schoolID": "F126310107724",
-    "schoolName": "京都美術工芸大学"
+    "schoolName": "京都美術工芸大学",
+    "used": false
   },
-  {
-    "schoolID": "F126310107519",
-    "schoolName": "京都女子大学"
-  },
+  { "schoolID": "F126310107519", "schoolName": "京都女子大学", "used": false },
   {
     "schoolID": "F126310107582",
-    "schoolName": "京都ノートルダム女子大学"
+    "schoolName": "京都ノートルダム女子大学",
+    "used": false
   },
   {
     "schoolID": "F126310107699",
-    "schoolName": "京都情報大学院大学"
+    "schoolName": "京都情報大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F126310107662",
-    "schoolName": "京都芸術大学"
-  },
-  {
-    "schoolID": "F126310107644",
-    "schoolName": "京都精華大学"
-  },
-  {
-    "schoolID": "F126310107555",
-    "schoolName": "京都橘大学"
-  },
-  {
-    "schoolID": "F126310107528",
-    "schoolName": "京都薬科大学"
-  },
+  { "schoolID": "F126310107662", "schoolName": "京都芸術大学", "used": false },
+  { "schoolID": "F126310107644", "schoolName": "京都精華大学", "used": false },
+  { "schoolID": "F126310107555", "schoolName": "京都橘大学", "used": false },
+  { "schoolID": "F126310107528", "schoolName": "京都薬科大学", "used": false },
   {
     "schoolID": "F126310107573",
-    "schoolName": "同志社女子大学"
+    "schoolName": "同志社女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F126310107671",
-    "schoolName": "京都文教大学"
-  },
-  {
-    "schoolID": "F126310107546",
-    "schoolName": "種智院大学"
-  },
-  {
-    "schoolID": "F126310107626",
-    "schoolName": "龍谷大学"
-  },
+  { "schoolID": "F126310107671", "schoolName": "京都文教大学", "used": false },
+  { "schoolID": "F126310107546", "schoolName": "種智院大学", "used": false },
+  { "schoolID": "F126310107626", "schoolName": "龍谷大学", "used": false },
   {
     "schoolID": "F126310107537",
-    "schoolName": "京都光華女子大学"
+    "schoolName": "京都光華女子大学",
+    "used": false
   },
   {
     "schoolID": "F126310107494",
-    "schoolName": "京都外国語大学"
+    "schoolName": "京都外国語大学",
+    "used": false
   },
   {
     "schoolID": "F126310107635",
-    "schoolName": "京都先端科学大学"
+    "schoolName": "京都先端科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F126310107680",
-    "schoolName": "嵯峨美術大学"
-  },
+  { "schoolID": "F126310107680", "schoolName": "嵯峨美術大学", "used": false },
   {
     "schoolID": "F126310107706",
-    "schoolName": "京都医療科学大学"
+    "schoolName": "京都医療科学大学",
+    "used": false
   },
   {
     "schoolID": "F126310107653",
-    "schoolName": "明治国際医療大学"
+    "schoolName": "明治国際医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F127110107852",
-    "schoolName": "大阪大学"
-  },
-  {
-    "schoolID": "F127110107861",
-    "schoolName": "大阪教育大学"
-  },
-  {
-    "schoolID": "F127210111989",
-    "schoolName": "大阪公立大学"
-  },
-  {
-    "schoolID": "F127210107878",
-    "schoolName": "大阪市立大学"
-  },
-  {
-    "schoolID": "F127210107887",
-    "schoolName": "大阪府立大学"
-  },
+  { "schoolID": "F127110107852", "schoolName": "大阪大学", "used": false },
+  { "schoolID": "F127110107861", "schoolName": "大阪教育大学", "used": false },
+  { "schoolID": "F127210111989", "schoolName": "大阪公立大学", "used": false },
+  { "schoolID": "F127210107878", "schoolName": "大阪市立大学", "used": false },
+  { "schoolID": "F127210107887", "schoolName": "大阪府立大学", "used": false },
   {
     "schoolID": "F127310111898",
-    "schoolName": "大阪国際工科専門職大学"
+    "schoolName": "大阪国際工科専門職大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108900",
-    "schoolName": "宝塚大学"
-  },
+  { "schoolID": "F127310108900", "schoolName": "宝塚大学", "used": false },
   {
     "schoolID": "F127310108358",
-    "schoolName": "大阪保健医療大学"
+    "schoolName": "大阪保健医療大学",
+    "used": false
   },
   {
     "schoolID": "F127310108376",
-    "schoolName": "滋慶医療科学大学"
+    "schoolName": "滋慶医療科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108241",
-    "schoolName": "大阪成蹊大学"
-  },
-  {
-    "schoolID": "F127310107894",
-    "schoolName": "大阪経済大学"
-  },
-  {
-    "schoolID": "F127310107901",
-    "schoolName": "大阪工業大学"
-  },
+  { "schoolID": "F127310108241", "schoolName": "大阪成蹊大学", "used": false },
+  { "schoolID": "F127310107894", "schoolName": "大阪経済大学", "used": false },
+  { "schoolID": "F127310107901", "schoolName": "大阪工業大学", "used": false },
   {
     "schoolID": "F127310111950",
-    "schoolName": "大阪信愛学院大学"
+    "schoolName": "大阪信愛学院大学",
+    "used": false
   },
   {
     "schoolID": "F127310108287",
-    "schoolName": "大阪女学院大学"
+    "schoolName": "大阪女学院大学",
+    "used": false
   },
   {
     "schoolID": "F127310108330",
-    "schoolName": "大阪総合保育大学"
+    "schoolName": "大阪総合保育大学",
+    "used": false
   },
   {
     "schoolID": "F127310108205",
-    "schoolName": "常磐会学園大学"
+    "schoolName": "常磐会学園大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310107929",
-    "schoolName": "相愛大学"
-  },
+  { "schoolID": "F127310107929", "schoolName": "相愛大学", "used": false },
   {
     "schoolID": "F127310108349",
-    "schoolName": "森ノ宮医療大学"
+    "schoolName": "森ノ宮医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310107974",
-    "schoolName": "大阪音楽大学"
-  },
-  {
-    "schoolID": "F127310108303",
-    "schoolName": "大阪青山大学"
-  },
-  {
-    "schoolID": "F127310108081",
-    "schoolName": "関西大学"
-  },
-  {
-    "schoolID": "F127310108394",
-    "schoolName": "大和大学"
-  },
-  {
-    "schoolID": "F127310107983",
-    "schoolName": "大阪学院大学"
-  },
-  {
-    "schoolID": "F127310108269",
-    "schoolName": "千里金蘭大学"
-  },
+  { "schoolID": "F127310107974", "schoolName": "大阪音楽大学", "used": false },
+  { "schoolID": "F127310108303", "schoolName": "大阪青山大学", "used": false },
+  { "schoolID": "F127310108081", "schoolName": "関西大学", "used": false },
+  { "schoolID": "F127310108394", "schoolName": "大和大学", "used": false },
+  { "schoolID": "F127310107983", "schoolName": "大阪学院大学", "used": false },
+  { "schoolID": "F127310108269", "schoolName": "千里金蘭大学", "used": false },
   {
     "schoolID": "F127310108223",
-    "schoolName": "大阪人間科学大学"
+    "schoolName": "大阪人間科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108296",
-    "schoolName": "藍野大学"
-  },
+  { "schoolID": "F127310108296", "schoolName": "藍野大学", "used": false },
   {
     "schoolID": "F127310108385",
-    "schoolName": "大阪行岡医療大学"
+    "schoolName": "大阪行岡医療大学",
+    "used": false
   },
   {
     "schoolID": "F127310108072",
-    "schoolName": "追手門学院大学"
+    "schoolName": "追手門学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108143",
-    "schoolName": "梅花女子大学"
-  },
-  {
-    "schoolID": "F127310108054",
-    "schoolName": "大阪薬科大学"
-  },
+  { "schoolID": "F127310108143", "schoolName": "梅花女子大学", "used": false },
+  { "schoolID": "F127310108054", "schoolName": "大阪薬科大学", "used": false },
   {
     "schoolID": "F127310107965",
-    "schoolName": "大阪医科薬科大学"
+    "schoolName": "大阪医科薬科大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108170",
-    "schoolName": "大阪国際大学"
-  },
-  {
-    "schoolID": "F127310107947",
-    "schoolName": "摂南大学"
-  },
+  { "schoolID": "F127310108170", "schoolName": "大阪国際大学", "used": false },
+  { "schoolID": "F127310107947", "schoolName": "摂南大学", "used": false },
   {
     "schoolID": "F127310108045",
-    "schoolName": "大阪電気通信大学"
+    "schoolName": "大阪電気通信大学",
+    "used": false
   },
   {
     "schoolID": "F127310108107",
-    "schoolName": "関西外国語大学"
+    "schoolName": "関西外国語大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108090",
-    "schoolName": "関西医科大学"
-  },
-  {
-    "schoolID": "F127310107910",
-    "schoolName": "大阪歯科大学"
-  },
+  { "schoolID": "F127310108090", "schoolName": "関西医科大学", "used": false },
+  { "schoolID": "F127310107910", "schoolName": "大阪歯科大学", "used": false },
   {
     "schoolID": "F127310108312",
-    "schoolName": "四條畷学園大学"
+    "schoolName": "四條畷学園大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108009",
-    "schoolName": "大阪産業大学"
-  },
-  {
-    "schoolID": "F127310108116",
-    "schoolName": "近畿大学"
-  },
-  {
-    "schoolID": "F127310108027",
-    "schoolName": "大阪商業大学"
-  },
+  { "schoolID": "F127310108009", "schoolName": "大阪産業大学", "used": false },
+  { "schoolID": "F127310108116", "schoolName": "近畿大学", "used": false },
+  { "schoolID": "F127310108027", "schoolName": "大阪商業大学", "used": false },
   {
     "schoolID": "F127310108018",
-    "schoolName": "大阪樟蔭女子大学"
+    "schoolName": "大阪樟蔭女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108278",
-    "schoolName": "東大阪大学"
-  },
-  {
-    "schoolID": "F127310108152",
-    "schoolName": "阪南大学"
-  },
+  { "schoolID": "F127310108278", "schoolName": "東大阪大学", "used": false },
+  { "schoolID": "F127310108152", "schoolName": "阪南大学", "used": false },
   {
     "schoolID": "F127310108161",
-    "schoolName": "大阪経済法科大学"
+    "schoolName": "大阪経済法科大学",
+    "used": false
   },
   {
     "schoolID": "F127310108189",
-    "schoolName": "関西福祉科学大学"
+    "schoolName": "関西福祉科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108125",
-    "schoolName": "四天王寺大学"
-  },
-  {
-    "schoolID": "F127310108063",
-    "schoolName": "大阪大谷大学"
-  },
-  {
-    "schoolID": "F127310107992",
-    "schoolName": "大阪芸術大学"
-  },
-  {
-    "schoolID": "F127310108198",
-    "schoolName": "太成学院大学"
-  },
+  { "schoolID": "F127310108125", "schoolName": "四天王寺大学", "used": false },
+  { "schoolID": "F127310108063", "schoolName": "大阪大谷大学", "used": false },
+  { "schoolID": "F127310107992", "schoolName": "大阪芸術大学", "used": false },
+  { "schoolID": "F127310108198", "schoolName": "太成学院大学", "used": false },
   {
     "schoolID": "F127310108134",
-    "schoolName": "帝塚山学院大学"
+    "schoolName": "帝塚山学院大学",
+    "used": false
   },
   {
     "schoolID": "F127310107956",
-    "schoolName": "桃山学院教育大学"
+    "schoolName": "桃山学院教育大学",
+    "used": false
   },
-  {
-    "schoolID": "F127310108250",
-    "schoolName": "関西医療大学"
-  },
-  {
-    "schoolID": "F127310108214",
-    "schoolName": "大阪観光大学"
-  },
-  {
-    "schoolID": "F127310108036",
-    "schoolName": "大阪体育大学"
-  },
-  {
-    "schoolID": "F127310108232",
-    "schoolName": "羽衣国際大学"
-  },
-  {
-    "schoolID": "F127310108367",
-    "schoolName": "大阪物療大学"
-  },
-  {
-    "schoolID": "F127310107938",
-    "schoolName": "桃山学院大学"
-  },
+  { "schoolID": "F127310108250", "schoolName": "関西医療大学", "used": false },
+  { "schoolID": "F127310108214", "schoolName": "大阪観光大学", "used": false },
+  { "schoolID": "F127310108036", "schoolName": "大阪体育大学", "used": false },
+  { "schoolID": "F127310108232", "schoolName": "羽衣国際大学", "used": false },
+  { "schoolID": "F127310108367", "schoolName": "大阪物療大学", "used": false },
+  { "schoolID": "F127310107938", "schoolName": "桃山学院大学", "used": false },
   {
     "schoolID": "F127310108321",
-    "schoolName": "大阪河﨑リハビリテーション大学"
+    "schoolName": "大阪河﨑リハビリテーション大学",
+    "used": false
   },
-  {
-    "schoolID": "F128110108654",
-    "schoolName": "神戸大学"
-  },
-  {
-    "schoolID": "F128110108663",
-    "schoolName": "兵庫教育大学"
-  },
+  { "schoolID": "F128110108654", "schoolName": "神戸大学", "used": false },
+  { "schoolID": "F128110108663", "schoolName": "兵庫教育大学", "used": false },
   {
     "schoolID": "F128210108689",
-    "schoolName": "神戸市看護大学"
+    "schoolName": "神戸市看護大学",
+    "used": false
   },
   {
     "schoolID": "F128210108670",
-    "schoolName": "神戸市外国語大学"
+    "schoolName": "神戸市外国語大学",
+    "used": false
   },
-  {
-    "schoolID": "F128210108698",
-    "schoolName": "兵庫県立大学"
-  },
+  { "schoolID": "F128210108698", "schoolName": "兵庫県立大学", "used": false },
   {
     "schoolID": "F128210111906",
-    "schoolName": "芸術文化観光専門職大学"
+    "schoolName": "芸術文化観光専門職大学",
+    "used": false
   },
   {
     "schoolID": "F128310108972",
-    "schoolName": "神戸情報大学院大学"
+    "schoolName": "神戸情報大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F128310108990",
-    "schoolName": "兵庫医療大学"
-  },
-  {
-    "schoolID": "F128310108730",
-    "schoolName": "神戸学院大学"
-  },
-  {
-    "schoolID": "F128310108776",
-    "schoolName": "神戸親和大学"
-  },
-  {
-    "schoolID": "F128310108927",
-    "schoolName": "流通科学大学"
-  },
+  { "schoolID": "F128310108990", "schoolName": "兵庫医療大学", "used": false },
+  { "schoolID": "F128310108730", "schoolName": "神戸学院大学", "used": false },
+  { "schoolID": "F128310108776", "schoolName": "神戸親和大学", "used": false },
+  { "schoolID": "F128310108927", "schoolName": "流通科学大学", "used": false },
   {
     "schoolID": "F128310108936",
-    "schoolName": "神戸芸術工科大学"
+    "schoolName": "神戸芸術工科大学",
+    "used": false
   },
-  {
-    "schoolID": "F128310108801",
-    "schoolName": "神戸常盤大学"
-  },
-  {
-    "schoolID": "F128310108749",
-    "schoolName": "神戸女子大学"
-  },
+  { "schoolID": "F128310108801", "schoolName": "神戸常盤大学", "used": false },
+  { "schoolID": "F128310108749", "schoolName": "神戸女子大学", "used": false },
   {
     "schoolID": "F128310108981",
-    "schoolName": "関西看護医療大学"
+    "schoolName": "関西看護医療大学",
+    "used": false
   },
   {
     "schoolID": "F128310108767",
-    "schoolName": "神戸松蔭女子学院大学"
+    "schoolName": "神戸松蔭女子学院大学",
+    "used": false
   },
   {
     "schoolID": "F128310108721",
-    "schoolName": "神戸海星女子学院大学"
+    "schoolName": "神戸海星女子学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F128310108712",
-    "schoolName": "甲南女子大学"
-  },
-  {
-    "schoolID": "F128310108785",
-    "schoolName": "神戸国際大学"
-  },
-  {
-    "schoolID": "F128310108703",
-    "schoolName": "甲南大学"
-  },
-  {
-    "schoolID": "F128310108758",
-    "schoolName": "神戸薬科大学"
-  },
-  {
-    "schoolID": "F128310108829",
-    "schoolName": "芦屋大学"
-  },
+  { "schoolID": "F128310108712", "schoolName": "甲南女子大学", "used": false },
+  { "schoolID": "F128310108785", "schoolName": "神戸国際大学", "used": false },
+  { "schoolID": "F128310108703", "schoolName": "甲南大学", "used": false },
+  { "schoolID": "F128310108758", "schoolName": "神戸薬科大学", "used": false },
+  { "schoolID": "F128310108829", "schoolName": "芦屋大学", "used": false },
   {
     "schoolID": "F128310108874",
-    "schoolName": "園田学園女子大学"
+    "schoolName": "園田学園女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F128310108847",
-    "schoolName": "関西学院大学"
-  },
+  { "schoolID": "F128310108847", "schoolName": "関西学院大学", "used": false },
   {
     "schoolID": "F128310108865",
-    "schoolName": "神戸女学院大学"
+    "schoolName": "神戸女学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F128310108838",
-    "schoolName": "大手前大学"
-  },
-  {
-    "schoolID": "F128310108892",
-    "schoolName": "兵庫医科大学"
-  },
+  { "schoolID": "F128310108838", "schoolName": "大手前大学", "used": false },
+  { "schoolID": "F128310108892", "schoolName": "兵庫医科大学", "used": false },
   {
     "schoolID": "F128310108883",
-    "schoolName": "武庫川女子大学"
+    "schoolName": "武庫川女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F128310108856",
-    "schoolName": "甲子園大学"
-  },
-  {
-    "schoolID": "F128310108909",
-    "schoolName": "宝塚大学"
-  },
-  {
-    "schoolID": "F128310108810",
-    "schoolName": "宝塚医療大学"
-  },
-  {
-    "schoolID": "F128310108918",
-    "schoolName": "姫路獨協大学"
-  },
-  {
-    "schoolID": "F128310109007",
-    "schoolName": "姫路大学"
-  },
-  {
-    "schoolID": "F128310108954",
-    "schoolName": "関西国際大学"
-  },
-  {
-    "schoolID": "F128310108794",
-    "schoolName": "兵庫大学"
-  },
-  {
-    "schoolID": "F128310108945",
-    "schoolName": "関西福祉大学"
-  },
+  { "schoolID": "F128310108856", "schoolName": "甲子園大学", "used": false },
+  { "schoolID": "F128310108909", "schoolName": "宝塚大学", "used": false },
+  { "schoolID": "F128310108810", "schoolName": "宝塚医療大学", "used": false },
+  { "schoolID": "F128310108918", "schoolName": "姫路獨協大学", "used": false },
+  { "schoolID": "F128310109007", "schoolName": "姫路大学", "used": false },
+  { "schoolID": "F128310108954", "schoolName": "関西国際大学", "used": false },
+  { "schoolID": "F128310108794", "schoolName": "兵庫大学", "used": false },
+  { "schoolID": "F128310108945", "schoolName": "関西福祉大学", "used": false },
   {
     "schoolID": "F128310108963",
-    "schoolName": "神戸医療未来大学"
+    "schoolName": "神戸医療未来大学",
+    "used": false
   },
   {
     "schoolID": "F129110109224",
-    "schoolName": "奈良先端科学技術大学院大学"
+    "schoolName": "奈良先端科学技術大学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F129110109215",
-    "schoolName": "奈良女子大学"
-  },
-  {
-    "schoolID": "F129110109206",
-    "schoolName": "奈良教育大学"
-  },
-  {
-    "schoolID": "F129210109240",
-    "schoolName": "奈良県立大学"
-  },
+  { "schoolID": "F129110109215", "schoolName": "奈良女子大学", "used": false },
+  { "schoolID": "F129110109206", "schoolName": "奈良教育大学", "used": false },
+  { "schoolID": "F129210109240", "schoolName": "奈良県立大学", "used": false },
   {
     "schoolID": "F129210109231",
-    "schoolName": "奈良県立医科大学"
+    "schoolName": "奈良県立医科大学",
+    "used": false
   },
-  {
-    "schoolID": "F129310109257",
-    "schoolName": "帝塚山大学"
-  },
-  {
-    "schoolID": "F129310109275",
-    "schoolName": "奈良大学"
-  },
-  {
-    "schoolID": "F129310109284",
-    "schoolName": "奈良学園大学"
-  },
-  {
-    "schoolID": "F129310109300",
-    "schoolName": "天理医療大学"
-  },
-  {
-    "schoolID": "F129310109266",
-    "schoolName": "天理大学"
-  },
-  {
-    "schoolID": "F129310109293",
-    "schoolName": "畿央大学"
-  },
-  {
-    "schoolID": "F130110109356",
-    "schoolName": "和歌山大学"
-  },
+  { "schoolID": "F129310109257", "schoolName": "帝塚山大学", "used": false },
+  { "schoolID": "F129310109275", "schoolName": "奈良大学", "used": false },
+  { "schoolID": "F129310109284", "schoolName": "奈良学園大学", "used": false },
+  { "schoolID": "F129310109300", "schoolName": "天理医療大学", "used": false },
+  { "schoolID": "F129310109266", "schoolName": "天理大学", "used": false },
+  { "schoolID": "F129310109293", "schoolName": "畿央大学", "used": false },
+  { "schoolID": "F130110109356", "schoolName": "和歌山大学", "used": false },
   {
     "schoolID": "F130210109363",
-    "schoolName": "和歌山県立医科大学"
+    "schoolName": "和歌山県立医科大学",
+    "used": false
   },
   {
     "schoolID": "F130310109389",
-    "schoolName": "和歌山信愛大学"
+    "schoolName": "和歌山信愛大学",
+    "used": false
   },
   {
     "schoolID": "F130310111919",
-    "schoolName": "和歌山リハビリテーション専門職大学"
+    "schoolName": "和歌山リハビリテーション専門職大学",
+    "used": false
   },
-  {
-    "schoolID": "F130310109370",
-    "schoolName": "高野山大学"
-  },
-  {
-    "schoolID": "F131110109417",
-    "schoolName": "鳥取大学"
-  },
+  { "schoolID": "F130310109370", "schoolName": "高野山大学", "used": false },
+  { "schoolID": "F131110109417", "schoolName": "鳥取大学", "used": false },
   {
     "schoolID": "F131210109424",
-    "schoolName": "公立鳥取環境大学"
+    "schoolName": "公立鳥取環境大学",
+    "used": false
   },
-  {
-    "schoolID": "F131310109431",
-    "schoolName": "鳥取看護大学"
-  },
-  {
-    "schoolID": "F132110109461",
-    "schoolName": "島根大学"
-  },
-  {
-    "schoolID": "F132210109478",
-    "schoolName": "島根県立大学"
-  },
-  {
-    "schoolID": "F133110109503",
-    "schoolName": "岡山大学"
-  },
-  {
-    "schoolID": "F133210109529",
-    "schoolName": "新見公立大学"
-  },
-  {
-    "schoolID": "F133210109510",
-    "schoolName": "岡山県立大学"
-  },
-  {
-    "schoolID": "F133310109554",
-    "schoolName": "岡山理科大学"
-  },
+  { "schoolID": "F131310109431", "schoolName": "鳥取看護大学", "used": false },
+  { "schoolID": "F132110109461", "schoolName": "島根大学", "used": false },
+  { "schoolID": "F132210109478", "schoolName": "島根県立大学", "used": false },
+  { "schoolID": "F133110109503", "schoolName": "岡山大学", "used": false },
+  { "schoolID": "F133210109529", "schoolName": "新見公立大学", "used": false },
+  { "schoolID": "F133210109510", "schoolName": "岡山県立大学", "used": false },
+  { "schoolID": "F133310109554", "schoolName": "岡山理科大学", "used": false },
   {
     "schoolID": "F133310109661",
-    "schoolName": "岡山医療専門職大学"
+    "schoolName": "岡山医療専門職大学",
+    "used": false
   },
   {
     "schoolID": "F133310109572",
-    "schoolName": "ノートルダム清心女子大学"
+    "schoolName": "ノートルダム清心女子大学",
+    "used": false
   },
-  {
-    "schoolID": "F133310109545",
-    "schoolName": "岡山商科大学"
-  },
-  {
-    "schoolID": "F133310109581",
-    "schoolName": "川崎医科大学"
-  },
+  { "schoolID": "F133310109545", "schoolName": "岡山商科大学", "used": false },
+  { "schoolID": "F133310109581", "schoolName": "川崎医科大学", "used": false },
   {
     "schoolID": "F133310109607",
-    "schoolName": "川崎医療福祉大学"
+    "schoolName": "川崎医療福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F133310109643",
-    "schoolName": "中国学園大学"
-  },
-  {
-    "schoolID": "F133310109616",
-    "schoolName": "山陽学園大学"
-  },
-  {
-    "schoolID": "F133310109590",
-    "schoolName": "就実大学"
-  },
-  {
-    "schoolID": "F133310109670",
-    "schoolName": "美作大学"
-  },
-  {
-    "schoolID": "F133310109652",
-    "schoolName": "環太平洋大学"
-  },
+  { "schoolID": "F133310109643", "schoolName": "中国学園大学", "used": false },
+  { "schoolID": "F133310109616", "schoolName": "山陽学園大学", "used": false },
+  { "schoolID": "F133310109590", "schoolName": "就実大学", "used": false },
+  { "schoolID": "F133310109670", "schoolName": "美作大学", "used": false },
+  { "schoolID": "F133310109652", "schoolName": "環太平洋大学", "used": false },
   {
     "schoolID": "F133310109563",
-    "schoolName": "くらしき作陽大学"
+    "schoolName": "くらしき作陽大学",
+    "used": false
   },
-  {
-    "schoolID": "F133310109634",
-    "schoolName": "岡山学院大学"
-  },
+  { "schoolID": "F133310109634", "schoolName": "岡山学院大学", "used": false },
   {
     "schoolID": "F133310109625",
-    "schoolName": "倉敷芸術科学大学"
+    "schoolName": "倉敷芸術科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F133310109536",
-    "schoolName": "吉備国際大学"
-  },
-  {
-    "schoolID": "F134110109780",
-    "schoolName": "広島大学"
-  },
-  {
-    "schoolID": "F134210109822",
-    "schoolName": "福山市立大学"
-  },
-  {
-    "schoolID": "F134210109804",
-    "schoolName": "尾道市立大学"
-  },
-  {
-    "schoolID": "F134210111926",
-    "schoolName": "叡啓大学"
-  },
-  {
-    "schoolID": "F134210109813",
-    "schoolName": "広島市立大学"
-  },
-  {
-    "schoolID": "F134210109797",
-    "schoolName": "県立広島大学"
-  },
-  {
-    "schoolID": "F134310109937",
-    "schoolName": "福山平成大学"
-  },
-  {
-    "schoolID": "F134310109919",
-    "schoolName": "福山大学"
-  },
+  { "schoolID": "F133310109536", "schoolName": "吉備国際大学", "used": false },
+  { "schoolID": "F134110109780", "schoolName": "広島大学", "used": false },
+  { "schoolID": "F134210109822", "schoolName": "福山市立大学", "used": false },
+  { "schoolID": "F134210109804", "schoolName": "尾道市立大学", "used": false },
+  { "schoolID": "F134210111926", "schoolName": "叡啓大学", "used": false },
+  { "schoolID": "F134210109813", "schoolName": "広島市立大学", "used": false },
+  { "schoolID": "F134210109797", "schoolName": "県立広島大学", "used": false },
+  { "schoolID": "F134310109937", "schoolName": "福山平成大学", "used": false },
+  { "schoolID": "F134310109919", "schoolName": "福山大学", "used": false },
   {
     "schoolID": "F134310109839",
-    "schoolName": "エリザベト音楽大学"
+    "schoolName": "エリザベト音楽大学",
+    "used": false
   },
-  {
-    "schoolID": "F134310109848",
-    "schoolName": "広島経済大学"
-  },
-  {
-    "schoolID": "F134310109900",
-    "schoolName": "安田女子大学"
-  },
-  {
-    "schoolID": "F134310109893",
-    "schoolName": "広島文教大学"
-  },
-  {
-    "schoolID": "F134310109866",
-    "schoolName": "広島修道大学"
-  },
-  {
-    "schoolID": "F134310109857",
-    "schoolName": "広島工業大学"
-  },
+  { "schoolID": "F134310109848", "schoolName": "広島経済大学", "used": false },
+  { "schoolID": "F134310109900", "schoolName": "安田女子大学", "used": false },
+  { "schoolID": "F134310109893", "schoolName": "広島文教大学", "used": false },
+  { "schoolID": "F134310109866", "schoolName": "広島修道大学", "used": false },
+  { "schoolID": "F134310109857", "schoolName": "広島工業大学", "used": false },
   {
     "schoolID": "F134310109875",
-    "schoolName": "広島女学院大学"
+    "schoolName": "広島女学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F134310109928",
-    "schoolName": "比治山大学"
-  },
+  { "schoolID": "F134310109928", "schoolName": "比治山大学", "used": false },
   {
     "schoolID": "F134310109973",
-    "schoolName": "広島都市学園大学"
+    "schoolName": "広島都市学園大学",
+    "used": false
   },
   {
     "schoolID": "F134310109946",
-    "schoolName": "広島文化学園大学"
+    "schoolName": "広島文化学園大学",
+    "used": false
   },
   {
     "schoolID": "F134310109964",
-    "schoolName": "日本赤十字広島看護大学"
+    "schoolName": "日本赤十字広島看護大学",
+    "used": false
   },
   {
     "schoolID": "F134310109884",
-    "schoolName": "広島国際学院大学"
+    "schoolName": "広島国際学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F134310109955",
-    "schoolName": "広島国際大学"
-  },
-  {
-    "schoolID": "F135110110054",
-    "schoolName": "山口大学"
-  },
-  {
-    "schoolID": "F135210111961",
-    "schoolName": "周南公立大学"
-  },
-  {
-    "schoolID": "F135210110061",
-    "schoolName": "下関市立大学"
-  },
-  {
-    "schoolID": "F135210110070",
-    "schoolName": "山口県立大学"
-  },
+  { "schoolID": "F134310109955", "schoolName": "広島国際大学", "used": false },
+  { "schoolID": "F135110110054", "schoolName": "山口大学", "used": false },
+  { "schoolID": "F135210111961", "schoolName": "周南公立大学", "used": false },
+  { "schoolID": "F135210110061", "schoolName": "下関市立大学", "used": false },
+  { "schoolID": "F135210110070", "schoolName": "山口県立大学", "used": false },
   {
     "schoolID": "F135210110089",
-    "schoolName": "山陽小野田市立山口東京理科大学"
+    "schoolName": "山陽小野田市立山口東京理科大学",
+    "used": false
   },
-  {
-    "schoolID": "F135310110103",
-    "schoolName": "徳山大学"
-  },
-  {
-    "schoolID": "F135310110096",
-    "schoolName": "梅光学院大学"
-  },
-  {
-    "schoolID": "F135310110112",
-    "schoolName": "東亜大学"
-  },
-  {
-    "schoolID": "F135310110149",
-    "schoolName": "山口学芸大学"
-  },
+  { "schoolID": "F135310110103", "schoolName": "徳山大学", "used": false },
+  { "schoolID": "F135310110096", "schoolName": "梅光学院大学", "used": false },
+  { "schoolID": "F135310110112", "schoolName": "東亜大学", "used": false },
+  { "schoolID": "F135310110149", "schoolName": "山口学芸大学", "used": false },
   {
     "schoolID": "F135310110130",
-    "schoolName": "宇部フロンティア大学"
+    "schoolName": "宇部フロンティア大学",
+    "used": false
   },
-  {
-    "schoolID": "F135310110121",
-    "schoolName": "至誠館大学"
-  },
-  {
-    "schoolID": "F136110110231",
-    "schoolName": "徳島大学"
-  },
-  {
-    "schoolID": "F136110110240",
-    "schoolName": "鳴門教育大学"
-  },
-  {
-    "schoolID": "F136310110264",
-    "schoolName": "徳島文理大学"
-  },
-  {
-    "schoolID": "F136310110255",
-    "schoolName": "四国大学"
-  },
-  {
-    "schoolID": "F137110110310",
-    "schoolName": "香川大学"
-  },
+  { "schoolID": "F135310110121", "schoolName": "至誠館大学", "used": false },
+  { "schoolID": "F136110110231", "schoolName": "徳島大学", "used": false },
+  { "schoolID": "F136110110240", "schoolName": "鳴門教育大学", "used": false },
+  { "schoolID": "F136310110264", "schoolName": "徳島文理大学", "used": false },
+  { "schoolID": "F136310110255", "schoolName": "四国大学", "used": false },
+  { "schoolID": "F137110110310", "schoolName": "香川大学", "used": false },
   {
     "schoolID": "F137210110327",
-    "schoolName": "香川県立保健医療大学"
+    "schoolName": "香川県立保健医療大学",
+    "used": false
   },
-  {
-    "schoolID": "F137310110343",
-    "schoolName": "高松大学"
-  },
-  {
-    "schoolID": "F137310110334",
-    "schoolName": "四国学院大学"
-  },
-  {
-    "schoolID": "F138110110382",
-    "schoolName": "愛媛大学"
-  },
+  { "schoolID": "F137310110343", "schoolName": "高松大学", "used": false },
+  { "schoolID": "F137310110334", "schoolName": "四国学院大学", "used": false },
+  { "schoolID": "F138110110382", "schoolName": "愛媛大学", "used": false },
   {
     "schoolID": "F138210110399",
-    "schoolName": "愛媛県立医療技術大学"
+    "schoolName": "愛媛県立医療技術大学",
+    "used": false
   },
-  {
-    "schoolID": "F138310110404",
-    "schoolName": "松山大学"
-  },
+  { "schoolID": "F138310110404", "schoolName": "松山大学", "used": false },
   {
     "schoolID": "F138310110422",
-    "schoolName": "松山東雲女子大学"
+    "schoolName": "松山東雲女子大学",
+    "used": false
   },
   {
     "schoolID": "F138310110413",
-    "schoolName": "聖カタリナ大学"
+    "schoolName": "聖カタリナ大学",
+    "used": false
   },
-  {
-    "schoolID": "F139110110504",
-    "schoolName": "高知大学"
-  },
-  {
-    "schoolID": "F139210110511",
-    "schoolName": "高知県立大学"
-  },
-  {
-    "schoolID": "F139210110520",
-    "schoolName": "高知工科大学"
-  },
-  {
-    "schoolID": "F139310110546",
-    "schoolName": "高知学園大学"
-  },
+  { "schoolID": "F139110110504", "schoolName": "高知大学", "used": false },
+  { "schoolID": "F139210110511", "schoolName": "高知県立大学", "used": false },
+  { "schoolID": "F139210110520", "schoolName": "高知工科大学", "used": false },
+  { "schoolID": "F139310110546", "schoolName": "高知学園大学", "used": false },
   {
     "schoolID": "F139310110537",
-    "schoolName": "高知リハビリテーション専門職大学"
+    "schoolName": "高知リハビリテーション専門職大学",
+    "used": false
   },
   {
     "schoolID": "F139310110556",
-    "schoolName": "高知健康科学大学"
+    "schoolName": "高知健康科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F140110110574",
-    "schoolName": "九州工業大学"
-  },
-  {
-    "schoolID": "F140110110583",
-    "schoolName": "福岡教育大学"
-  },
-  {
-    "schoolID": "F140110110592",
-    "schoolName": "九州大学"
-  },
+  { "schoolID": "F140110110574", "schoolName": "九州工業大学", "used": false },
+  { "schoolID": "F140110110583", "schoolName": "福岡教育大学", "used": false },
+  { "schoolID": "F140110110592", "schoolName": "九州大学", "used": false },
   {
     "schoolID": "F140210110607",
-    "schoolName": "北九州市立大学"
+    "schoolName": "北九州市立大学",
+    "used": false
   },
-  {
-    "schoolID": "F140210110616",
-    "schoolName": "九州歯科大学"
-  },
-  {
-    "schoolID": "F140210110625",
-    "schoolName": "福岡女子大学"
-  },
-  {
-    "schoolID": "F140210110634",
-    "schoolName": "福岡県立大学"
-  },
+  { "schoolID": "F140210110616", "schoolName": "九州歯科大学", "used": false },
+  { "schoolID": "F140210110625", "schoolName": "福岡女子大学", "used": false },
+  { "schoolID": "F140210110634", "schoolName": "福岡県立大学", "used": false },
   {
     "schoolID": "F140310110730",
-    "schoolName": "西日本工業大学"
+    "schoolName": "西日本工業大学",
+    "used": false
   },
   {
     "schoolID": "F140310110810",
-    "schoolName": "西南女学院大学"
+    "schoolName": "西南女学院大学",
+    "used": false
   },
   {
     "schoolID": "F140310110838",
-    "schoolName": "九州栄養福祉大学"
+    "schoolName": "九州栄養福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F140310110669",
-    "schoolName": "九州国際大学"
-  },
-  {
-    "schoolID": "F140310110650",
-    "schoolName": "九州女子大学"
-  },
-  {
-    "schoolID": "F140310110785",
-    "schoolName": "産業医科大学"
-  },
-  {
-    "schoolID": "F140310110641",
-    "schoolName": "九州共立大学"
-  },
+  { "schoolID": "F140310110669", "schoolName": "九州国際大学", "used": false },
+  { "schoolID": "F140310110650", "schoolName": "九州女子大学", "used": false },
+  { "schoolID": "F140310110785", "schoolName": "産業医科大学", "used": false },
+  { "schoolID": "F140310110641", "schoolName": "九州共立大学", "used": false },
   {
     "schoolID": "F140310112006",
-    "schoolName": "令和健康科学大学"
+    "schoolName": "令和健康科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F140310110758",
-    "schoolName": "福岡工業大学"
-  },
+  { "schoolID": "F140310110758", "schoolName": "福岡工業大学", "used": false },
   {
     "schoolID": "F140310110801",
-    "schoolName": "福岡女学院大学"
+    "schoolName": "福岡女学院大学",
+    "used": false
   },
   {
     "schoolID": "F140310110874",
-    "schoolName": "福岡女学院看護大学"
+    "schoolName": "福岡女学院看護大学",
+    "used": false
   },
   {
     "schoolID": "F140310110847",
-    "schoolName": "日本赤十字九州国際看護大学"
+    "schoolName": "日本赤十字九州国際看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F140310110865",
-    "schoolName": "サイバー大学"
-  },
-  {
-    "schoolID": "F140310110687",
-    "schoolName": "九州産業大学"
-  },
+  { "schoolID": "F140310110865", "schoolName": "サイバー大学", "used": false },
+  { "schoolID": "F140310110687", "schoolName": "九州産業大学", "used": false },
   {
     "schoolID": "F140310110918",
-    "schoolName": "福岡国際医療福祉大学"
+    "schoolName": "福岡国際医療福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F140310110749",
-    "schoolName": "福岡大学"
-  },
-  {
-    "schoolID": "F140310110678",
-    "schoolName": "福岡歯科大学"
-  },
-  {
-    "schoolID": "F140310110909",
-    "schoolName": "福岡看護大学"
-  },
-  {
-    "schoolID": "F140310110721",
-    "schoolName": "中村学園大学"
-  },
-  {
-    "schoolID": "F140310110703",
-    "schoolName": "西南学院大学"
-  },
-  {
-    "schoolID": "F140310110892",
-    "schoolName": "純真学園大学"
-  },
-  {
-    "schoolID": "F140310110712",
-    "schoolName": "第一薬科大学"
-  },
-  {
-    "schoolID": "F140310110829",
-    "schoolName": "九州情報大学"
-  },
+  { "schoolID": "F140310110749", "schoolName": "福岡大学", "used": false },
+  { "schoolID": "F140310110678", "schoolName": "福岡歯科大学", "used": false },
+  { "schoolID": "F140310110909", "schoolName": "福岡看護大学", "used": false },
+  { "schoolID": "F140310110721", "schoolName": "中村学園大学", "used": false },
+  { "schoolID": "F140310110703", "schoolName": "西南学院大学", "used": false },
+  { "schoolID": "F140310110892", "schoolName": "純真学園大学", "used": false },
+  { "schoolID": "F140310110712", "schoolName": "第一薬科大学", "used": false },
+  { "schoolID": "F140310110829", "schoolName": "九州情報大学", "used": false },
   {
     "schoolID": "F140310110794",
-    "schoolName": "筑紫女学園大学"
+    "schoolName": "筑紫女学園大学",
+    "used": false
   },
-  {
-    "schoolID": "F140310110767",
-    "schoolName": "日本経済大学"
-  },
-  {
-    "schoolID": "F140310110696",
-    "schoolName": "久留米大学"
-  },
+  { "schoolID": "F140310110767", "schoolName": "日本経済大学", "used": false },
+  { "schoolID": "F140310110696", "schoolName": "久留米大学", "used": false },
   {
     "schoolID": "F140310110776",
-    "schoolName": "久留米工業大学"
+    "schoolName": "久留米工業大学",
+    "used": false
   },
   {
     "schoolID": "F140310110856",
-    "schoolName": "聖マリア学院大学"
+    "schoolName": "聖マリア学院大学",
+    "used": false
   },
   {
     "schoolID": "F140310110883",
-    "schoolName": "保健医療経営大学"
+    "schoolName": "保健医療経営大学",
+    "used": false
   },
-  {
-    "schoolID": "F141110111135",
-    "schoolName": "佐賀大学"
-  },
-  {
-    "schoolID": "F141310111140",
-    "schoolName": "西九州大学"
-  },
-  {
-    "schoolID": "F142110111189",
-    "schoolName": "長崎大学"
-  },
-  {
-    "schoolID": "F142210111196",
-    "schoolName": "長崎県立大学"
-  },
-  {
-    "schoolID": "F142310111210",
-    "schoolName": "活水女子大学"
-  },
+  { "schoolID": "F141110111135", "schoolName": "佐賀大学", "used": false },
+  { "schoolID": "F141310111140", "schoolName": "西九州大学", "used": false },
+  { "schoolID": "F142110111189", "schoolName": "長崎大学", "used": false },
+  { "schoolID": "F142210111196", "schoolName": "長崎県立大学", "used": false },
+  { "schoolID": "F142310111210", "schoolName": "活水女子大学", "used": false },
   {
     "schoolID": "F142310111201",
-    "schoolName": "長崎総合科学大学"
+    "schoolName": "長崎総合科学大学",
+    "used": false
   },
   {
     "schoolID": "F142310111247",
-    "schoolName": "長崎外国語大学"
+    "schoolName": "長崎外国語大学",
+    "used": false
   },
-  {
-    "schoolID": "F142310111229",
-    "schoolName": "長崎純心大学"
-  },
-  {
-    "schoolID": "F142310111256",
-    "schoolName": "鎮西学院大学"
-  },
-  {
-    "schoolID": "F142310111238",
-    "schoolName": "長崎国際大学"
-  },
-  {
-    "schoolID": "F143110111295",
-    "schoolName": "熊本大学"
-  },
-  {
-    "schoolID": "F143210111300",
-    "schoolName": "熊本県立大学"
-  },
-  {
-    "schoolID": "F143310111317",
-    "schoolName": "崇城大学"
-  },
+  { "schoolID": "F142310111229", "schoolName": "長崎純心大学", "used": false },
+  { "schoolID": "F142310111256", "schoolName": "鎮西学院大学", "used": false },
+  { "schoolID": "F142310111238", "schoolName": "長崎国際大学", "used": false },
+  { "schoolID": "F143110111295", "schoolName": "熊本大学", "used": false },
+  { "schoolID": "F143210111300", "schoolName": "熊本県立大学", "used": false },
+  { "schoolID": "F143310111317", "schoolName": "崇城大学", "used": false },
   {
     "schoolID": "F143310111344",
-    "schoolName": "九州ルーテル学院大学"
+    "schoolName": "九州ルーテル学院大学",
+    "used": false
   },
-  {
-    "schoolID": "F143310111362",
-    "schoolName": "平成音楽大学"
-  },
+  { "schoolID": "F143310111362", "schoolName": "平成音楽大学", "used": false },
   {
     "schoolID": "F143310111371",
-    "schoolName": "熊本保健科学大学"
+    "schoolName": "熊本保健科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F143310111335",
-    "schoolName": "尚絅大学"
-  },
-  {
-    "schoolID": "F143310111326",
-    "schoolName": "熊本学園大学"
-  },
+  { "schoolID": "F143310111335", "schoolName": "尚絅大学", "used": false },
+  { "schoolID": "F143310111326", "schoolName": "熊本学園大学", "used": false },
   {
     "schoolID": "F143310111353",
-    "schoolName": "九州看護福祉大学"
+    "schoolName": "九州看護福祉大学",
+    "used": false
   },
-  {
-    "schoolID": "F144110111418",
-    "schoolName": "大分大学"
-  },
+  { "schoolID": "F144110111418", "schoolName": "大分大学", "used": false },
   {
     "schoolID": "F144210111425",
-    "schoolName": "大分県立看護科学大学"
+    "schoolName": "大分県立看護科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F144310111432",
-    "schoolName": "日本文理大学"
-  },
-  {
-    "schoolID": "F144310111441",
-    "schoolName": "別府大学"
-  },
+  { "schoolID": "F144310111432", "schoolName": "日本文理大学", "used": false },
+  { "schoolID": "F144310111441", "schoolName": "別府大学", "used": false },
   {
     "schoolID": "F144310111450",
-    "schoolName": "立命館アジア太平洋大学"
+    "schoolName": "立命館アジア太平洋大学",
+    "used": false
   },
-  {
-    "schoolID": "F145110111523",
-    "schoolName": "宮崎大学"
-  },
+  { "schoolID": "F145110111523", "schoolName": "宮崎大学", "used": false },
   {
     "schoolID": "F145210111549",
-    "schoolName": "宮崎県立看護大学"
+    "schoolName": "宮崎県立看護大学",
+    "used": false
   },
-  {
-    "schoolID": "F145210111530",
-    "schoolName": "宮崎公立大学"
-  },
-  {
-    "schoolID": "F145310111556",
-    "schoolName": "南九州大学"
-  },
+  { "schoolID": "F145210111530", "schoolName": "宮崎公立大学", "used": false },
+  { "schoolID": "F145310111556", "schoolName": "南九州大学", "used": false },
   {
     "schoolID": "F145310111565",
-    "schoolName": "宮崎産業経営大学"
+    "schoolName": "宮崎産業経営大学",
+    "used": false
   },
   {
     "schoolID": "F145310111583",
-    "schoolName": "九州医療科学大学"
+    "schoolName": "九州医療科学大学",
+    "used": false
   },
-  {
-    "schoolID": "F145310111574",
-    "schoolName": "宮崎国際大学"
-  },
-  {
-    "schoolID": "F146110111620",
-    "schoolName": "鹿児島大学"
-  },
-  {
-    "schoolID": "F146110111639",
-    "schoolName": "鹿屋体育大学"
-  },
-  {
-    "schoolID": "F146310111662",
-    "schoolName": "志學館大学"
-  },
+  { "schoolID": "F145310111574", "schoolName": "宮崎国際大学", "used": false },
+  { "schoolID": "F146110111620", "schoolName": "鹿児島大学", "used": false },
+  { "schoolID": "F146110111639", "schoolName": "鹿屋体育大学", "used": false },
+  { "schoolID": "F146310111662", "schoolName": "志學館大学", "used": false },
   {
     "schoolID": "F146310111644",
-    "schoolName": "鹿児島国際大学"
+    "schoolName": "鹿児島国際大学",
+    "used": false
   },
   {
     "schoolID": "F146310111671",
-    "schoolName": "鹿児島純心大学"
+    "schoolName": "鹿児島純心大学",
+    "used": false
   },
-  {
-    "schoolID": "F146310111653",
-    "schoolName": "第一工科大学"
-  },
-  {
-    "schoolID": "F147110111736",
-    "schoolName": "琉球大学"
-  },
+  { "schoolID": "F146310111653", "schoolName": "第一工科大学", "used": false },
+  { "schoolID": "F147110111736", "schoolName": "琉球大学", "used": false },
   {
     "schoolID": "F147210111761",
-    "schoolName": "沖縄県立看護大学"
+    "schoolName": "沖縄県立看護大学",
+    "used": false
   },
   {
     "schoolID": "F147210111752",
-    "schoolName": "沖縄県立芸術大学"
+    "schoolName": "沖縄県立芸術大学",
+    "used": false
   },
-  {
-    "schoolID": "F147210111743",
-    "schoolName": "名桜大学"
-  },
-  {
-    "schoolID": "F147310111787",
-    "schoolName": "沖縄国際大学"
-  },
-  {
-    "schoolID": "F147310111796",
-    "schoolName": "沖縄大学"
-  },
+  { "schoolID": "F147210111743", "schoolName": "名桜大学", "used": false },
+  { "schoolID": "F147310111787", "schoolName": "沖縄国際大学", "used": false },
+  { "schoolID": "F147310111796", "schoolName": "沖縄大学", "used": false },
   {
     "schoolID": "F147310111803",
-    "schoolName": "沖縄キリスト教学院大学"
+    "schoolName": "沖縄キリスト教学院大学",
+    "used": false
   },
   {
     "schoolID": "F147310111778",
-    "schoolName": "沖縄科学技術大学院大学"
+    "schoolName": "沖縄科学技術大学院大学",
+    "used": false
   }
 ]
