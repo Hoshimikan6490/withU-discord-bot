@@ -15,7 +15,7 @@ const {
   TextInputStyle,
 } = require("discord.js");
 const fs = require("fs");
-const { getDatabase } = require("../databaseController");
+const { getDatabase, setUsedStatus } = require("../databaseController");
 
 module.exports = async (client, interaction) => {
   if (interaction?.type == InteractionType.ApplicationCommand) {
@@ -50,6 +50,7 @@ module.exports = async (client, interaction) => {
     // button 処理
     let buttonId = interaction.customId;
     if (buttonId == "guildJoinContinue") {
+      // 大学選択メニューを表示
       let embed = new EmbedBuilder()
         .setTitle("所属大学/組織名登録")
         .setDescription(
@@ -77,6 +78,7 @@ module.exports = async (client, interaction) => {
         components: [universitySelectComponents, universityNameNotListed],
       });
     } else if (buttonId == "universityNameNotListed") {
+      // 大学名入力モーダルを表示
       let modal = new ModalBuilder()
         .setCustomId("askUniversityName")
         .setTitle("あなたが所属する大学名を入力してください。");
@@ -91,7 +93,16 @@ module.exports = async (client, interaction) => {
       modal.addComponents(actionRow);
 
       await interaction.showModal(modal);
+    } else if (buttonId.includes(`universityNameCorrect`)) {
+      // 大学登録処理
+      let universityID = buttonId.split("-")[1];
+
+      // データベース更新
+      await setUsedStatus(universityID, true);
+      // 次の処理への誘導表示
+      // TODO：　次ここ
     } else if (buttonId == "cancel" || buttonId == "delete") {
+      // キャンセル処理
       await interaction.message.delete();
     }
   }
@@ -122,20 +133,18 @@ module.exports = async (client, interaction) => {
       new ButtonBuilder()
         .setLabel("この大学で登録する")
         .setCustomId(`universityNameCorrect-${universityInfo[0].schoolID}`)
-        .setStyle(ButtonStyle.Success),
-      new ButtonBuilder()
-        .setLabel("プルダウンリストに戻る")
-        .setCustomId("cancel")
-        .setStyle(ButtonStyle.Secondary)
+        .setStyle(ButtonStyle.Success)
     );
 
+    let embed = new EmbedBuilder()
+      .setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
+      .setFooter({
+        text: "※正しい大学名が表示されない場合は、もう一度「この中にない」ボタンを押してキーワードを変更して再度お試しください。",
+      });
     await interaction.reply({
-      embeds: [
-        {
-          title: `「${universityInfo[0].schoolName}」を登録しますか？`,
-        },
-      ],
+      embeds: [embed],
       components: [universitySelectButton],
+      ephemeral: true,
     });
   }
 };
