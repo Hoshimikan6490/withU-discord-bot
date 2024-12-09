@@ -25,8 +25,8 @@ module.exports = async (client, message) => {
   }
 
   //メッセージ展開
-  const activeGuildIDs = process.env.activeGuildIDs;
-  if (activeGuildIDs.includes(message.guild.id)) {
+  const activeGuildID = process.env.activeGuildID;
+  if (activeGuildID == message.guild.id) {
     const MESSAGE_URL_REGEX =
       /https?:\/\/discord\.com\/channels\/(\d+)\/(\d+)\/(\d+)/g;
     const matches = MESSAGE_URL_REGEX.exec(message.content);

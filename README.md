@@ -27,9 +27,9 @@ npm i
 ```
 # Discord Bot Token
 bot_token=YOUR_DISCORD_BOT_TOKEN_HERE
-# 使うDiscordサーバーのIDをarrayで列挙
-activeGuildIDs=["0123456789"]
-# コンソール用のテキストチャットのチャンネルIDを記入
+# 使うDiscordサーバーのID
+activeGuildID="0123456789"
+# コンソール用のテキストチャットのチャンネルID
 consoleChannelID=0123456789
 # このアプリの起動に使うポートを指定。何も書かないと8000番が使われる。
 PORT=8080
