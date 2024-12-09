@@ -105,6 +105,30 @@ module.exports = async (client, interaction) => {
 
       // データベース更新
       await setUsedStatus(universityID, true);
+
+      // ロール追加
+      try {
+        let guild = await client.guilds.cache.get(process.env.activeGuildID);
+        let role = await guild.roles.cache.find(
+          (role) => role.name === universityInfo[0].schoolName
+        );
+        if (!role) {
+          // ロールが無い場合は、作成する
+          role = await guild.roles.create({
+            name: universityInfo[0].schoolName,
+            permissions: [],
+          });
+        }
+        let member = await guild.members.fetch(interaction.user.id);
+        member.roles.add(role);
+      } catch (err) {
+        return interaction.reply({
+          content:
+            "❌　ロール追加時にエラーが発生しました。お手数ですが、以下のURLから管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+          ephemeral: true,
+        });
+      }
+
       // 次の処理への誘導表示
       // TODO：　次ここ
     } else if (buttonId == "cancel" || buttonId == "delete") {
