@@ -1,6 +1,7 @@
 const fs = require("fs");
 
-function getData(keyword, onlyUsed) {
+// データベース検索用function。引数は(keyword: 検索キーワード, searchFromID: 検索キーワードに学校IDを使う場合はtrue, onlyUsed: 「onlyUsed」フラグがtrueのやつだけ抽出)
+function getDatabaseFromSchoolName(keyword, onlyUsed) {
   let data = fs.readFileSync("./universityList.json");
   data = JSON.parse(data);
 
@@ -14,9 +15,23 @@ function getData(keyword, onlyUsed) {
 
   return data;
 }
+function getDatabaseFromSchoolID(schoolID, onlyUsed) {
+  let data = fs.readFileSync("./universityList.json");
+  data = JSON.parse(data);
+
+  if (schoolID) {
+    data = data.filter((result) => result["schoolID"] == schoolID);
+  }
+
+  if (onlyUsed) {
+    data = data.filter((result) => result["used"] == true);
+  }
+
+  return data;
+}
 
 function setUsedStatus(schoolID, setTo) {
-  let data = getData();
+  let data = getDatabaseFromSchoolID();
 
   data.forEach((key) => {
     if (schoolID) {
@@ -33,5 +48,6 @@ function setUsedStatus(schoolID, setTo) {
   return data;
 }
 
-module.exports["getDatabase"] = getData;
+module.exports["getDatabaseFromSchoolName"] = getDatabaseFromSchoolName;
+module.exports["getDatabaseFromSchoolID"] = getDatabaseFromSchoolID;
 module.exports["setUsedStatus"] = setUsedStatus;

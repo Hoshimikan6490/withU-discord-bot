@@ -15,7 +15,12 @@ const {
   TextInputStyle,
 } = require("discord.js");
 const fs = require("fs");
-const { getDatabase, setUsedStatus } = require("../databaseController");
+const {
+  getDatabaseFromSchoolID,
+  getDatabaseFromSchoolName,
+  setUsedStatus,
+} = require("../databaseController");
+require("dotenv").config();
 
 module.exports = async (client, interaction) => {
   if (interaction?.type == InteractionType.ApplicationCommand) {
@@ -96,6 +101,7 @@ module.exports = async (client, interaction) => {
     } else if (buttonId.includes(`universityNameCorrect`)) {
       // 大学登録処理
       let universityID = buttonId.split("-")[1];
+      let universityInfo = getDatabaseFromSchoolID(universityID);
 
       // データベース更新
       await setUsedStatus(universityID, true);
@@ -112,7 +118,7 @@ module.exports = async (client, interaction) => {
       "universityNameInput"
     );
 
-    let universityInfo = getDatabase(universityNameInput);
+    let universityInfo = getDatabaseFromSchoolName(universityNameInput);
     if (universityInfo.length == 0) {
       // 大学名が見つからなかった場合
       return interaction.reply({
