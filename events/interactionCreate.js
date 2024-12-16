@@ -89,8 +89,8 @@ module.exports = async (client, interaction) => {
         .setTitle("あなたが所属する大学名を入力してください。");
       let textInput = new TextInputBuilder()
         .setCustomId("universityNameInput")
-        .setLabel("※略称は使用しないでください")
-        .setPlaceholder("例) 工学院大学")
+        .setLabel("正式名称またはその一部を入力してください。")
+        .setPlaceholder("例) 架空野大学")
         .setStyle(TextInputStyle.Short)
         .setRequired(true);
 
@@ -104,6 +104,7 @@ module.exports = async (client, interaction) => {
       // 大学登録処理
       let universityID = buttonId.split("-")[1];
       let universityInfo = getDatabaseFromSchoolID(universityID);
+      let universityName = universityInfo[0].schoolName;
 
       // データベース更新
       await setUsedStatus(universityID, true);
@@ -112,17 +113,26 @@ module.exports = async (client, interaction) => {
       try {
         let guild = await client.guilds.cache.get(process.env.activeGuildID);
         let role = await guild.roles.cache.find(
-          (role) => role.name === universityInfo[0].schoolName
+          (role) => role.name === universityName
         );
         if (!role) {
           // ロールが無い場合は、作成する
           role = await guild.roles.create({
-            name: universityInfo[0].schoolName,
+            name: universityName,
             permissions: [],
           });
         }
         let member = await guild.members.fetch(interaction.user.id);
-        member.roles.add(role);
+
+        // 既にロールを持っている場合は、次のガイドに従うように案内する
+        if (!member.roles.cache.some((role) => role.name === universityName)) {
+          member.roles.add(role);
+        } else {
+          return interaction.editReply({
+            content:
+              "⚠️　既に大学選択処理は完了しています。\n次の名前登録へお進みください。",
+          });
+        }
       } catch (err) {
         Sentry.captureException(err);
         return interaction.editReply({
@@ -131,7 +141,7 @@ module.exports = async (client, interaction) => {
         });
       }
 
-      // 次の処理への誘導表示]
+      // 次の処理への誘導表示
       let embed = new EmbedBuilder()
         .setTitle("ご協力ありがとうございます！")
         .setDescription(
@@ -152,7 +162,20 @@ module.exports = async (client, interaction) => {
       });
     } else if (buttonId == "nameRegisterContinue") {
       // 名前登録のモーダル表示
-      // TODO：　次ここ
+      let modal = new ModalBuilder()
+        .setCustomId("userNameModal")
+        .setTitle("本名ををフルネームでご入力ください。");
+      let textInput = new TextInputBuilder()
+        .setCustomId("userName")
+        .setLabel("必ず本名をフルネームでスペース無しで入力してください")
+        .setPlaceholder("架空野太郎")
+        .setStyle(TextInputStyle.Short)
+        .setRequired(true);
+
+      let actionRow = new ActionRowBuilder().addComponents(textInput);
+      modal.addComponents(actionRow);
+
+      await interaction.showModal(modal);
     } else if (buttonId == "cancel" || buttonId == "delete") {
       // キャンセル処理
       await interaction.message.delete();
@@ -160,43 +183,53 @@ module.exports = async (client, interaction) => {
   }
 
   if (interaction?.type == InteractionType.ModalSubmit) {
-    let universityNameInput = interaction.fields.getTextInputValue(
-      "universityNameInput"
-    );
+    let modalId = interaction.customId;
+    if (modalId == "askUniversityName") {
+      let universityNameInput = interaction.fields.getTextInputValue(
+        "universityNameInput"
+      );
 
-    let universityInfo = getDatabaseFromSchoolName(universityNameInput);
-    if (universityInfo.length == 0) {
-      // 大学名が見つからなかった場合
-      return interaction.reply({
-        content:
-          "❌　大学名が見つかりませんでした。検索キーワードを変えてもう一度お試しください。",
-        ephemeral: true,
+      let universityInfo = getDatabaseFromSchoolName(universityNameInput);
+      if (universityInfo.length == 0) {
+        // 大学名が見つからなかった場合
+        return interaction.reply({
+          content:
+            "❌　大学名が見つかりませんでした。検索キーワードを変えてもう一度お試しください。",
+          ephemeral: true,
+        });
+      }
+      if (universityInfo[0].used == true) {
+        // 既に登録済みの大学名が入力された場合
+        return interaction.reply({
+          content: `❌　「${universityInfo[0].schoolName}」はすでにプルダウンリストに登録されています。そちらからお選びください。`,
+          ephemeral: true,
+        });
+      }
+
+      let universitySelectButton = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel("この大学で登録する")
+          .setCustomId(`universityNameCorrect-${universityInfo[0].schoolID}`)
+          .setStyle(ButtonStyle.Success),
+        new ButtonBuilder()
+          .setLabel("この大学で登録しない")
+          .setCustomId("universityNameNotListed")
+          .setStyle(ButtonStyle.Secondary)
+      );
+
+      let embed = new EmbedBuilder()
+        .setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
+        .setFooter({
+          text: "※正しい大学名が表示されない場合は、「この大学で登録しない」ボタンを押して再度キーワードを変更してお試しください。",
+        });
+
+      await interaction.reply({
+        embeds: [embed],
+        components: [universitySelectButton],
       });
     }
-    if (universityInfo[0].used == true) {
-      // 既に登録済みの大学名が入力された場合
-      return interaction.reply({
-        content: `❌　「${universityInfo[0].schoolName}」はすでにプルダウンリストに登録されています。そちらからお選びください。`,
-        ephemeral: true,
-      });
-    }
-
-    let universitySelectButton = new ActionRowBuilder().addComponents(
-      new ButtonBuilder()
-        .setLabel("この大学で登録する")
-        .setCustomId(`universityNameCorrect-${universityInfo[0].schoolID}`)
-        .setStyle(ButtonStyle.Success)
-    );
-
-    let embed = new EmbedBuilder()
-      .setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
-      .setFooter({
-        text: "※正しい大学名が表示されない場合は、もう一度「この中にない」ボタンを押してキーワードを変更して再度お試しください。",
-      });
-    await interaction.reply({
-      embeds: [embed],
-      components: [universitySelectButton],
-      ephemeral: true,
-    });
+  } else if (buttonId == "userNameModal") {
+    // お名前登録処理
+    // TODO：　次ここ
   }
 };
