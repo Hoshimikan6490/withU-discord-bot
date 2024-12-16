@@ -99,6 +99,8 @@ module.exports = async (client, interaction) => {
 
       await interaction.showModal(modal);
     } else if (buttonId.includes(`universityNameCorrect`)) {
+      await interaction.deferReply();
+
       // 大学登録処理
       let universityID = buttonId.split("-")[1];
       let universityInfo = getDatabaseFromSchoolID(universityID);
@@ -122,14 +124,34 @@ module.exports = async (client, interaction) => {
         let member = await guild.members.fetch(interaction.user.id);
         member.roles.add(role);
       } catch (err) {
-        return interaction.reply({
+        Sentry.captureException(err);
+        return interaction.editReply({
           content:
             "❌　ロール追加時にエラーが発生しました。お手数ですが、以下のURLから管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
-          ephemeral: true,
         });
       }
 
-      // 次の処理への誘導表示
+      // 次の処理への誘導表示]
+      let embed = new EmbedBuilder()
+        .setTitle("ご協力ありがとうございます！")
+        .setDescription(
+          "続いて、お名前の登録をお願い致します。これが完了しますと、入室手続きは完了となります。"
+        );
+
+      let nameRegisterContinue = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId("nameRegisterContinue")
+          .setLabel("続ける")
+          .setEmoji("➡️")
+          .setStyle(ButtonStyle.Success)
+      );
+
+      await interaction.editReply({
+        embeds: [embed],
+        components: [nameRegisterContinue],
+      });
+    } else if (buttonId == "nameRegisterContinue") {
+      // 名前登録のモーダル表示
       // TODO：　次ここ
     } else if (buttonId == "cancel" || buttonId == "delete") {
       // キャンセル処理
