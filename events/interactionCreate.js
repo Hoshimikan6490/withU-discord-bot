@@ -274,8 +274,30 @@ module.exports = async (client, interaction) => {
         components: [universitySelectButton],
       });
     } else if (modalId == "userNameModal") {
+      await interaction.deferReply();
       // お名前登録処理
-      // TODO：　次ここ
+      let userName = interaction.fields.getTextInputValue("userName");
+
+      try {
+        // ユーザー名の設定
+        let guild = await client.guilds.cache.get(process.env.activeGuildID);
+        let member = await guild.members.fetch(interaction.user.id);
+        await member.setNickname(userName);
+      } catch (err) {
+        Sentry.captureException(err);
+        return interaction.editReply({
+          content:
+            "❌　お名前の登録時にエラーが発生しました。お手数ですが、以下のURLから管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+        });
+      }
+
+      // ログを残す
+      await sendJoinProcessLog(
+        client,
+        "userNameRegisterFinished",
+        userName,
+        interaction.user.id
+      );
     }
   }
 };
