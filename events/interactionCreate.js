@@ -22,6 +22,41 @@ const {
 } = require("../databaseController");
 require("dotenv").config();
 
+async function sendJoinProcessLog(client, type, howToSet, userId) {
+  let memberLogChannel = process.env.memberLogChannel;
+  let embedTitle, embedDescription, embedColor;
+
+  let guild = await client.guilds.cache.get(process.env.activeGuildID);
+  let member = await guild.members.fetch(userId);
+
+  if (type == "universityRegisterFinished") {
+    embedTitle = `${member.user.globalName}さん(\`${userId}\`)が大学選択を完了しました！`;
+  } else if (type == "userNameRegisterFinished") {
+    embedTitle = `${member.user.globalName}さん(\`${userId}\`)が名前登録を完了しました！`;
+  }
+
+  if (type == "universityRegisterFinished") {
+    embedDescription = `大学名に「${howToSet}」が設定されました。`;
+  } else if (type == "userNameRegisterFinished") {
+    embedDescription = `名前を「${howToSet}」に設定されました。`;
+  }
+
+  if (type == "universityRegisterFinished") {
+    embedColor = 0xffff00;
+  } else if (type == "userNameRegisterFinished") {
+    embedColor = 0x00ff00;
+  }
+
+  let embed = new EmbedBuilder()
+    .setTitle(embedTitle)
+    .setDescription(embedDescription)
+    .setThumbnail(member.displayAvatarURL())
+    .setColor(0xffff00)
+    .setTimestamp();
+
+  await client.channels.cache.get(memberLogChannel).send({ embeds: [embed] });
+}
+
 module.exports = async (client, interaction) => {
   if (interaction?.type == InteractionType.ApplicationCommand) {
     if (!interaction?.guild) {
@@ -141,12 +176,23 @@ module.exports = async (client, interaction) => {
         });
       }
 
+      // ログを残す
+      await sendJoinProcessLog(
+        client,
+        "universityRegisterFinished",
+        universityName,
+        interaction.user.id
+      );
+
       // 次の処理への誘導表示
       let embed = new EmbedBuilder()
         .setTitle("ご協力ありがとうございます！")
         .setDescription(
           "続いて、お名前の登録をお願い致します。これが完了しますと、入室手続きは完了となります。"
-        );
+        )
+        .setFooter({
+          text: "なお、不正な情報を登録した場合、処罰の対象になる場合もあります。",
+        });
 
       let nameRegisterContinue = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
@@ -227,9 +273,9 @@ module.exports = async (client, interaction) => {
         embeds: [embed],
         components: [universitySelectButton],
       });
+    } else if (modalId == "userNameModal") {
+      // お名前登録処理
+      // TODO：　次ここ
     }
-  } else if (buttonId == "userNameModal") {
-    // お名前登録処理
-    // TODO：　次ここ
   }
 };
