@@ -96,17 +96,25 @@ module.exports = async (client, interaction) => {
         .setDescription(
           "まずは、あなたが所属している大学または組織の名前を1つだけ登録してください。\nなお、このリストの中にあなたの所属している大学名または組織名が無い場合は何も選ばずに「この中にない」ボタンを押してください。"
         );
+
+      // 大学名プルダウンリストを動的に生成
+      let usedUniversityList = await getDatabaseFromSchoolID("", true);
+      let selectMenuOptions = [];
+      for (let university of usedUniversityList) {
+        let selectMenuOption = new StringSelectMenuOptionBuilder()
+          .setLabel(university.schoolName)
+          .setValue(university.schoolID);
+        selectMenuOptions.push(selectMenuOption);
+      }
       let universitySelectMenu = new StringSelectMenuBuilder()
         .setCustomId("universitySelectMenu")
         .setPlaceholder("大学名を選んでください")
-        .addOptions(
-          new StringSelectMenuOptionBuilder()
-            .setLabel("国際工科専門職大学")
-            .setValue("F113310102993")
-        );
+        .addOptions(selectMenuOptions);
       let universitySelectComponents = new ActionRowBuilder().addComponents(
         universitySelectMenu
       );
+      // TODO: ↑これで生成したプルダウンリストが動作するように設定
+
       let universityNameNotListed = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setLabel("この中にはない")
