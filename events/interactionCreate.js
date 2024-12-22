@@ -51,7 +51,7 @@ async function sendJoinProcessLog(client, type, howToSet, userId) {
     .setTitle(embedTitle)
     .setDescription(embedDescription)
     .setThumbnail(member.displayAvatarURL())
-    .setColor(0xffff00)
+    .setColor(embedColor)
     .setTimestamp();
 
   await client.channels.cache.get(memberLogChannel).send({ embeds: [embed] });
@@ -64,7 +64,6 @@ async function universityRegister(client, interaction, customId) {
   let universityName = universityInfo[0].schoolName;
 
   // データベース更新
-  console.log(customId);
   await setUsedStatus(universityID, true);
 
   // ロール追加
