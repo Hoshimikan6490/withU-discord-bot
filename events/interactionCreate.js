@@ -57,6 +57,80 @@ async function sendJoinProcessLog(client, type, howToSet, userId) {
   await client.channels.cache.get(memberLogChannel).send({ embeds: [embed] });
 }
 
+async function universityRegister(client, interaction, customId) {
+  // 大学登録処理
+  let universityID = customId.split("-")[1];
+  let universityInfo = getDatabaseFromSchoolID(universityID);
+  let universityName = universityInfo[0].schoolName;
+
+  // データベース更新
+  console.log(customId);
+  await setUsedStatus(universityID, true);
+
+  // ロール追加
+  try {
+    let guild = await client.guilds.cache.get(process.env.activeGuildID);
+    let role = await guild.roles.cache.find(
+      (role) => role.name === universityName
+    );
+    if (!role) {
+      // ロールが無い場合は、作成する
+      role = await guild.roles.create({
+        name: universityName,
+        permissions: [],
+      });
+    }
+    let member = await guild.members.fetch(interaction.user.id);
+
+    // 既にロールを持っている場合は、次のガイドに従うように案内する
+    if (!member.roles.cache.some((role) => role.name === universityName)) {
+      member.roles.add(role);
+    } else {
+      return interaction.editReply({
+        content:
+          "⚠️　既に大学選択処理は完了しています。\n次の名前登録へお進みください。",
+      });
+    }
+  } catch (err) {
+    Sentry.captureException(err);
+    return interaction.editReply({
+      content:
+        "❌　ロール追加時にエラーが発生しました。お手数ですが、以下のURLから管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+    });
+  }
+
+  // ログを残す
+  await sendJoinProcessLog(
+    client,
+    "universityRegisterFinished",
+    universityName,
+    interaction.user.id
+  );
+
+  // 次の処理への誘導表示
+  let embed = new EmbedBuilder()
+    .setTitle("ご協力ありがとうございます！")
+    .setDescription(
+      "続いて、お名前の登録をお願い致します。これが完了しますと、入室手続きは完了となります。"
+    )
+    .setFooter({
+      text: "なお、不正な情報を登録した場合、処罰の対象になる場合もあります。",
+    });
+
+  let nameRegisterContinue = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setCustomId("nameRegisterContinue")
+      .setLabel("続ける")
+      .setEmoji("➡️")
+      .setStyle(ButtonStyle.Success)
+  );
+
+  await interaction.editReply({
+    embeds: [embed],
+    components: [nameRegisterContinue],
+  });
+}
+
 module.exports = async (client, interaction) => {
   if (interaction?.type == InteractionType.ApplicationCommand) {
     if (!interaction?.guild) {
@@ -103,7 +177,7 @@ module.exports = async (client, interaction) => {
       for (let university of usedUniversityList) {
         let selectMenuOption = new StringSelectMenuOptionBuilder()
           .setLabel(university.schoolName)
-          .setValue(university.schoolID);
+          .setValue(`universityNameCorrect-${university.schoolID}`);
         selectMenuOptions.push(selectMenuOption);
       }
       let universitySelectMenu = new StringSelectMenuBuilder()
@@ -113,8 +187,8 @@ module.exports = async (client, interaction) => {
       let universitySelectComponents = new ActionRowBuilder().addComponents(
         universitySelectMenu
       );
-      // TODO: ↑これで生成したプルダウンリストが動作するように設定
 
+      // TODO: 大学名選択後に「この中にない」ボタンが使える問題を修正
       let universityNameNotListed = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setLabel("この中にはない")
@@ -143,77 +217,9 @@ module.exports = async (client, interaction) => {
       await interaction.showModal(modal);
     } else if (buttonId.includes(`universityNameCorrect`)) {
       await interaction.deferReply();
+      let customId = interaction.customId;
 
-      // 大学登録処理
-      let universityID = buttonId.split("-")[1];
-      let universityInfo = getDatabaseFromSchoolID(universityID);
-      let universityName = universityInfo[0].schoolName;
-
-      // データベース更新
-      await setUsedStatus(universityID, true);
-
-      // ロール追加
-      try {
-        let guild = await client.guilds.cache.get(process.env.activeGuildID);
-        let role = await guild.roles.cache.find(
-          (role) => role.name === universityName
-        );
-        if (!role) {
-          // ロールが無い場合は、作成する
-          role = await guild.roles.create({
-            name: universityName,
-            permissions: [],
-          });
-        }
-        let member = await guild.members.fetch(interaction.user.id);
-
-        // 既にロールを持っている場合は、次のガイドに従うように案内する
-        if (!member.roles.cache.some((role) => role.name === universityName)) {
-          member.roles.add(role);
-        } else {
-          return interaction.editReply({
-            content:
-              "⚠️　既に大学選択処理は完了しています。\n次の名前登録へお進みください。",
-          });
-        }
-      } catch (err) {
-        Sentry.captureException(err);
-        return interaction.editReply({
-          content:
-            "❌　ロール追加時にエラーが発生しました。お手数ですが、以下のURLから管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
-        });
-      }
-
-      // ログを残す
-      await sendJoinProcessLog(
-        client,
-        "universityRegisterFinished",
-        universityName,
-        interaction.user.id
-      );
-
-      // 次の処理への誘導表示
-      let embed = new EmbedBuilder()
-        .setTitle("ご協力ありがとうございます！")
-        .setDescription(
-          "続いて、お名前の登録をお願い致します。これが完了しますと、入室手続きは完了となります。"
-        )
-        .setFooter({
-          text: "なお、不正な情報を登録した場合、処罰の対象になる場合もあります。",
-        });
-
-      let nameRegisterContinue = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setCustomId("nameRegisterContinue")
-          .setLabel("続ける")
-          .setEmoji("➡️")
-          .setStyle(ButtonStyle.Success)
-      );
-
-      await interaction.editReply({
-        embeds: [embed],
-        components: [nameRegisterContinue],
-      });
+      await universityRegister(client, interaction, customId);
     } else if (buttonId == "nameRegisterContinue") {
       // 名前登録のモーダル表示
       let modal = new ModalBuilder()
@@ -234,6 +240,13 @@ module.exports = async (client, interaction) => {
       // キャンセル処理
       await interaction.message.delete();
     }
+  }
+
+  if (interaction.isStringSelectMenu()) {
+    await interaction.deferReply();
+
+    let customId = interaction.values[0];
+    await universityRegister(client, interaction, customId);
   }
 
   if (interaction?.type == InteractionType.ModalSubmit) {
