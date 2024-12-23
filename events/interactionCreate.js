@@ -67,6 +67,7 @@ async function universityRegister(client, interaction, customId) {
   await setUsedStatus(universityID, true);
 
   // ロール追加
+  // TODO: 大学IDを正常に取得できなかった場合にDBの全データがtrueに設定される問題を修正
   try {
     let guild = await client.guilds.cache.get(process.env.activeGuildID);
     let role = await guild.roles.cache.find(
@@ -187,7 +188,7 @@ module.exports = async (client, interaction) => {
         universitySelectMenu
       );
 
-      // TODO: 大学名選択後に「この中にない」ボタンが使える問題を修正
+      // TODO: 大学名選択後に「この中にない」ボタンが使える問題を修正。test2コマンドを参照
       let universityNameNotListed = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setLabel("この中にはない")
