@@ -13,7 +13,6 @@ const {
   ModalBuilder,
   TextInputBuilder,
   TextInputStyle,
-  ComponentType,
 } = require("discord.js");
 const fs = require("fs");
 const {
@@ -132,6 +131,41 @@ async function universityRegister(client, interaction, customId) {
   });
 }
 
+async function universitySelectMenuMessageBuilder(client, interaction) {
+  // 大学選択メニューを表示
+  let embed = new EmbedBuilder()
+    .setTitle("所属大学/組織名登録")
+    .setDescription(
+      "まずは、あなたが所属している大学または組織の名前を1つだけ登録してください。\nなお、このリストの中にあなたの所属している大学名または組織名が無い場合は何も選ばずに「この中にない」ボタンを押してください。"
+    );
+
+  // 大学名プルダウンリストを動的に生成
+  let usedUniversityList = await getDatabaseFromSchoolID("", true);
+  let selectMenuOptions = [];
+  for (let university of usedUniversityList) {
+    let selectMenuOption = new StringSelectMenuOptionBuilder()
+      .setLabel(university.schoolName)
+      .setValue(`universityNameCorrect-${university.schoolID}`);
+    selectMenuOptions.push(selectMenuOption);
+  }
+  let universitySelectMenu = new ActionRowBuilder().addComponents(
+    new StringSelectMenuBuilder()
+      .setCustomId("universitySelectMenu")
+      .setPlaceholder("大学名を選んでください")
+      .addOptions(selectMenuOptions)
+  );
+
+  // TODO: 大学名選択後に「この中にない」ボタンが使える問題を修正。test2コマンドを参照
+  let universityNameNotListedButton = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setLabel("この中にはない")
+      .setCustomId("universityNameNotListed")
+      .setStyle(ButtonStyle.Secondary)
+  );
+
+  return [embed, universitySelectMenu, universityNameNotListedButton];
+}
+
 module.exports = async (client, interaction) => {
   if (interaction?.type == InteractionType.ApplicationCommand) {
     if (!interaction?.guild) {
@@ -165,39 +199,15 @@ module.exports = async (client, interaction) => {
     // button 処理
     let buttonId = interaction.customId;
     if (buttonId == "guildJoinContinue") {
-      // 大学選択メニューを表示
-      let embed = new EmbedBuilder()
-        .setTitle("所属大学/組織名登録")
-        .setDescription(
-          "まずは、あなたが所属している大学または組織の名前を1つだけ登録してください。\nなお、このリストの中にあなたの所属している大学名または組織名が無い場合は何も選ばずに「この中にない」ボタンを押してください。"
-        );
+      let universitySelectMenuMessage =
+        await universitySelectMenuMessageBuilder(client, interaction);
 
-      // 大学名プルダウンリストを動的に生成
-      let usedUniversityList = await getDatabaseFromSchoolID("", true);
-      let selectMenuOptions = [];
-      for (let university of usedUniversityList) {
-        let selectMenuOption = new StringSelectMenuOptionBuilder()
-          .setLabel(university.schoolName)
-          .setValue(`universityNameCorrect-${university.schoolID}`);
-        selectMenuOptions.push(selectMenuOption);
-      }
-      let universitySelectMenu = new ActionRowBuilder().addComponents(
-        new StringSelectMenuBuilder()
-          .setCustomId("universitySelectMenu")
-          .setPlaceholder("大学名を選んでください")
-          .addOptions(selectMenuOptions)
-      );
-
-      // TODO: 大学名選択後に「この中にない」ボタンが使える問題を修正。test2コマンドを参照
-      let universityNameNotListedButton = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("この中にはない")
-          .setCustomId("universityNameNotListed")
-          .setStyle(ButtonStyle.Secondary)
-      );
       await interaction.reply({
-        embeds: [embed],
-        components: [universitySelectMenu, universityNameNotListedButton],
+        embeds: [universitySelectMenuMessage[0]],
+        components: [
+          universitySelectMenuMessage[1],
+          universitySelectMenuMessage[2],
+        ],
       });
     } else if (buttonId == "universityNameNotListed") {
       // 大学名入力モーダルを表示
@@ -215,6 +225,21 @@ module.exports = async (client, interaction) => {
       modal.addComponents(actionRow);
 
       await interaction.showModal(modal);
+
+      ////////////////////////////////////////////////
+      let universitySelectMenuMessage =
+        await universitySelectMenuMessageBuilder(client, interaction);
+      let oldMessageEmbed = universitySelectMenuMessage[0];
+      let universitySelectMenu = universitySelectMenuMessage[1];
+      let universityNameNotListedButton = universitySelectMenuMessage[2];
+
+      universitySelectMenu.components[0].setDisabled(true);
+      universityNameNotListedButton.components[0].setDisabled(true);
+
+      await interaction.message.edit({
+        embeds: [oldMessageEmbed],
+        components: [universitySelectMenu, universityNameNotListedButton],
+      });
     } else if (buttonId.includes(`universityNameCorrect`)) {
       await interaction.deferReply();
       let customId = interaction.customId;
@@ -245,6 +270,22 @@ module.exports = async (client, interaction) => {
   if (interaction.isStringSelectMenu()) {
     await interaction.deferReply();
 
+    let universitySelectMenuMessage = await universitySelectMenuMessageBuilder(
+      client,
+      interaction
+    );
+    let oldMessageEmbed = universitySelectMenuMessage[0];
+    let universitySelectMenu = universitySelectMenuMessage[1];
+    let universityNameNotListedButton = universitySelectMenuMessage[2];
+
+    universitySelectMenu.components[0].setDisabled(true);
+    universityNameNotListedButton.components[0].setDisabled(true);
+
+    await interaction.message.edit({
+      embeds: [oldMessageEmbed],
+      components: [universitySelectMenu, universityNameNotListedButton],
+    });
+
     let customId = interaction.values[0];
     await universityRegister(client, interaction, customId);
   }
@@ -257,19 +298,33 @@ module.exports = async (client, interaction) => {
       );
 
       let universityInfo = getDatabaseFromSchoolName(universityNameInput);
+
+      let textInputRetryButton = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel("再度検索ワードを試す")
+          .setCustomId("universityNameNotListed")
+          .setStyle(ButtonStyle.Secondary)
+      );
+      let selectMenuRetryButton = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel("プルダウンリストからやり直す")
+          .setCustomId("guildJoinContinue")
+          .setStyle(ButtonStyle.Secondary)
+      );
+
       if (universityInfo.length == 0) {
         // 大学名が見つからなかった場合
         return interaction.reply({
           content:
             "❌　大学名が見つかりませんでした。検索キーワードを変えてもう一度お試しください。",
-          ephemeral: true,
+          components: [textInputRetryButton],
         });
       }
       if (universityInfo[0].used == true) {
         // 既に登録済みの大学名が入力された場合
         return interaction.reply({
           content: `❌　「${universityInfo[0].schoolName}」はすでにプルダウンリストに登録されています。そちらからお選びください。`,
-          ephemeral: true,
+          components: [selectMenuRetryButton],
         });
       }
 
