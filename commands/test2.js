@@ -7,6 +7,7 @@ const {
   ComponentType,
   ButtonBuilder,
   ButtonStyle,
+  StringSelectMenuOptionBuilder,
 } = require("discord.js");
 
 module.exports = {
@@ -14,33 +15,25 @@ module.exports = {
   description: "test2",
   run: async (client, interaction) => {
     try {
-      const select = new ActionRowBuilder().addComponents(
+      const selectMenu = new ActionRowBuilder().addComponents(
         new StringSelectMenuBuilder()
-          .setCustomId("select")
-          .setPlaceholder(`Select a match to tip on.`)
-          .addOptions([{ label: `select me`, value: `testValue` }])
+          .setCustomId("testSelectMenu")
+          .setPlaceholder("選べ")
+          .addOptions(
+            new StringSelectMenuOptionBuilder()
+              .setLabel("せんたくし１")
+              .setValue("option1")
+          )
       );
-      await interaction.reply({
-        content: "Please make a selection",
-        components: [select],
-        ephemeral: true,
-      });
-
-      const collectedSelect = await interaction.channel?.awaitMessageComponent({
-        componentType: ComponentType.StringSelect,
-      });
-      console.log(collectedSelect.values[0]);
-
       const button = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId(`button`)
           .setLabel("push me")
           .setStyle(ButtonStyle.Primary)
       );
-      await collectedSelect.update({
+      await interaction.reply({
         content: "Thanks for making a selection. Now, please push the button.",
-        components: [button],
-        ephemeral: true,
+        components: [selectMenu, button],
       });
 
       const collectedButton = await interaction.channel?.awaitMessageComponent({
@@ -48,10 +41,13 @@ module.exports = {
       });
       console.log(collectedButton.customId);
 
+      // edit button
+      selectMenu.components[0].setDisabled(true);
+      button.components[0].setDisabled(true);
+
       return collectedButton.update({
         content: "Thanks for pushing the button.",
-        components: [],
-        ephemeral: true,
+        components: [selectMenu, button],
       });
     } catch (err) {
       Sentry.captureException(err);
