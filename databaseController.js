@@ -33,19 +33,26 @@ function getDatabaseFromSchoolID(schoolID, onlyUsed) {
 function setUsedStatus(schoolID, setTo) {
   let data = getDatabaseFromSchoolID();
 
+  let error = false;
   data.forEach((key) => {
     if (schoolID) {
       if (key.schoolID == schoolID) {
         key.used = setTo;
       }
     } else {
-      key.used = setTo;
+      console.error(
+        "[DatabaseController setUsedStatus Error]: 必ず学校IDを指定してください！"
+      );
+      error = true;
     }
   });
 
-  fs.writeFileSync("./universityList.json", JSON.stringify(data));
-
-  return data;
+  if (!error) {
+    fs.writeFileSync("./universityList.json", JSON.stringify(data));
+    return data;
+  } else {
+    return null;
+  }
 }
 
 module.exports["getDatabaseFromSchoolName"] = getDatabaseFromSchoolName;
