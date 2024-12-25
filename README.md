@@ -4,7 +4,7 @@
 # TODO
 - [ ] 入室ガイドの仕組み
 - [ ] スレッドへの自動参加の仕組み
-- [ ] アナウンスチャンネルのAutoPublishの仕組み
+- [x] アナウンスチャンネルのAutoPublishの仕組み
 - [x] Sentry を使う
 
 # Server jon flow
