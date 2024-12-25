@@ -2,7 +2,12 @@
 require("../instrument");
 const Sentry = require("@sentry/node");
 
-const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const {
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  ChannelType,
+} = require("discord.js");
 require("dotenv").config();
 
 module.exports = async (client, message) => {
@@ -24,9 +29,9 @@ module.exports = async (client, message) => {
     }
   }
 
-  //メッセージ展開
   const activeGuildID = process.env.activeGuildID;
   if (activeGuildID == message.guild.id) {
+    //メッセージ展開
     const MESSAGE_URL_REGEX =
       /https?:\/\/discord\.com\/channels\/(\d+)\/(\d+)\/(\d+)/g;
     const matches = MESSAGE_URL_REGEX.exec(message.content);
@@ -68,6 +73,37 @@ module.exports = async (client, message) => {
         }
       } catch (err) {
         Sentry.captureException(err);
+      }
+    }
+
+    // アナウンスチャンネルのAutoPublish
+    if (message.channel.type === ChannelType.GuildAnnouncement) {
+      // メッセージを「公開」にする
+      if (message.crosspostable) {
+        message
+          .crosspost()
+          .then(() => {
+            message.react("✅");
+
+            setTimeout(async () => {
+              let botReactions = message.reactions.cache.filter((reaction) =>
+                reaction.users.cache.has(client.user.id)
+              );
+
+              try {
+                for (let reaction of botReactions.values()) {
+                  await reaction.users.remove(client.user.id)
+                }
+              } catch (err) {
+                Sentry.captureException(err);
+              }
+            }, 5000);
+          }) //メッセージを公開できたらリアクションをする
+          .catch((err) => {
+            Sentry.captureException(err);
+          });
+      } else {
+        message.react("❌"); //Botに権限がない場合
       }
     }
   }
