@@ -235,7 +235,9 @@ module.exports = async (client, interaction) => {
       universitySelectMenu.components[0].setDisabled(true);
       universityNameNotListedButton.components[0].setDisabled(true);
 
-      await interaction.message.edit({
+      const channel = await interaction.user.createDM();
+      const message = await channel.messages.fetch(interaction.message.id);
+      await message.edit({
         embeds: [oldMessageEmbed],
         components: [universitySelectMenu, universityNameNotListedButton],
       });
@@ -298,32 +300,33 @@ module.exports = async (client, interaction) => {
 
       let universityInfo = getDatabaseFromSchoolName(universityNameInput);
 
-      let textInputRetryButton = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("再度検索ワードを試す")
-          .setCustomId("universityNameNotListed")
-          .setStyle(ButtonStyle.Secondary)
-      );
-      let selectMenuRetryButton = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel("プルダウンリストからやり直す")
-          .setCustomId("guildJoinContinue")
-          .setStyle(ButtonStyle.Secondary)
-      );
-
       if (universityInfo.length == 0) {
         // 大学名が見つからなかった場合
+        let universitySelectMenuMessage =
+          await universitySelectMenuMessageBuilder(client, interaction);
+
         return interaction.reply({
           content:
             "❌　大学名が見つかりませんでした。検索キーワードを変えてもう一度お試しください。",
-          components: [textInputRetryButton],
+          embeds: [universitySelectMenuMessage[0]],
+          components: [
+            universitySelectMenuMessage[1],
+            universitySelectMenuMessage[2],
+          ],
         });
       }
       if (universityInfo[0].used == true) {
         // 既に登録済みの大学名が入力された場合
+        let universitySelectMenuMessage =
+          await universitySelectMenuMessageBuilder(client, interaction);
+
         return interaction.reply({
           content: `❌　「${universityInfo[0].schoolName}」はすでにプルダウンリストに登録されています。そちらからお選びください。`,
-          components: [selectMenuRetryButton],
+          embeds: [universitySelectMenuMessage[0]],
+          components: [
+            universitySelectMenuMessage[1],
+            universitySelectMenuMessage[2],
+          ],
         });
       }
 
