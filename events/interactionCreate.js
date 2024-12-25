@@ -13,6 +13,7 @@ const {
   ModalBuilder,
   TextInputBuilder,
   TextInputStyle,
+  ComponentType,
 } = require("discord.js");
 const fs = require("fs");
 const {
@@ -180,16 +181,15 @@ module.exports = async (client, interaction) => {
           .setValue(`universityNameCorrect-${university.schoolID}`);
         selectMenuOptions.push(selectMenuOption);
       }
-      let universitySelectMenu = new StringSelectMenuBuilder()
-        .setCustomId("universitySelectMenu")
-        .setPlaceholder("大学名を選んでください")
-        .addOptions(selectMenuOptions);
-      let universitySelectComponents = new ActionRowBuilder().addComponents(
-        universitySelectMenu
+      let universitySelectMenu = new ActionRowBuilder().addComponents(
+        new StringSelectMenuBuilder()
+          .setCustomId("universitySelectMenu")
+          .setPlaceholder("大学名を選んでください")
+          .addOptions(selectMenuOptions)
       );
 
       // TODO: 大学名選択後に「この中にない」ボタンが使える問題を修正。test2コマンドを参照
-      let universityNameNotListed = new ActionRowBuilder().addComponents(
+      let universityNameNotListedButton = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setLabel("この中にはない")
           .setCustomId("universityNameNotListed")
@@ -197,7 +197,7 @@ module.exports = async (client, interaction) => {
       );
       await interaction.reply({
         embeds: [embed],
-        components: [universitySelectComponents, universityNameNotListed],
+        components: [universitySelectMenu, universityNameNotListedButton],
       });
     } else if (buttonId == "universityNameNotListed") {
       // 大学名入力モーダルを表示
