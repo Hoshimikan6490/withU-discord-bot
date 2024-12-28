@@ -20,6 +20,7 @@ const {
   getDatabaseFromSchoolName,
   setUsedStatus,
 } = require("../databaseController");
+const { joinedMemberGuide } = require("./guildMemberAdd");
 require("dotenv").config();
 
 async function sendJoinProcessLog(client, type, howToSet, userId) {
@@ -110,7 +111,7 @@ async function universityRegister(client, interaction, customId) {
   let embed = new EmbedBuilder()
     .setTitle("ご協力ありがとうございます！")
     .setDescription(
-      "続いて、お名前の登録をお願い致します。これが完了しますと、入室手続きは完了となります。"
+      `あなたの所属大学名を__**${universityName}**__に設定しました！\n\n続いて、お名前の登録をお願い致します。これが完了しますと、入室手続きは完了となります。`
     )
     .setFooter({
       text: "なお、不正な情報を登録した場合、処罰の対象になる場合もあります。",
@@ -208,6 +209,19 @@ module.exports = async (client, interaction) => {
           universitySelectMenuMessage[2],
         ],
       });
+
+      ////////////////////////////////////////////////
+      let [guildJoinContinue, embed1, embed2, embed3] =
+        await joinedMemberGuide();
+
+      guildJoinContinue.components[0].setDisabled(true);
+
+      const channel = await interaction.user.createDM();
+      const message = await channel.messages.fetch(interaction.message.id);
+      await message.edit({
+        embeds: [embed1, embed2, embed3],
+        components: [guildJoinContinue],
+      });
     } else if (buttonId == "universityNameNotListed") {
       // 大学名入力モーダルを表示
       let modal = new ModalBuilder()
@@ -246,6 +260,18 @@ module.exports = async (client, interaction) => {
       let customId = interaction.customId;
 
       await universityRegister(client, interaction, customId);
+    } else if (buttonId == "universityNotSelect") {
+      let universitySelectMenuMessage =
+        await universitySelectMenuMessageBuilder(client, interaction);
+
+      await interaction.reply({
+        content: "❌　大学登録をキャンセルしました。再度お試しください。",
+        embeds: [universitySelectMenuMessage[0]],
+        components: [
+          universitySelectMenuMessage[1],
+          universitySelectMenuMessage[2],
+        ],
+      });
     } else if (buttonId == "nameRegisterContinue") {
       // 名前登録のモーダル表示
       let modal = new ModalBuilder()
@@ -337,7 +363,7 @@ module.exports = async (client, interaction) => {
           .setStyle(ButtonStyle.Success),
         new ButtonBuilder()
           .setLabel("この大学で登録しない")
-          .setCustomId("universityNameNotListed")
+          .setCustomId("universityNotSelect")
           .setStyle(ButtonStyle.Secondary)
       );
 
