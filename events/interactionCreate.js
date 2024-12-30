@@ -86,6 +86,7 @@ async function universityRegister(client, interaction, customId) {
     if (!member.roles.cache.some((role) => role.name === universityName)) {
       member.roles.add(role);
     } else {
+      // TODO: 何らかの原因でここにたどり着くと、先に進めなくなる問題
       return interaction.editReply({
         content:
           "⚠️　既に大学選択処理は完了しています。\n次の名前登録へお進みください。",
@@ -95,7 +96,7 @@ async function universityRegister(client, interaction, customId) {
     Sentry.captureException(err);
     return interaction.editReply({
       content:
-        "❌　ロール追加時にエラーが発生しました。お手数ですが、以下のURLから管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+        "❌　ロール追加時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
     });
   }
 
@@ -143,6 +144,7 @@ async function universitySelectMenuMessageBuilder(client, interaction) {
   let usedUniversityList = await getDatabaseFromSchoolID("", true);
   let selectMenuOptions = [];
   for (let university of usedUniversityList) {
+    // TODO: 登録済み大学が25を超えた場合の処理を追加
     let selectMenuOption = new StringSelectMenuOptionBuilder()
       .setLabel(university.schoolName)
       .setValue(`universityNameCorrect-${university.schoolID}`);
@@ -391,7 +393,7 @@ module.exports = async (client, interaction) => {
         Sentry.captureException(err);
         return interaction.editReply({
           content:
-            "❌　お名前の登録時にエラーが発生しました。お手数ですが、以下のURLから管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+            "❌　お名前の登録時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
         });
       }
 
