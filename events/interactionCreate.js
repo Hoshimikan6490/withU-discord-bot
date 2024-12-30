@@ -67,6 +67,15 @@ async function universityRegister(client, interaction, customId) {
   // データベース更新
   await setUsedStatus(universityID, true);
 
+  // エラー処理のために、次の処理への案内用のボタンをここで定義
+  let nameRegisterContinue = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setCustomId("nameRegisterContinue")
+      .setLabel("続ける")
+      .setEmoji("➡️")
+      .setStyle(ButtonStyle.Success)
+  );
+
   // ロール追加
   try {
     let guild = await client.guilds.cache.get(process.env.activeGuildID);
@@ -86,10 +95,10 @@ async function universityRegister(client, interaction, customId) {
     if (!member.roles.cache.some((role) => role.name === universityName)) {
       member.roles.add(role);
     } else {
-      // TODO: 何らかの原因でここにたどり着くと、先に進めなくなる問題
       return interaction.editReply({
         content:
           "⚠️　既に大学選択処理は完了しています。\n次の名前登録へお進みください。",
+        components: [nameRegisterContinue],
       });
     }
   } catch (err) {
@@ -117,14 +126,6 @@ async function universityRegister(client, interaction, customId) {
     .setFooter({
       text: "なお、不正な情報を登録した場合、処罰の対象になる場合もあります。",
     });
-
-  let nameRegisterContinue = new ActionRowBuilder().addComponents(
-    new ButtonBuilder()
-      .setCustomId("nameRegisterContinue")
-      .setLabel("続ける")
-      .setEmoji("➡️")
-      .setStyle(ButtonStyle.Success)
-  );
 
   await interaction.editReply({
     embeds: [embed],
