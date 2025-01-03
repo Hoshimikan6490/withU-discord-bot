@@ -13,6 +13,7 @@ const {
   ModalBuilder,
   TextInputBuilder,
   TextInputStyle,
+  MessageFlags,
 } = require("discord.js");
 const fs = require("fs");
 const {
@@ -175,7 +176,7 @@ module.exports = async (client, interaction) => {
       return interaction?.reply({
         content:
           "❌ このBOTはサーバー内でのみ動作します。\nお手数をおかけしますが、サーバー内でご利用ください。",
-        ephemeral: true,
+        flags: MessageFlags.Ephemeral,
       });
     }
 
@@ -190,7 +191,7 @@ module.exports = async (client, interaction) => {
             Sentry.captureException(err);
             return interaction?.reply({
               content: `❌ 何らかのエラーが発生しました。`,
-              ephemeral: true,
+              flags: MessageFlags.Ephemeral,
             });
           }
         }
