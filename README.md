@@ -3,7 +3,8 @@
 
 # TODO
 - [x] 入室ガイドの仕組み
-- [ ] スレッドへの自動参加の仕組み
+- [x] スレッドへの自動参加の仕組み
+- [ ] スレッドのkeep aliveの仕組み
 - [x] アナウンスチャンネルのAutoPublishの仕組み
 - [x] Sentry を使う
 
@@ -31,6 +32,8 @@ bot_token=YOUR_DISCORD_BOT_TOKEN_HERE
 activeGuildID=0123456789
 # BOTの管理者のDiscordユーザーID
 botOwnerID=0123456789
+# memberロールのID
+memberRoleID=0123456789
 # コンソール用のテキストチャットのチャンネルID
 consoleChannelID=0123456789
 # 参加ログ関連のログチャンネルのチャンネルID
