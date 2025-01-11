@@ -6,12 +6,23 @@ const {
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
+  MessageFlags,
 } = require("discord.js");
+require("dotenv").config();
 
 module.exports = {
-  name: "test",
-  description: "this is test.",
+  name: "debug",
+  description:
+    "入室システムのテスト用のコマンドです。BOTの管理者以外は実行する事が出来ません。",
   run: async (client, interaction) => {
+    // BOTの管理者以外は実行する事が出来ないようにする
+    if (interaction.user.id !== process.env.botOwnerID) {
+      return interaction.reply({
+        content: "このコマンドはBOTの管理者のみ実行可能です。",
+        flags: MessageFlags.Ephemeral,
+      });
+    }
+
     try {
       let joinedMember = await client.users.fetch(interaction.user.id);
       // 処罰後の連絡先を決める！
@@ -43,6 +54,11 @@ module.exports = {
       (await joinedMember).send({
         embeds: [embed1, embed2, embed3],
         components: [guildJoinContinue],
+      });
+
+      return interaction.reply({
+        content: "DMにルール説明を送信しました。",
+        flags: MessageFlags.Ephemeral,
       });
     } catch (err) {
       Sentry.captureException(err);
