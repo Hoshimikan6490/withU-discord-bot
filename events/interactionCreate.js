@@ -198,7 +198,7 @@ module.exports = async (client, interaction) => {
             .setCustomId("showUniversityNameInputModal")
             .setLabel("大学名を登録する")
             .setStyle(ButtonStyle.Success)
-          // 組織名も登録できるようにする
+          // TODO: 組織名も登録できるようにする
         );
 
       await interaction.reply({
@@ -327,7 +327,7 @@ module.exports = async (client, interaction) => {
                 .setLabel("大学名を登録する")
                 .setStyle(ButtonStyle.Success)
                 .setDisabled(true)
-              // 組織名も登録できるようにする
+              // TODO: 組織名も登録できるようにする
             );
 
           const channel = await interaction.user.createDM();
