@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 # 作業ディレクトリを設定
 WORKDIR /home/discord-bot
