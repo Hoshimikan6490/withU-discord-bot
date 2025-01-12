@@ -7,12 +7,11 @@ module.exports = {
   description: "BotのPingを測定します。",
   run: async (client, interaction) => {
     try {
-      let sent = await interaction.reply({
+      await interaction.reply({
         content: "🔄️　計測中…",
-        fetchReply: true,
       });
 
-      interaction.editReply(
+      return interaction.editReply(
         `# Ping計測結果
         - WebsocketのPing: \`${Math.abs(client.ws.ping)}ms\`.
         - APIのLatency: \`${
