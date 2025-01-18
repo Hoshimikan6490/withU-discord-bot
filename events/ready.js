@@ -29,12 +29,10 @@ module.exports = async (client) => {
 
   console.log(`${client.user.username}への接続に成功しました。`);
 
-  let osType = os.version();
-
   setInterval(() => {
     client.user.setActivity(
       `Ping値は、${client.ws.ping}ms｜${
-        osType.includes("windows") ? "本番環境" : "開発環境"
+        os.type().includes("Windows") ? "開発環境" : "本番環境"
       }で起動中です`,
       { type: ActivityType.Listening }
     );
@@ -43,6 +41,8 @@ module.exports = async (client) => {
   client.channels.cache
     .get(consoleChannelID)
     .send(
-      `${osType.includes("windows") ? "本番環境" : "開発環境"}で起動しました！`
+      `${
+        os.type().includes("Windows") ? "開発環境" : "本番環境"
+      }で起動しました！`
     );
 };
