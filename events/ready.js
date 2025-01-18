@@ -6,6 +6,7 @@ const { ActivityType } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v10");
 require("dotenv").config();
+const os = require("node:os");
 
 const token = process.env.bot_token;
 const consoleChannelID = process.env.consoleChannelID;
@@ -28,12 +29,20 @@ module.exports = async (client) => {
 
   console.log(`${client.user.username}への接続に成功しました。`);
 
+  let osType = os.version();
+
   setInterval(() => {
     client.user.setActivity(
-      `Ping値は、${client.ws.ping}ms｜localhostで起動中です`,
+      `Ping値は、${client.ws.ping}ms｜${
+        osType.includes("windows") ? "本番環境" : "開発環境"
+      }で起動中です`,
       { type: ActivityType.Listening }
     );
   }, 10000);
 
-  client.channels.cache.get(consoleChannelID).send("起動しました！");
+  client.channels.cache
+    .get(consoleChannelID)
+    .send(
+      `${osType.includes("windows") ? "本番環境" : "開発環境"}で起動しました！`
+    );
 };
