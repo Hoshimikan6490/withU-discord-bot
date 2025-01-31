@@ -7,13 +7,17 @@ const {
   ButtonStyle,
   EmbedBuilder,
   MessageFlags,
+  SlashCommandBuilder,
 } = require("discord.js");
 require("dotenv").config();
 
 module.exports = {
-  name: "debug",
-  description:
-    "入室システムのテスト用のコマンドです。BOTの管理者以外は実行する事が出来ません。",
+  command: new SlashCommandBuilder()
+    .setName("debug")
+    .setDescription(
+      "入室システムのテスト用のコマンドです。BOTの管理者以外は実行する事が出来ません。"
+    ),
+
   run: async (client, interaction) => {
     // BOTの管理者以外は実行する事が出来ないようにする
     if (interaction.user.id !== process.env.botOwnerID) {

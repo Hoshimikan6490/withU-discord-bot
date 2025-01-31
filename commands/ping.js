@@ -1,10 +1,13 @@
 // for using sentry
 require("../instrument");
 const Sentry = require("@sentry/node");
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
-  name: "ping",
-  description: "BotのPingを測定します。",
+  command: new SlashCommandBuilder()
+    .setName("ping")
+    .setDescription("BotのPingを測定します。"),
+
   run: async (client, interaction) => {
     try {
       await interaction.reply({

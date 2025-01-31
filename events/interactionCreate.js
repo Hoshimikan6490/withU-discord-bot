@@ -12,6 +12,7 @@ const {
   TextInputBuilder,
   TextInputStyle,
   MessageFlags,
+  ApplicationCommandType,
 } = require("discord.js");
 const fs = require("fs");
 const {
@@ -169,7 +170,17 @@ module.exports = async (client, interaction) => {
       if (err) throw err;
       files.forEach(async (f) => {
         let props = require(`../commands/${f}`);
-        if (interaction.commandName == props.name) {
+        let propsJson = props.command.toJSON();
+
+        // commandsフォルダ内のファイルで特にタイプの指定が無ければ、スラッシュコマンドとして指定する。
+        if (propsJson.type == undefined) {
+          propsJson.type = ApplicationCommandType.ChatInput;
+        }
+
+        if (
+          interaction.commandName == propsJson.name &&
+          interaction.commandType == propsJson.type
+        ) {
           try {
             return props.run(client, interaction);
           } catch (err) {
