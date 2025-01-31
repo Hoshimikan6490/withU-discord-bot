@@ -61,7 +61,7 @@ module.exports = {
       });
 
       return interaction.reply({
-        content: "DMにルール説明を送信しました。",
+        content: "DMに入室時の説明を送信しました。",
         flags: MessageFlags.Ephemeral,
       });
     } catch (err) {
