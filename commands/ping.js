@@ -10,7 +10,7 @@ module.exports = {
 
   run: async (client, interaction) => {
     try {
-      await interaction.reply({
+      let sent = await interaction.reply({
         content: "🔄️　計測中…",
       });
 
