@@ -37,7 +37,9 @@ memberRoleID=0123456789
 # コンソール用のテキストチャットのチャンネルID
 consoleChannelID=0123456789
 # 参加ログ関連のログチャンネルのチャンネルID
-memberLogChannel=0123456789
+memberLogChannelID=0123456789
+# 自己紹介チャンネルのチャンネルID
+selfIntroductionChannelID=0123456789
 
 # このアプリの起動に使うポートを指定。何も書かないと8000番が使われる。
 PORT=8080
