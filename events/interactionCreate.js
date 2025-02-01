@@ -30,15 +30,15 @@ async function sendJoinProcessLog(client, type, howToSet, userId) {
   let member = await guild.members.fetch(userId);
 
   if (type == "universityRegisterFinished") {
-    embedTitle = `${member.user.globalName}さん(\`${userId}\`)が大学選択を完了しました！`;
+    embedTitle = "大学選択を完了しました。";
   } else if (type == "userNameRegisterFinished") {
-    embedTitle = `${member.user.globalName}さん(\`${userId}\`)が名前登録を完了しました！`;
+    embedTitle = "名前登録が完了しました。";
   }
 
   if (type == "universityRegisterFinished") {
-    embedDescription = `大学名に「${howToSet}」が設定されました。`;
+    embedDescription = `<@${userId}> さんの大学名を「${howToSet}」に設定しました。`;
   } else if (type == "userNameRegisterFinished") {
-    embedDescription = `名前を「${howToSet}」に設定されました。`;
+    embedDescription = `<@${userId}> さんのニックネームを「${howToSet}」に設定しました。`;
   }
 
   if (type == "universityRegisterFinished") {
@@ -271,7 +271,7 @@ module.exports = async (client, interaction) => {
         .setTitle("自己紹介をご入力ください。");
       let nameInput = new TextInputBuilder()
         .setCustomId("userName")
-        .setLabel("本名(フルネーム)を入力してください。")
+        .setLabel("本名(フルネーム)を空白無しで、入力してください。")
         .setPlaceholder("架空野太郎")
         .setStyle(TextInputStyle.Short)
         .setRequired(true);
@@ -396,19 +396,50 @@ module.exports = async (client, interaction) => {
         let universityInfo = getDatabaseFromSchoolID(universityID);
         let universityName = universityInfo[0].schoolName;
 
+        // 自己紹介埋め込み色の設定
+        var letters = "0123456789ABCDEF";
+        var color = "0x";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+
         // 自己紹介文の送信
         let embed = new EmbedBuilder()
           .setTitle(`${userName}さんの自己紹介`)
           .setDescription(
-            `- 所属大学/組織名と学年/役職：\n\`\`\`\n${universityName} ${userGrade}\n\`\`\`\n- 所属サークル：\n\`\`\`\n${userClub}\n\`\`\`\n- 一言：\n\`\`\`\n${userShortMessage}\n\`\`\`\n`
-          );
+            `- 所属大学/組織名：\n\`\`\`\n${universityName}\n\`\`\`\n- 学年/役職：\n\`\`\`\n${userGrade}\n\`\`\`\n- 所属サークル：\n\`\`\`\n${userClub}\n\`\`\`\n- 一言：\n\`\`\`\n${userShortMessage}\n\`\`\`\n`
+          )
+          .setColor(Number(color))
+          .setThumbnail(member.displayAvatarURL());
         client.channels.cache.get(process.env.selfIntroductionChannelID).send({
+          content: `<@${interaction.user.id}>`,
           embeds: [embed],
         });
 
-        // TODO: メンバーロールを付与
+        // メンバーロールを付与
+        await member.roles.add(process.env.memberRoleID);
 
-        // TODO: 完了した旨をDMに送信
+        // TODO: 自己紹介入力フォームを開くボタンをdisableにする
+
+        // 完了した旨をDMに送信
+        let finishedEmbed = new EmbedBuilder()
+          .setTitle("入室手続きが完了！")
+          .setDescription(
+            "入室手続きが完了しました。サーバー内の各チャンネルの使い方は、チャンネルトピックを参考にしながらご利用ください。ご不明な点等がございましたら、雑談チャンネルや運営までお問い合わせください。"
+          )
+          .setColor(0xff0000)
+          .setTimestamp();
+        await interaction.editReply({
+          embeds: [finishedEmbed],
+        });
+
+        // ログを残す
+        return sendJoinProcessLog(
+          client,
+          "userNameRegisterFinished",
+          userName,
+          interaction.user.id
+        );
       } catch (err) {
         Sentry.captureException(err);
         return interaction.editReply({
@@ -416,14 +447,6 @@ module.exports = async (client, interaction) => {
             "❌　お名前の登録時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
         });
       }
-
-      // ログを残す
-      await sendJoinProcessLog(
-        client,
-        "userNameRegisterFinished",
-        userName,
-        interaction.user.id
-      );
     }
   }
 };
