@@ -9,7 +9,7 @@ require("dotenv").config();
 const os = require("node:os");
 
 const token = process.env.bot_token;
-const consoleChannelID = process.env.consoleChannelID;
+const startupNotificationChannelID = process.env.startupNotificationChannelID;
 
 module.exports = async (client) => {
   const rest = new REST({ version: "10" }).setToken(token);
@@ -39,7 +39,7 @@ module.exports = async (client) => {
   }, 10000);
 
   client.channels.cache
-    .get(consoleChannelID)
+    .get(startupNotificationChannelID)
     .send(
       `${
         os.type().includes("Windows") ? "開発環境" : "本番環境"

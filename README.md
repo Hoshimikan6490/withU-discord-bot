@@ -34,9 +34,9 @@ activeGuildID=0123456789
 botOwnerID=0123456789
 # memberロールのID
 memberRoleID=0123456789
-# コンソール用のテキストチャットのチャンネルID
-consoleChannelID=0123456789
-# 参加ログ関連のログチャンネルのチャンネルID
+# 起動通知用のチャンネルID
+startupNotificationChannelID=0123456789
+# 入室手続きのログを表示するチャンネルID
 memberLogChannelID=0123456789
 # 自己紹介チャンネルのチャンネルID
 selfIntroductionChannelID=0123456789
