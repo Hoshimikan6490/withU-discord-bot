@@ -270,7 +270,7 @@ module.exports = async (client, interaction) => {
         });
 
       // 引き継ぐ大学IDを取得
-      let universityID = buttonId.substring(21);
+      let universityID = buttonId.substring(33);
 
       // 自己紹介登録のモーダル表示
       let modal = new ModalBuilder()
@@ -391,7 +391,7 @@ module.exports = async (client, interaction) => {
       let userShortMessage =
         interaction.fields.getTextInputValue("userShortMessage");
       // 引き継がれた大学IDを取得
-      let universityID = modalId.substring(14);
+      let universityID = modalId.substring(26);
 
       try {
         // ユーザー名の設定
@@ -422,7 +422,8 @@ module.exports = async (client, interaction) => {
           .setTitle(`${userName}さんの自己紹介`)
           .setDescription(description)
           .setColor(Number(color))
-          .setThumbnail(member.displayAvatarURL());
+          .setThumbnail(member.displayAvatarURL())
+          .setTimestamp();
         client.channels.cache.get(process.env.selfIntroductionChannelID).send({
           content: `<@${interaction.user.id}>`,
           embeds: [embed],
