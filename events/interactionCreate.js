@@ -403,6 +403,13 @@ module.exports = async (client, interaction) => {
         let universityInfo = getDatabaseFromSchoolID(universityID);
         let universityName = universityInfo[0].schoolName;
 
+        // 自己紹介説明欄の設定
+        let description = `- 所属大学/組織名：\n\`\`\`\n${universityName}\n\`\`\`\n- 学年/役職：\n\`\`\`\n${userGrade}\n\`\`\`\n`;
+        if (userClub) {
+          description += `- 所属サークル：\n\`\`\`\n${userClub}\n\`\`\`\n`;
+        }
+        description += `- 一言：\n\`\`\`\n${userShortMessage}\n\`\`\`\n`;
+
         // 自己紹介埋め込み色の設定
         var letters = "0123456789ABCDEF";
         var color = "0x";
@@ -413,9 +420,7 @@ module.exports = async (client, interaction) => {
         // 自己紹介文の送信
         let embed = new EmbedBuilder()
           .setTitle(`${userName}さんの自己紹介`)
-          .setDescription(
-            `- 所属大学/組織名：\n\`\`\`\n${universityName}\n\`\`\`\n- 学年/役職：\n\`\`\`\n${userGrade}\n\`\`\`\n- 所属サークル：\n\`\`\`\n${userClub}\n\`\`\`\n- 一言：\n\`\`\`\n${userShortMessage}\n\`\`\`\n`
-          )
+          .setDescription(description)
           .setColor(Number(color))
           .setThumbnail(member.displayAvatarURL());
         client.channels.cache.get(process.env.selfIntroductionChannelID).send({
