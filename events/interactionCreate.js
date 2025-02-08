@@ -31,19 +31,19 @@ async function sendJoinProcessLog(client, type, howToSet, userId) {
 
   if (type == "universityRegisterFinished") {
     embedTitle = "大学選択を完了しました。";
-  } else if (type == "userNameRegisterFinished") {
-    embedTitle = "名前登録が完了しました。";
+  } else if (type == "userSelfIntroductionRegisterFinished") {
+    embedTitle = "自己紹介登録が完了しました。";
   }
 
   if (type == "universityRegisterFinished") {
     embedDescription = `<@${userId}> さんの大学名を「${howToSet}」に設定しました。`;
-  } else if (type == "userNameRegisterFinished") {
+  } else if (type == "userSelfIntroductionRegisterFinished") {
     embedDescription = `<@${userId}> さんのニックネームを「${howToSet}」に設定しました。`;
   }
 
   if (type == "universityRegisterFinished") {
     embedColor = 0xffff00;
-  } else if (type == "userNameRegisterFinished") {
+  } else if (type == "userSelfIntroductionRegisterFinished") {
     embedColor = 0x00ff00;
   }
 
@@ -64,9 +64,9 @@ async function universityRegister(client, interaction, customId) {
   let universityName = universityInfo[0].schoolName;
 
   // エラー処理のために、次の処理への案内用のボタンをここで定義
-  let nameRegisterContinue = new ActionRowBuilder().addComponents(
+  let SelfIntroductionRegisterContinue = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
-      .setCustomId(`nameRegisterContinue_${universityID}`) //自己紹介送信のため、大学IDを引き継ぐ
+      .setCustomId(`SelfIntroductionRegisterContinue_${universityID}`) //自己紹介送信のため、大学IDを引き継ぐ
       .setLabel("続ける")
       .setEmoji("➡️")
       .setStyle(ButtonStyle.Success)
@@ -120,8 +120,8 @@ async function universityRegister(client, interaction, customId) {
     } else {
       return interaction.editReply({
         content:
-          "⚠️　既に大学選択処理は完了しています。\n次の名前登録へお進みください。",
-        components: [nameRegisterContinue],
+          "⚠️　既に大学選択処理は完了しています。\n次の自己紹介登録へお進みください。",
+        components: [SelfIntroductionRegisterContinue],
       });
     }
   } catch (err) {
@@ -152,7 +152,7 @@ async function universityRegister(client, interaction, customId) {
 
   await interaction.editReply({
     embeds: [embed],
-    components: [nameRegisterContinue],
+    components: [SelfIntroductionRegisterContinue],
   });
 }
 
@@ -261,9 +261,9 @@ module.exports = async (client, interaction) => {
       let customId = interaction.customId;
 
       await universityRegister(client, interaction, customId);
-    } else if (buttonId.includes("nameRegisterContinue")) {
+    } else if (buttonId.includes("SelfIntroductionRegisterContinue")) {
       // 大学名が引き継がれていない場合は、エラーを出す
-      if (buttonId == "nameRegisterContinue")
+      if (buttonId == "SelfIntroductionRegisterContinue")
         return interaction.reply({
           content:
             "❌　自己紹介フォームの準備処理中にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
@@ -272,9 +272,9 @@ module.exports = async (client, interaction) => {
       // 引き継ぐ大学IDを取得
       let universityID = buttonId.substring(21);
 
-      // 名前登録のモーダル表示
+      // 自己紹介登録のモーダル表示
       let modal = new ModalBuilder()
-        .setCustomId(`userNameModal_${universityID}`)
+        .setCustomId(`userSelfIntroductionModal_${universityID}`)
         .setTitle("自己紹介をご入力ください。");
       let nameInput = new TextInputBuilder()
         .setCustomId("userName")
@@ -382,7 +382,7 @@ module.exports = async (client, interaction) => {
           });
         }
       }
-    } else if (modalId.includes("userNameModal")) {
+    } else if (modalId.includes("userSelfIntroductionModal")) {
       await interaction.deferReply();
       // 自己紹介モーダル送信後処理
       let userName = interaction.fields.getTextInputValue("userName");
@@ -431,7 +431,7 @@ module.exports = async (client, interaction) => {
         const message = await channel.messages.fetch(interaction.message.id);
         const newComponent = new ActionRowBuilder().addComponents(
           new ButtonBuilder()
-            .setCustomId(`nameRegisterContinue`)
+            .setCustomId(`SelfIntroductionRegisterContinue`)
             .setLabel("続ける")
             .setEmoji("➡️")
             .setStyle(ButtonStyle.Success)
@@ -441,7 +441,6 @@ module.exports = async (client, interaction) => {
           embeds: message.embeds,
           components: [newComponent],
         });
-        // TODO: ２つ目のフォームの内容が名前登録から自己紹介登録に変わったので、変数名修正
 
         // 完了した旨をDMに送信
         let finishedEmbed = new EmbedBuilder()
@@ -458,7 +457,7 @@ module.exports = async (client, interaction) => {
         // ログを残す
         return sendJoinProcessLog(
           client,
-          "userNameRegisterFinished",
+          "userSelfIntroductionRegisterFinished",
           userName,
           interaction.user.id
         );
@@ -466,7 +465,7 @@ module.exports = async (client, interaction) => {
         Sentry.captureException(err);
         return interaction.editReply({
           content:
-            "❌　お名前の登録時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+            "❌　自己紹介の登録時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
         });
       }
     }
