@@ -419,7 +419,22 @@ module.exports = async (client, interaction) => {
         // メンバーロールを付与
         await member.roles.add(process.env.memberRoleID);
 
-        // TODO: 自己紹介入力フォームを開くボタンをdisableにする
+        // 自己紹介入力フォームを開くボタンをdisableにして、次の処理への誘導表示
+        const channel = await interaction.user.createDM();
+        const message = await channel.messages.fetch(interaction.message.id);
+        const newComponent = new ActionRowBuilder().addComponents(
+          new ButtonBuilder()
+            .setCustomId(`nameRegisterContinue`)
+            .setLabel("続ける")
+            .setEmoji("➡️")
+            .setStyle(ButtonStyle.Success)
+            .setDisabled(true)
+        );
+        await message.edit({
+          embeds: message.embeds,
+          components: [newComponent],
+        });
+        // TODO: ２つ目のフォームの内容が名前登録から自己紹介登録に変わったので、変数名修正
 
         // 完了した旨をDMに送信
         let finishedEmbed = new EmbedBuilder()
