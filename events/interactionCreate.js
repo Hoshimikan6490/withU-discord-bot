@@ -262,6 +262,13 @@ module.exports = async (client, interaction) => {
 
       await universityRegister(client, interaction, customId);
     } else if (buttonId.includes("nameRegisterContinue")) {
+      // 大学名が引き継がれていない場合は、エラーを出す
+      if (buttonId == "nameRegisterContinue")
+        return interaction.reply({
+          content:
+            "❌　自己紹介フォームの準備処理中にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+        });
+
       // 引き継ぐ大学IDを取得
       let universityID = buttonId.substring(21);
 
