@@ -19,7 +19,7 @@ const {
   getDatabaseFromSchoolID,
   getDatabaseFromSchoolName,
 } = require("../databaseController");
-const { joinedMemberGuide } = require("./guildMemberAdd");
+const { joinedMemberGuide } = require("../joinedMemberGuide");
 require("dotenv").config();
 
 async function sendJoinProcessLog(client, type, howToSet, userId) {
