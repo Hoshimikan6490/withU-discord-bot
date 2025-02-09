@@ -4,7 +4,7 @@
 # TODO
 - [x] 入室ガイドの仕組み
 - [x] スレッドへの自動参加の仕組み
-- [ ] スレッドのkeep aliveの仕組み
+- [x] スレッドのkeep aliveの仕組み
 - [x] アナウンスチャンネルのAutoPublishの仕組み
 - [x] Sentry を使う
 
