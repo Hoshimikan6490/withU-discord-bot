@@ -10,6 +10,7 @@ const {
 } = require("discord.js");
 require("dotenv").config();
 const os = require("node:os");
+const leaveFromUnknownServer = require("../leaveFromUnknownServer");
 
 const token = process.env.bot_token;
 const startupNotificationChannelID = process.env.startupNotificationChannelID;
@@ -87,4 +88,9 @@ module.exports = async (client) => {
   setInterval(threadKeepAlive, 6 * 60 * 60 * 1000);
   // とりあえず、1回実行
   threadKeepAlive();
+
+  // 許可されていないサーバーから退出する
+  client.guilds.cache.forEach(
+    async (guild) => await leaveFromUnknownServer(client, guild)
+  );
 };
