@@ -1,7 +1,7 @@
 // for using sentry
-require("../instrument");
+require("../lib/instrument");
 const Sentry = require("@sentry/node");
-const joinedMemberGuide = require("../joinedMemberGuide");
+const joinedMemberGuide = require("../lib/joinedMemberGuide");
 
 module.exports = async (client, member) => {
   try {

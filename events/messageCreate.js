@@ -1,5 +1,5 @@
 // for using sentry
-require("../instrument");
+require("../lib/instrument");
 const Sentry = require("@sentry/node");
 
 const {
@@ -92,7 +92,7 @@ module.exports = async (client, message) => {
 
               try {
                 for (let reaction of botReactions.values()) {
-                  await reaction.users.remove(client.user.id)
+                  await reaction.users.remove(client.user.id);
                 }
               } catch (err) {
                 Sentry.captureException(err);

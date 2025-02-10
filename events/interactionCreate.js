@@ -1,5 +1,5 @@
 // for using sentry
-require("../instrument");
+require("../lib/instrument");
 const Sentry = require("@sentry/node");
 
 const {
@@ -18,8 +18,8 @@ const fs = require("fs");
 const {
   getDatabaseFromSchoolID,
   getDatabaseFromSchoolName,
-} = require("../databaseController");
-const joinedMemberGuide = require("../joinedMemberGuide");
+} = require("../lib/databaseController");
+const joinedMemberGuide = require("../lib/joinedMemberGuide");
 require("dotenv").config();
 
 async function sendJoinProcessLog(client, type, howToSet, userId) {
@@ -166,7 +166,7 @@ module.exports = async (client, interaction) => {
       });
     }
 
-    fs.readdir("./commands", (err, files) => {
+    fs.readdir("../commands", (err, files) => {
       if (err) throw err;
       files.forEach(async (f) => {
         let props = require(`../commands/${f}`);

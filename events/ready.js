@@ -1,5 +1,5 @@
 // for using sentry
-require("../instrument");
+require("../lib/instrument");
 const Sentry = require("@sentry/node");
 
 const {
@@ -10,7 +10,7 @@ const {
 } = require("discord.js");
 require("dotenv").config();
 const os = require("node:os");
-const leaveFromUnknownServer = require("../leaveFromUnknownServer");
+const leaveFromUnknownServer = require("../lib/leaveFromUnknownServer");
 
 const token = process.env.bot_token;
 const startupNotificationChannelID = process.env.startupNotificationChannelID;

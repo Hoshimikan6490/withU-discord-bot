@@ -1,5 +1,5 @@
 // for using sentry
-require("../instrument");
+require("../lib/instrument");
 const Sentry = require("@sentry/node");
 const { SlashCommandBuilder } = require("discord.js");
 

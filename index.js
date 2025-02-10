@@ -1,5 +1,5 @@
 // for using sentry
-require("./instrument");
+require("./lib/instrument");
 
 const fs = require("fs");
 const { Client, GatewayIntentBits } = require("discord.js");
