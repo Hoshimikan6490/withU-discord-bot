@@ -77,10 +77,11 @@ module.exports = async (client) => {
           }
         }
       }
-    } catch (error) {
-      console.error(
+    } catch (err) {
+      Sentry.captureException(err);
+      console.err(
         "スレッドのアーカイブ時間を更新する際にエラーが発生しました:",
-        error
+        err
       );
     }
   }

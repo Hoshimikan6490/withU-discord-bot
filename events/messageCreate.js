@@ -29,15 +29,16 @@ module.exports = async (client, message) => {
     }
   }
 
-  const activeGuildID = process.env.activeGuildID;
-  if (activeGuildID == message.guild.id) {
-    //メッセージ展開
-    const MESSAGE_URL_REGEX =
-      /https?:\/\/discord\.com\/channels\/(\d+)\/(\d+)\/(\d+)/g;
-    const matches = MESSAGE_URL_REGEX.exec(message.content);
-    if (matches) {
-      const [url, guildId, channelId, messageId] = matches;
-      try {
+  try {
+    const activeGuildID = process.env.activeGuildID;
+    if (activeGuildID == message.guild.id) {
+      //メッセージ展開
+      const MESSAGE_URL_REGEX =
+        /https?:\/\/discord\.com\/channels\/(\d+)\/(\d+)\/(\d+)/g;
+      const matches = MESSAGE_URL_REGEX.exec(message.content);
+      if (matches) {
+        const [url, guildId, channelId, messageId] = matches;
+
         const channel = await client.channels.fetch(channelId);
         const fetchedMessage = await channel.messages.fetch(messageId);
 
@@ -71,40 +72,40 @@ module.exports = async (client, message) => {
         if (url == message.content) {
           message.delete().catch((err) => {});
         }
-      } catch (err) {
-        Sentry.captureException(err);
       }
-    }
 
-    // アナウンスチャンネルのAutoPublish
-    if (message.channel.type === ChannelType.GuildAnnouncement) {
-      // メッセージを「公開」にする
-      if (message.crosspostable) {
-        message
-          .crosspost()
-          .then(() => {
-            message.react("✅");
+      // アナウンスチャンネルのAutoPublish
+      if (message.channel.type === ChannelType.GuildAnnouncement) {
+        // メッセージを「公開」にする
+        if (message.crosspostable) {
+          message
+            .crosspost()
+            .then(() => {
+              message.react("✅");
 
-            setTimeout(async () => {
-              let botReactions = message.reactions.cache.filter((reaction) =>
-                reaction.users.cache.has(client.user.id)
-              );
+              setTimeout(async () => {
+                let botReactions = message.reactions.cache.filter((reaction) =>
+                  reaction.users.cache.has(client.user.id)
+                );
 
-              try {
-                for (let reaction of botReactions.values()) {
-                  await reaction.users.remove(client.user.id);
+                try {
+                  for (let reaction of botReactions.values()) {
+                    await reaction.users.remove(client.user.id);
+                  }
+                } catch (err) {
+                  Sentry.captureException(err);
                 }
-              } catch (err) {
-                Sentry.captureException(err);
-              }
-            }, 5000);
-          }) //メッセージを公開できたらリアクションをする
-          .catch((err) => {
-            Sentry.captureException(err);
-          });
-      } else {
-        message.react("❌"); //Botに権限がない場合
+              }, 5000);
+            }) //メッセージを公開できたらリアクションをする
+            .catch((err) => {
+              Sentry.captureException(err);
+            });
+        } else {
+          message.react("❌"); //Botに権限がない場合
+        }
       }
     }
+  } catch (err) {
+    Sentry.captureException(err);
   }
 };

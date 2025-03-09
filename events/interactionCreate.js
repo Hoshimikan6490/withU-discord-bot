@@ -167,7 +167,7 @@ module.exports = async (client, interaction) => {
     }
 
     fs.readdir("../commands", (err, files) => {
-      if (err) throw err;
+      if (err) Sentry.captureException(err);
       files.forEach(async (f) => {
         let props = require(`../commands/${f}`);
         let propsJson = props.command.toJSON();
@@ -196,284 +196,303 @@ module.exports = async (client, interaction) => {
   }
 
   if (interaction?.type == InteractionType.MessageComponent) {
-    // button 処理
-    let buttonId = interaction.customId;
-    if (buttonId == "guildJoinContinue") {
-      let embed = new EmbedBuilder().setTitle(
-        "下のボタンから大学名/組織名を設定してください"
-      );
-
-      let showUniversityNameInputModalButton =
-        new ActionRowBuilder().addComponents(
-          new ButtonBuilder()
-            .setCustomId("showUniversityNameInputModal")
-            .setLabel("大学名を登録する")
-            .setStyle(ButtonStyle.Success)
-          // TODO: 組織名も登録できるようにする
+    try {
+      // button 処理
+      let buttonId = interaction.customId;
+      if (buttonId == "guildJoinContinue") {
+        let embed = new EmbedBuilder().setTitle(
+          "下のボタンから大学名/組織名を設定してください"
         );
 
-      await interaction.reply({
-        embeds: [embed],
-        components: [showUniversityNameInputModalButton],
-      });
-      ////////////////////////////////////////////////
-      // 最初の「続ける」ボタンを無効化
-      let [guildJoinContinue, embed1, embed2, embed3] =
-        await joinedMemberGuide();
+        let showUniversityNameInputModalButton =
+          new ActionRowBuilder().addComponents(
+            new ButtonBuilder()
+              .setCustomId("showUniversityNameInputModal")
+              .setLabel("大学名を登録する")
+              .setStyle(ButtonStyle.Success)
+            // TODO: 組織名も登録できるようにする
+          );
 
-      guildJoinContinue.components[0].setDisabled(true);
-
-      const channel = await interaction.user.createDM();
-      const message = await channel.messages.fetch(interaction.message.id);
-      await message.edit({
-        embeds: [embed1, embed2, embed3],
-        components: [guildJoinContinue],
-      });
-    } else if (
-      buttonId
-        .toLocaleLowerCase()
-        .includes("showUniversityNameInputModal".toLocaleLowerCase())
-    ) {
-      // 大学名入力モーダルを表示
-      let retry;
-      if (buttonId == "reShowUniversityNameInputModal") {
-        retry = true;
-      } else {
-        retry = false;
-      }
-
-      let modal = new ModalBuilder()
-        .setCustomId(retry ? "reAskUniversityName" : "askUniversityName")
-        .setTitle("あなたが所属する大学名を入力してください。");
-      let textInput = new TextInputBuilder()
-        .setCustomId("universityNameInput")
-        .setLabel("正式名称またはその一部を入力してください。")
-        .setPlaceholder("例) 架空野大学")
-        .setStyle(TextInputStyle.Short)
-        .setRequired(true);
-
-      let actionRow = new ActionRowBuilder().addComponents(textInput);
-      modal.addComponents(actionRow);
-
-      await interaction.showModal(modal);
-    } else if (buttonId.includes(`universityNameCorrect`)) {
-      await interaction.deferReply();
-      let customId = interaction.customId;
-
-      await universityRegister(client, interaction, customId);
-    } else if (buttonId.includes("SelfIntroductionRegisterContinue")) {
-      // 大学名が引き継がれていない場合は、エラーを出す
-      if (buttonId == "SelfIntroductionRegisterContinue")
-        return interaction.reply({
-          content:
-            "❌　自己紹介フォームの準備処理中にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+        await interaction.reply({
+          embeds: [embed],
+          components: [showUniversityNameInputModalButton],
         });
+        ////////////////////////////////////////////////
+        // 最初の「続ける」ボタンを無効化
+        let [guildJoinContinue, embed1, embed2, embed3] =
+          await joinedMemberGuide();
 
-      // 引き継ぐ大学IDを取得
-      let universityID = buttonId.substring(33);
+        guildJoinContinue.components[0].setDisabled(true);
 
-      // 自己紹介登録のモーダル表示
-      let modal = new ModalBuilder()
-        .setCustomId(`userSelfIntroductionModal_${universityID}`)
-        .setTitle("自己紹介をご入力ください。");
-      let nameInput = new TextInputBuilder()
-        .setCustomId("userName")
-        .setLabel("本名(フルネーム)を空白無しで、入力してください。")
-        .setPlaceholder("架空野太郎")
-        .setStyle(TextInputStyle.Short)
-        .setRequired(true);
-      let gradeInput = new TextInputBuilder()
-        .setCustomId("userGrade")
-        .setLabel("大学生は現在の学年を、それ以外は役職を入力してください。")
-        .setPlaceholder("大学1年/専門学校1年/広報部など")
-        .setStyle(TextInputStyle.Short)
-        .setRequired(true);
-      let clubInput = new TextInputBuilder()
-        .setCustomId("userClub")
-        .setLabel(
-          "何か学校のサークルなどに所属してる場合はその名前を入力してください。"
-        )
-        .setPlaceholder("野球部/マンガ研究会など")
-        .setStyle(TextInputStyle.Short)
-        .setRequired(false);
-      let shortMessageInput = new TextInputBuilder()
-        .setCustomId("userShortMessage")
-        .setLabel("何か一言どうぞ！")
-        .setPlaceholder("以上の内容で書ききれなかった事や、ご挨拶などをどうぞ")
-        .setStyle(TextInputStyle.Paragraph)
-        .setRequired(true);
+        const channel = await interaction.user.createDM();
+        const message = await channel.messages.fetch(interaction.message.id);
+        await message.edit({
+          embeds: [embed1, embed2, embed3],
+          components: [guildJoinContinue],
+        });
+      } else if (
+        buttonId
+          .toLocaleLowerCase()
+          .includes("showUniversityNameInputModal".toLocaleLowerCase())
+      ) {
+        // 大学名入力モーダルを表示
+        let retry;
+        if (buttonId == "reShowUniversityNameInputModal") {
+          retry = true;
+        } else {
+          retry = false;
+        }
 
-      let actionRow1 = new ActionRowBuilder().addComponents(nameInput);
-      let actionRow2 = new ActionRowBuilder().addComponents(gradeInput);
-      let actionRow3 = new ActionRowBuilder().addComponents(clubInput);
-      let actionRow4 = new ActionRowBuilder().addComponents(shortMessageInput);
-      modal.addComponents(actionRow1, actionRow2, actionRow3, actionRow4);
+        let modal = new ModalBuilder()
+          .setCustomId(retry ? "reAskUniversityName" : "askUniversityName")
+          .setTitle("あなたが所属する大学名を入力してください。");
+        let textInput = new TextInputBuilder()
+          .setCustomId("universityNameInput")
+          .setLabel("正式名称またはその一部を入力してください。")
+          .setPlaceholder("例) 架空野大学")
+          .setStyle(TextInputStyle.Short)
+          .setRequired(true);
 
-      await interaction.showModal(modal);
-    } else if (buttonId == "cancel" || buttonId == "delete") {
-      // キャンセル処理
-      await interaction.message.delete();
+        let actionRow = new ActionRowBuilder().addComponents(textInput);
+        modal.addComponents(actionRow);
+
+        await interaction.showModal(modal);
+      } else if (buttonId.includes(`universityNameCorrect`)) {
+        await interaction.deferReply();
+        let customId = interaction.customId;
+
+        await universityRegister(client, interaction, customId);
+      } else if (buttonId.includes("SelfIntroductionRegisterContinue")) {
+        // 大学名が引き継がれていない場合は、エラーを出す
+        if (buttonId == "SelfIntroductionRegisterContinue")
+          return interaction.reply({
+            content:
+              "❌　自己紹介フォームの準備処理中にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
+          });
+
+        // 引き継ぐ大学IDを取得
+        let universityID = buttonId.substring(33);
+
+        // 自己紹介登録のモーダル表示
+        let modal = new ModalBuilder()
+          .setCustomId(`userSelfIntroductionModal_${universityID}`)
+          .setTitle("自己紹介をご入力ください。");
+        let nameInput = new TextInputBuilder()
+          .setCustomId("userName")
+          .setLabel("本名(フルネーム)を空白無しで、入力してください。")
+          .setPlaceholder("架空野太郎")
+          .setStyle(TextInputStyle.Short)
+          .setRequired(true);
+        let gradeInput = new TextInputBuilder()
+          .setCustomId("userGrade")
+          .setLabel("大学生は現在の学年を、それ以外は役職を入力してください。")
+          .setPlaceholder("大学1年/専門学校1年/広報部など")
+          .setStyle(TextInputStyle.Short)
+          .setRequired(true);
+        let clubInput = new TextInputBuilder()
+          .setCustomId("userClub")
+          .setLabel(
+            "何か学校のサークルなどに所属してる場合はその名前を入力してください。"
+          )
+          .setPlaceholder("野球部/マンガ研究会など")
+          .setStyle(TextInputStyle.Short)
+          .setRequired(false);
+        let shortMessageInput = new TextInputBuilder()
+          .setCustomId("userShortMessage")
+          .setLabel("何か一言どうぞ！")
+          .setPlaceholder(
+            "以上の内容で書ききれなかった事や、ご挨拶などをどうぞ"
+          )
+          .setStyle(TextInputStyle.Paragraph)
+          .setRequired(true);
+
+        let actionRow1 = new ActionRowBuilder().addComponents(nameInput);
+        let actionRow2 = new ActionRowBuilder().addComponents(gradeInput);
+        let actionRow3 = new ActionRowBuilder().addComponents(clubInput);
+        let actionRow4 = new ActionRowBuilder().addComponents(
+          shortMessageInput
+        );
+        modal.addComponents(actionRow1, actionRow2, actionRow3, actionRow4);
+
+        await interaction.showModal(modal);
+      } else if (buttonId == "cancel" || buttonId == "delete") {
+        // キャンセル処理
+        await interaction.message.delete();
+      }
+    } catch (err) {
+      Sentry.captureException(err);
     }
   }
 
   if (interaction?.type == InteractionType.ModalSubmit) {
-    let modalId = interaction.customId;
-    if (
-      modalId.toLowerCase().includes("askUniversityName".toLocaleLowerCase())
-    ) {
-      let universityNameInput = interaction.fields.getTextInputValue(
-        "universityNameInput"
-      );
-
-      let universityInfo = getDatabaseFromSchoolName(universityNameInput);
-
-      if (universityInfo.length == 0) {
-        await interaction.reply({
-          content: "❌　大学名が見つかりませんでした。もう一度お試しください。",
-          flags: MessageFlags.Ephemeral,
-        });
-      } else {
-        let universitySelectButton = new ActionRowBuilder().addComponents(
-          new ButtonBuilder()
-            .setLabel("この大学で登録する")
-            .setCustomId(`universityNameCorrect-${universityInfo[0].schoolID}`)
-            .setStyle(ButtonStyle.Success),
-          new ButtonBuilder()
-            .setLabel("この大学で登録しない")
-            .setCustomId("reShowUniversityNameInputModal")
-            .setStyle(ButtonStyle.Secondary)
+    try {
+      let modalId = interaction.customId;
+      if (
+        modalId.toLowerCase().includes("askUniversityName".toLocaleLowerCase())
+      ) {
+        let universityNameInput = interaction.fields.getTextInputValue(
+          "universityNameInput"
         );
 
-        let embed = new EmbedBuilder()
-          .setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
-          .setFooter({
-            text: "※正しい大学名が表示されない場合は、「この大学で登録しない」ボタンを押して再度キーワードを変更してお試しください。",
-          });
+        let universityInfo = getDatabaseFromSchoolName(universityNameInput);
 
-        await interaction.reply({
-          embeds: [embed],
-          components: [universitySelectButton],
-        });
-        ////////////////////////////////////////////////
-        // 大学名の質問モーダルの表示が２回目以降の場合は、前のメッセージを削除
-        // 最初の場合は、「大学名を登録する」ボタンを無効化
-        if (modalId == "reAskUniversityName") {
-          await interaction.message.delete();
+        if (universityInfo.length == 0) {
+          await interaction.reply({
+            content:
+              "❌　大学名が見つかりませんでした。もう一度お試しください。",
+            flags: MessageFlags.Ephemeral,
+          });
         } else {
-          let editMessageEmbed = new EmbedBuilder().setTitle(
-            "下のボタンから大学名/組織名を設定してください"
+          let universitySelectButton = new ActionRowBuilder().addComponents(
+            new ButtonBuilder()
+              .setLabel("この大学で登録する")
+              .setCustomId(
+                `universityNameCorrect-${universityInfo[0].schoolID}`
+              )
+              .setStyle(ButtonStyle.Success),
+            new ButtonBuilder()
+              .setLabel("この大学で登録しない")
+              .setCustomId("reShowUniversityNameInputModal")
+              .setStyle(ButtonStyle.Secondary)
           );
 
-          let showUniversityNameInputModalButton =
-            new ActionRowBuilder().addComponents(
-              new ButtonBuilder()
-                .setCustomId("showUniversityNameInputModal")
-                .setLabel("大学名を登録する")
-                .setStyle(ButtonStyle.Success)
-                .setDisabled(true)
-              // TODO: 組織名も登録できるようにする
+          let embed = new EmbedBuilder()
+            .setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
+            .setFooter({
+              text: "※正しい大学名が表示されない場合は、「この大学で登録しない」ボタンを押して再度キーワードを変更してお試しください。",
+            });
+
+          await interaction.reply({
+            embeds: [embed],
+            components: [universitySelectButton],
+          });
+          ////////////////////////////////////////////////
+          // 大学名の質問モーダルの表示が２回目以降の場合は、前のメッセージを削除
+          // 最初の場合は、「大学名を登録する」ボタンを無効化
+          if (modalId == "reAskUniversityName") {
+            await interaction.message.delete();
+          } else {
+            let editMessageEmbed = new EmbedBuilder().setTitle(
+              "下のボタンから大学名/組織名を設定してください"
             );
 
+            let showUniversityNameInputModalButton =
+              new ActionRowBuilder().addComponents(
+                new ButtonBuilder()
+                  .setCustomId("showUniversityNameInputModal")
+                  .setLabel("大学名を登録する")
+                  .setStyle(ButtonStyle.Success)
+                  .setDisabled(true)
+                // TODO: 組織名も登録できるようにする
+              );
+
+            const channel = await interaction.user.createDM();
+            const message = await channel.messages.fetch(
+              interaction.message.id
+            );
+            await message.edit({
+              embeds: [editMessageEmbed],
+              components: [showUniversityNameInputModalButton],
+            });
+          }
+        }
+      } else if (modalId.includes("userSelfIntroductionModal")) {
+        await interaction.deferReply();
+        // 自己紹介モーダル送信後処理
+        let userName = interaction.fields.getTextInputValue("userName");
+        let userGrade = interaction.fields.getTextInputValue("userGrade");
+        let userClub = interaction.fields.getTextInputValue("userClub");
+        let userShortMessage =
+          interaction.fields.getTextInputValue("userShortMessage");
+        // 引き継がれた大学IDを取得
+        let universityID = modalId.substring(26);
+
+        try {
+          // ユーザー名の設定
+          let guild = await client.guilds.cache.get(process.env.activeGuildID);
+          let member = await guild.members.fetch(interaction.user.id);
+          await member.setNickname(userName);
+
+          // 大学名を取得
+          let universityInfo = getDatabaseFromSchoolID(universityID);
+          let universityName = universityInfo[0].schoolName;
+
+          // 自己紹介説明欄の設定
+          let description = `- 所属大学/組織名：\n\`\`\`\n${universityName}\n\`\`\`\n- 学年/役職：\n\`\`\`\n${userGrade}\n\`\`\`\n`;
+          if (userClub) {
+            description += `- 所属サークル：\n\`\`\`\n${userClub}\n\`\`\`\n`;
+          }
+          description += `- 一言：\n\`\`\`\n${userShortMessage}\n\`\`\`\n`;
+
+          // 自己紹介埋め込み色の設定
+          var letters = "0123456789ABCDEF";
+          var color = "0x";
+          for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+
+          // 自己紹介文の送信
+          let embed = new EmbedBuilder()
+            .setTitle(`${userName}さんの自己紹介`)
+            .setDescription(description)
+            .setColor(Number(color))
+            .setThumbnail(member.displayAvatarURL())
+            .setTimestamp();
+          client.channels.cache
+            .get(process.env.selfIntroductionChannelID)
+            .send({
+              content: `<@${interaction.user.id}>`,
+              embeds: [embed],
+            });
+
+          // メンバーロールを付与
+          await member.roles.add(process.env.memberRoleID);
+
+          // 自己紹介入力フォームを開くボタンをdisableにして、次の処理への誘導表示
           const channel = await interaction.user.createDM();
           const message = await channel.messages.fetch(interaction.message.id);
+          const newComponent = new ActionRowBuilder().addComponents(
+            new ButtonBuilder()
+              .setCustomId(`SelfIntroductionRegisterContinue`)
+              .setLabel("続ける")
+              .setEmoji("➡️")
+              .setStyle(ButtonStyle.Success)
+              .setDisabled(true)
+          );
           await message.edit({
-            embeds: [editMessageEmbed],
-            components: [showUniversityNameInputModalButton],
+            embeds: message.embeds,
+            components: [newComponent],
+          });
+
+          // 完了した旨をDMに送信
+          let finishedEmbed = new EmbedBuilder()
+            .setTitle("入室手続きが完了！")
+            .setDescription(
+              "入室手続きが完了しました。サーバー内の各チャンネルの使い方は、チャンネルトピックを参考にしながらご利用ください。ご不明な点等がございましたら、雑談チャンネルや運営までお問い合わせください。"
+            )
+            .setColor(0xff0000)
+            .setTimestamp();
+          await interaction.editReply({
+            embeds: [finishedEmbed],
+          });
+
+          // ログを残す
+          return sendJoinProcessLog(
+            client,
+            "userSelfIntroductionRegisterFinished",
+            userName,
+            interaction.user.id
+          );
+        } catch (err) {
+          Sentry.captureException(err);
+          return interaction.editReply({
+            content:
+              "❌　自己紹介の登録時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
           });
         }
       }
-    } else if (modalId.includes("userSelfIntroductionModal")) {
-      await interaction.deferReply();
-      // 自己紹介モーダル送信後処理
-      let userName = interaction.fields.getTextInputValue("userName");
-      let userGrade = interaction.fields.getTextInputValue("userGrade");
-      let userClub = interaction.fields.getTextInputValue("userClub");
-      let userShortMessage =
-        interaction.fields.getTextInputValue("userShortMessage");
-      // 引き継がれた大学IDを取得
-      let universityID = modalId.substring(26);
-
-      try {
-        // ユーザー名の設定
-        let guild = await client.guilds.cache.get(process.env.activeGuildID);
-        let member = await guild.members.fetch(interaction.user.id);
-        await member.setNickname(userName);
-
-        // 大学名を取得
-        let universityInfo = getDatabaseFromSchoolID(universityID);
-        let universityName = universityInfo[0].schoolName;
-
-        // 自己紹介説明欄の設定
-        let description = `- 所属大学/組織名：\n\`\`\`\n${universityName}\n\`\`\`\n- 学年/役職：\n\`\`\`\n${userGrade}\n\`\`\`\n`;
-        if (userClub) {
-          description += `- 所属サークル：\n\`\`\`\n${userClub}\n\`\`\`\n`;
-        }
-        description += `- 一言：\n\`\`\`\n${userShortMessage}\n\`\`\`\n`;
-
-        // 自己紹介埋め込み色の設定
-        var letters = "0123456789ABCDEF";
-        var color = "0x";
-        for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
-        }
-
-        // 自己紹介文の送信
-        let embed = new EmbedBuilder()
-          .setTitle(`${userName}さんの自己紹介`)
-          .setDescription(description)
-          .setColor(Number(color))
-          .setThumbnail(member.displayAvatarURL())
-          .setTimestamp();
-        client.channels.cache.get(process.env.selfIntroductionChannelID).send({
-          content: `<@${interaction.user.id}>`,
-          embeds: [embed],
-        });
-
-        // メンバーロールを付与
-        await member.roles.add(process.env.memberRoleID);
-
-        // 自己紹介入力フォームを開くボタンをdisableにして、次の処理への誘導表示
-        const channel = await interaction.user.createDM();
-        const message = await channel.messages.fetch(interaction.message.id);
-        const newComponent = new ActionRowBuilder().addComponents(
-          new ButtonBuilder()
-            .setCustomId(`SelfIntroductionRegisterContinue`)
-            .setLabel("続ける")
-            .setEmoji("➡️")
-            .setStyle(ButtonStyle.Success)
-            .setDisabled(true)
-        );
-        await message.edit({
-          embeds: message.embeds,
-          components: [newComponent],
-        });
-
-        // 完了した旨をDMに送信
-        let finishedEmbed = new EmbedBuilder()
-          .setTitle("入室手続きが完了！")
-          .setDescription(
-            "入室手続きが完了しました。サーバー内の各チャンネルの使い方は、チャンネルトピックを参考にしながらご利用ください。ご不明な点等がございましたら、雑談チャンネルや運営までお問い合わせください。"
-          )
-          .setColor(0xff0000)
-          .setTimestamp();
-        await interaction.editReply({
-          embeds: [finishedEmbed],
-        });
-
-        // ログを残す
-        return sendJoinProcessLog(
-          client,
-          "userSelfIntroductionRegisterFinished",
-          userName,
-          interaction.user.id
-        );
-      } catch (err) {
-        Sentry.captureException(err);
-        return interaction.editReply({
-          content:
-            "❌　自己紹介の登録時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
-        });
-      }
+    } catch (err) {
+      Sentry.captureException(err);
     }
   }
 };
