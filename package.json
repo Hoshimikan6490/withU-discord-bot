@@ -14,11 +14,11 @@
   "author": "Hoshimikan6490",
   "license": "ISC",
   "dependencies": {
-    "@sentry/node": "^9.9.0",
-    "@sentry/profiling-node": "^9.9.0",
+    "@sentry/node": "^9.10.1",
+    "@sentry/profiling-node": "^9.10.1",
     "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "fs": "^0.0.1-security"
