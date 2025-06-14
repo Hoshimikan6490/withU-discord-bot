@@ -9,6 +9,7 @@
     }
   ],
   "schedule": ["before 4am"],
+  "assignees": ["Hoshimikan6490"],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "timezone": "Asia/Tokyo"
