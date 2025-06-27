@@ -20,7 +20,7 @@ const {
   getDatabaseFromSchoolName,
 } = require("../lib/databaseController");
 const joinedMemberGuide = require("../lib/joinedMemberGuide");
-require("dotenv").config();
+require("dotenv").config({ quiet: true });
 
 async function sendJoinProcessLog(client, type, howToSet, userId) {
   let memberLogChannelID = process.env.memberLogChannelID;

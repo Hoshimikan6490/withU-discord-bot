@@ -8,7 +8,7 @@ const {
   ActivityType,
   ThreadAutoArchiveDuration,
 } = require("discord.js");
-require("dotenv").config();
+require("dotenv").config({ quiet: true });
 const os = require("node:os");
 const leaveFromUnknownServer = require("../lib/leaveFromUnknownServer");
 

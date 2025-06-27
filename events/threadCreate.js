@@ -2,7 +2,7 @@
 require("../lib/instrument");
 const Sentry = require("@sentry/node");
 const { ChannelType, MessageFlags } = require("discord.js");
-require("dotenv").config();
+require("dotenv").config({ quiet: true });
 
 module.exports = async (client, thread) => {
   try {

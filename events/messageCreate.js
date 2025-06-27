@@ -8,7 +8,7 @@ const {
   ButtonStyle,
   ChannelType,
 } = require("discord.js");
-require("dotenv").config();
+require("dotenv").config({ quiet: true });
 
 module.exports = async (client, message) => {
   if (message.author.bot) return;
