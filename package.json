@@ -17,7 +17,7 @@
     "@sentry/node": "^9.33.0",
     "@sentry/profiling-node": "^9.33.0",
     "discord.js": "^14.21.0",
-    "dotenv": "^16.6.0",
+    "dotenv": "^17.0.0",
     "express": "^5.1.0"
   },
   "devDependencies": {
