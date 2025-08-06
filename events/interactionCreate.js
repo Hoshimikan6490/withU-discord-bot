@@ -93,33 +93,6 @@ async function universityRegister(client, interaction, customId) {
 		}
 		let member = await guild.members.fetch(interaction.user.id);
 
-		// 登録画面を無効化
-		let universitySelectButton = new ActionRowBuilder().addComponents(
-			new ButtonBuilder()
-				.setLabel("この大学で登録する")
-				.setCustomId(`universityNameCorrect-${universityInfo[0].schoolID}`)
-				.setStyle(ButtonStyle.Success)
-				.setDisabled(true),
-			new ButtonBuilder()
-				.setLabel("この大学で登録しない")
-				.setCustomId("reShowUniversityNameInputModal")
-				.setStyle(ButtonStyle.Secondary)
-				.setDisabled(true)
-		);
-
-		let embed = new EmbedBuilder()
-			.setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
-			.setFooter({
-				text: "※正しい大学名が表示されない場合は、「この大学で登録しない」ボタンを押して再度キーワードを変更してお試しください。",
-			});
-
-		const channel = await interaction.user.createDM();
-		const message = await channel.messages.fetch(interaction.message.id);
-		await message.edit({
-			embeds: [embed],
-			components: [universitySelectButton],
-		});
-
 		// 既にロールを持っている場合は、次のガイドに従うように案内する
 		if (!member.roles.cache.some((role) => role.name === universityName)) {
 			member.roles.add(role);
@@ -137,6 +110,33 @@ async function universityRegister(client, interaction, customId) {
 				"❌　ロール追加時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
 		});
 	}
+
+	// 登録画面を無効化
+	let universitySelectButton = new ActionRowBuilder().addComponents(
+		new ButtonBuilder()
+			.setLabel("この大学で登録する")
+			.setCustomId(`universityNameCorrect-${universityInfo[0].schoolID}`)
+			.setStyle(ButtonStyle.Success)
+			.setDisabled(true),
+		new ButtonBuilder()
+			.setLabel("この大学で登録しない")
+			.setCustomId("reShowUniversityNameInputModal")
+			.setStyle(ButtonStyle.Secondary)
+			.setDisabled(true)
+	);
+
+	let disabledButtonEmbed = new EmbedBuilder()
+		.setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
+		.setFooter({
+			text: "※正しい大学名が表示されない場合は、「この大学で登録しない」ボタンを押して再度キーワードを変更してお試しください。",
+		});
+
+	const channel = await interaction.user.createDM();
+	const message = await channel.messages.fetch(interaction.message.id);
+	await message.edit({
+		embeds: [disabledButtonEmbed],
+		components: [universitySelectButton],
+	});
 
 	// ログを残す
 	await sendJoinProcessLog(
@@ -336,7 +336,7 @@ module.exports = async (client, interaction) => {
 							? "reAskOrganizationName"
 							: "askOrganizationName"
 					)
-					.setTitle("あなたが所属する組織名を入力");
+					.setTitle("あなたが所属する組織名を入力してください。");
 				let textInput = new TextInputBuilder()
 					.setCustomId("organizationNameInput")
 					.setLabel("所属している組織の正式名称を入力してください。")
