@@ -4,6 +4,9 @@ const Sentry = require("@sentry/node");
 const joinedMemberGuide = require("../lib/joinedMemberGuide");
 
 module.exports = async (client, member) => {
+	// BOTが参加した場合は何もしない
+	if (member.user.bot) return;
+
 	try {
 		let joinedMember = await client.users.fetch(member.id);
 
