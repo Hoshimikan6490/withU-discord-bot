@@ -4,25 +4,25 @@ const Sentry = require("@sentry/node");
 const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
-  command: new SlashCommandBuilder()
-    .setName("ping")
-    .setDescription("BotのPingを測定します。"),
+	command: new SlashCommandBuilder()
+		.setName("ping")
+		.setDescription("BotのPingを測定します。"),
 
-  run: async (client, interaction) => {
-    try {
-      let sent = await interaction.reply({
-        content: "🔄️　計測中…",
-      });
+	run: async (client, interaction) => {
+		try {
+			let sent = await interaction.reply({
+				content: "🔄️　計測中…",
+			});
 
-      return interaction.editReply(
-        `# Ping計測結果
+			return interaction.editReply(
+				`# Ping計測結果
         - WebsocketのPing: \`${Math.abs(client.ws.ping)}ms\`.
         - APIのLatency: \`${
-          sent.createdTimestamp - interaction.createdTimestamp
-        }ms\`.`
-      );
-    } catch (err) {
-      Sentry.captureException(err);
-    }
-  },
+					sent.createdTimestamp - interaction.createdTimestamp
+				}ms\`.`
+			);
+		} catch (err) {
+			Sentry.captureException(err);
+		}
+	},
 };

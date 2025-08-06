@@ -1,26 +1,26 @@
 {
-  "name": "withu-discord-bot",
-  "version": "1.0.0",
-  "description": "this repo is discord BOT for withU project.",
-  "main": "index.js",
-  "scripts": {
-    "main": "node index.js && npm run sentry:sourcemaps",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org planet-bot-project --project withu-discord-bot ./index.js && sentry-cli sourcemaps upload --org planet-bot-project --project withu-discord-bot ./index.js"
-  },
-  "keywords": [
-    "discord",
-    "withU"
-  ],
-  "author": "Hoshimikan6490",
-  "license": "ISC",
-  "dependencies": {
-    "@sentry/node": "^9.42.0",
-    "@sentry/profiling-node": "^9.42.0",
-    "discord.js": "^14.21.0",
-    "dotenv": "^17.2.1",
-    "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "fs": "^0.0.1-security"
-  }
+	"name": "withu-discord-bot",
+	"version": "1.0.0",
+	"description": "this repo is discord BOT for withU project.",
+	"main": "index.js",
+	"scripts": {
+		"main": "node index.js && npm run sentry:sourcemaps",
+		"sentry:sourcemaps": "sentry-cli sourcemaps inject --org planet-bot-project --project withu-discord-bot ./index.js && sentry-cli sourcemaps upload --org planet-bot-project --project withu-discord-bot ./index.js"
+	},
+	"keywords": [
+		"discord",
+		"withU"
+	],
+	"author": "Hoshimikan6490",
+	"license": "ISC",
+	"dependencies": {
+		"@sentry/node": "^9.42.0",
+		"@sentry/profiling-node": "^9.42.0",
+		"discord.js": "^14.21.0",
+		"dotenv": "^17.2.1",
+		"express": "^5.1.0"
+	},
+	"devDependencies": {
+		"fs": "^0.0.1-security"
+	}
 }
