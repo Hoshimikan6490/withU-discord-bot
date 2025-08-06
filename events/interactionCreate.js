@@ -843,7 +843,6 @@ module.exports = async (client, interaction) => {
 					);
 				} catch (err) {
 					Sentry.captureException(err);
-					console.error(err);
 					return interaction.editReply({
 						content:
 							"❌　自己紹介の登録時にエラーが発生しました。お手数ですが、以下のURLからDiscordのIDを添えて管理者までお問い合わせください。\nhttps://forms.gle/E5Pt7YRJfVcz4ZRJ6",
