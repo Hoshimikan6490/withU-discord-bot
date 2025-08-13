@@ -2,14 +2,10 @@
 require("../lib/instrument");
 const Sentry = require("@sentry/node");
 
-const {
-	REST,
-	Routes,
-	ActivityType,
-	ThreadAutoArchiveDuration,
-} = require("discord.js");
+const { REST, Routes, ActivityType } = require("discord.js");
 require("dotenv").config({ quiet: true });
 const os = require("node:os");
+const threadKeepAlive = require("../lib/threadKeepAlive");
 const leaveFromUnknownServer = require("../lib/leaveFromUnknownServer");
 
 const token = process.env.bot_token;
@@ -51,44 +47,8 @@ module.exports = async (client) => {
 		);
 
 	// スレッドのKeepAlive
-	async function threadKeepAlive() {
-		try {
-			const guild = await client.guilds.cache.get(process.env.activeGuildID);
-			const activeThreads = await guild.channels.fetchActiveThreads();
-			const now = Date.now();
-
-			for (const thread of activeThreads.threads.values()) {
-				const archiveTimestamp =
-					thread.archiveTimestamp || thread.createdTimestamp;
-				const autoArchiveDuration = thread.autoArchiveDuration * 60 * 1000;
-				const archiveTime = archiveTimestamp + autoArchiveDuration;
-				const timeUntilArchive = archiveTime - now;
-
-				if (timeUntilArchive <= 6 * 60 * 60 * 1000) {
-					// 6時間以内にアーカイブ予定
-					const newDuration =
-						thread.autoArchiveDuration === ThreadAutoArchiveDuration.OneWeek
-							? ThreadAutoArchiveDuration.ThreeDays
-							: ThreadAutoArchiveDuration.OneWeek;
-
-					if (thread.autoArchiveDuration !== newDuration) {
-						await thread.setAutoArchiveDuration(newDuration);
-						console.log(`スレッドの自動アーカイブ期間を更新: ${thread.name}`);
-					}
-				}
-			}
-		} catch (err) {
-			Sentry.captureException(err);
-			console.err(
-				"スレッドのアーカイブ時間を更新する際にエラーが発生しました:",
-				err
-			);
-		}
-	}
-	// 6時間ごとに実行
-	setInterval(threadKeepAlive, 6 * 60 * 60 * 1000);
-	// とりあえず、1回実行
-	threadKeepAlive();
+	setInterval(threadKeepAlive, 6 * 60 * 60 * 1000); // 6時間ごとの実行
+	threadKeepAlive(); //起動時の実行
 
 	// 許可されていないサーバーから退出する
 	client.guilds.cache.forEach(
