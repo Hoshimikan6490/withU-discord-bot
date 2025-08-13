@@ -18,11 +18,11 @@ module.exports = async (client, thread) => {
 			flags: MessageFlags.SuppressNotifications,
 		});
 
-		message.edit({
+		await message.edit({
 			content: `このメッセージは、スレッド管理のために送信されました。このメッセージは数秒後に削除されます。\n<@&${process.env.memberRoleID}>を招待しました。`,
 		});
 
-		message.delete({ timeout: 5000 });
+		return message.delete({ timeout: 5000 });
 	} catch (err) {
 		Sentry.captureException(err);
 	}
