@@ -11,7 +11,10 @@ const {
 require("dotenv").config({ quiet: true });
 
 module.exports = async (client, message) => {
+	// botからのメッセージを無視
 	if (message.author.bot) return;
+	// DMでのメッセージを無視
+	if (message.channel.type === ChannelType.DM) return;
 
 	let myPermissions = message.guild.members.me
 		.permissionsIn(message.channel)
