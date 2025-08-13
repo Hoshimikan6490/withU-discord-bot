@@ -47,7 +47,7 @@ module.exports = async (client) => {
 		);
 
 	// スレッドのKeepAlive
-	setInterval(threadKeepAlive(client), 6 * 60 * 60 * 1000); // 6時間ごとの実行
+	setInterval(() => threadKeepAlive(client), 6 * 60 * 60 * 1000); // 6時間ごとの実行
 	threadKeepAlive(client); //起動時の実行
 
 	// 許可されていないサーバーから退出する
