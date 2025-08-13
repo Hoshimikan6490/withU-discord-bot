@@ -112,30 +112,26 @@ async function universityRegister(client, interaction, customId) {
 	}
 
 	// 登録画面を無効化
-	let universitySelectButton = new ActionRowBuilder().addComponents(
-		new ButtonBuilder()
-			.setLabel("この大学で登録する")
-			.setCustomId(`universityNameCorrect-${universityInfo[0].schoolID}`)
-			.setStyle(ButtonStyle.Success)
-			.setDisabled(true),
-		new ButtonBuilder()
-			.setLabel("この大学で登録しない")
-			.setCustomId("reShowUniversityNameInputModal")
-			.setStyle(ButtonStyle.Secondary)
-			.setDisabled(true)
-	);
+	const channel = await interaction.user.createDM();
+	const message = await channel.messages.fetch(interaction.message.id);
 
-	let disabledButtonEmbed = new EmbedBuilder()
+	const disabledButtonEmbed = new EmbedBuilder()
 		.setTitle(`「${universityInfo[0].schoolName}」を登録しますか？`)
 		.setFooter({
 			text: "※正しい大学名が表示されない場合は、「この大学で登録しない」ボタンを押して再度キーワードを変更してお試しください。",
 		});
 
-	const channel = await interaction.user.createDM();
-	const message = await channel.messages.fetch(interaction.message.id);
+	let buttonRow = message.components[0];
+	const disabledComponents = buttonRow.components.map((button) =>
+		ButtonBuilder.from(button).setDisabled(true)
+	);
+	const disabledActionRow = new ActionRowBuilder().addComponents(
+		disabledComponents
+	);
+
 	await message.edit({
 		embeds: [disabledButtonEmbed],
-		components: [universitySelectButton],
+		components: [disabledActionRow],
 	});
 
 	// ログを残す
@@ -650,26 +646,21 @@ module.exports = async (client, interaction) => {
 							"下のボタンから大学名/組織名を設定してください"
 						);
 
-						let userTypeButtons = new ActionRowBuilder().addComponents(
-							new ButtonBuilder()
-								.setCustomId("showUniversityNameInputModal")
-								.setLabel("大学生として登録する")
-								.setStyle(ButtonStyle.Success)
-								.setDisabled(true),
-							new ButtonBuilder()
-								.setCustomId("showOrganizationNameInputModal")
-								.setLabel("大学生以外として登録する")
-								.setStyle(ButtonStyle.Primary)
-								.setDisabled(true)
-						);
-
+						// 元メッセージのボタンの無効化
 						const channel = await interaction.user.createDM();
 						const message = await channel.messages.fetch(
 							interaction.message.id
 						);
+						let buttonRow = message.components[0];
+						const disabledComponents = buttonRow.components.map((button) =>
+							ButtonBuilder.from(button).setDisabled(true)
+						);
+						const disabledActionRow = new ActionRowBuilder().addComponents(
+							disabledComponents
+						);
 						await message.edit({
 							embeds: [editMessageEmbed],
-							components: [userTypeButtons],
+							components: [disabledActionRow],
 						});
 					}
 				}
@@ -713,24 +704,19 @@ module.exports = async (client, interaction) => {
 						"下のボタンから大学名/組織名を設定してください"
 					);
 
-					let userTypeButtons = new ActionRowBuilder().addComponents(
-						new ButtonBuilder()
-							.setCustomId("showUniversityNameInputModal")
-							.setLabel("大学生として登録する")
-							.setStyle(ButtonStyle.Success)
-							.setDisabled(true),
-						new ButtonBuilder()
-							.setCustomId("showOrganizationNameInputModal")
-							.setLabel("大学生以外として登録する")
-							.setStyle(ButtonStyle.Primary)
-							.setDisabled(true)
-					);
-
+					// 元メッセージのボタンの無効化
 					const channel = await interaction.user.createDM();
 					const message = await channel.messages.fetch(interaction.message.id);
+					let buttonRow = message.components[0];
+					const disabledComponents = buttonRow.components.map((button) =>
+						ButtonBuilder.from(button).setDisabled(true)
+					);
+					const disabledActionRow = new ActionRowBuilder().addComponents(
+						disabledComponents
+					);
 					await message.edit({
 						embeds: [editMessageEmbed],
-						components: [userTypeButtons],
+						components: [disabledActionRow],
 					});
 				}
 			} else if (modalId.includes("userSelfIntroductionModal")) {
@@ -809,17 +795,16 @@ module.exports = async (client, interaction) => {
 					// 自己紹介入力フォームを開くボタンをdisableにして、次の処理への誘導表示
 					const channel = await interaction.user.createDM();
 					const message = await channel.messages.fetch(interaction.message.id);
-					const newComponent = new ActionRowBuilder().addComponents(
-						new ButtonBuilder()
-							.setCustomId(`SelfIntroductionRegisterContinue`)
-							.setLabel("続ける")
-							.setEmoji("➡️")
-							.setStyle(ButtonStyle.Success)
-							.setDisabled(true)
+					// 元メッセージのボタンの無効化
+					let buttonRow = message.components[0];
+					const disabledComponents = buttonRow.components.map((button) =>
+						ButtonBuilder.from(button).setDisabled(true)
+					);
+					const disabledActionRow = new ActionRowBuilder().addComponents(
+						disabledComponents
 					);
 					await message.edit({
-						embeds: message.embeds,
-						components: [newComponent],
+						components: [disabledActionRow],
 					});
 
 					// 完了した旨をDMに送信
