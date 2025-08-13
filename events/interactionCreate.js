@@ -553,7 +553,7 @@ module.exports = async (client, interaction) => {
 					let gradeInput = new TextInputBuilder()
 						.setCustomId("userGrade")
 						.setLabel(
-							"大学生は現在の学年を、それ以外は役職を入力してください。"
+							"現在の学年を入力してください。"
 						)
 						.setPlaceholder("大学1年/専門学校1年/広報部など")
 						.setStyle(TextInputStyle.Short)
