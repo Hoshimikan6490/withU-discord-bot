@@ -9,7 +9,13 @@ const {
 	SlashCommandBuilder,
 } = require("discord.js");
 const ErrorHandler = require("../lib/monitoring/errorHandler");
-const { ERROR_MESSAGES, SUCCESS_MESSAGES, URLS, EMOJIS, UI_LABELS } = require("../lib/config/constants");
+const {
+	ERROR_MESSAGES,
+	SUCCESS_MESSAGES,
+	URLS,
+	EMOJIS,
+	UI_LABELS,
+} = require("../lib/config/constants");
 require("dotenv").config({ quiet: true });
 
 module.exports = {
