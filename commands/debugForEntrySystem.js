@@ -1,6 +1,5 @@
 // for using sentry
 require("../lib/instrument");
-const Sentry = require("@sentry/node");
 const {
 	ActionRowBuilder,
 	ButtonBuilder,
@@ -9,6 +8,8 @@ const {
 	MessageFlags,
 	SlashCommandBuilder,
 } = require("discord.js");
+const ErrorHandler = require("../lib/errorHandler");
+const { ERROR_MESSAGES, SUCCESS_MESSAGES, URLS, EMOJIS, UI_LABELS } = require("../lib/constants");
 require("dotenv").config({ quiet: true });
 
 module.exports = {
@@ -22,7 +23,7 @@ module.exports = {
 		// BOTの管理者以外は実行する事が出来ないようにする
 		if (interaction.user.id !== process.env.botOwnerID) {
 			return interaction.reply({
-				content: "このコマンドはBOTの管理者のみ実行可能です。",
+				content: ERROR_MESSAGES.ADMIN_ONLY,
 				flags: MessageFlags.Ephemeral,
 			});
 		}
@@ -33,8 +34,8 @@ module.exports = {
 			let guildJoinContinue = new ActionRowBuilder().addComponents(
 				new ButtonBuilder()
 					.setCustomId("guildJoinContinue")
-					.setEmoji("➡️")
-					.setLabel("続ける")
+					.setEmoji(EMOJIS.ARROW_RIGHT)
+					.setLabel(UI_LABELS.CONTINUE_BUTTON)
 					.setStyle(ButtonStyle.Primary)
 			);
 			let embed1 = new EmbedBuilder()
@@ -48,7 +49,7 @@ module.exports = {
 					`本サーバーでは、安心・安全な環境づくりを目的としてルールを策定しております。これ以降の参加手続きを続ける場合は、以下のルールに同意したものとみなします。
           まあ、一言でまとめてしまえば__「常識ある言動/行動をしろ」というだけ__ですが、言い争いになってからでは遅いので以下のように定めています。
           
-          ## [ルールはこちらから確認！](https://docs.google.com/document/d/e/2PACX-1vQWDtLH0nCXh8oc1k-NMNeviG5QvvLVjlj0yApHKMCKvaHeBkmqCJxXXiALJ-OEa92z-s8VACL7R6x6/pub)
+          ## [ルールはこちらから確認！](${URLS.RULES_DOCUMENT})
           `
 				);
 			let embed3 = new EmbedBuilder().setTitle("アンケートご協力のお願い")
@@ -61,11 +62,11 @@ module.exports = {
 			});
 
 			return interaction.reply({
-				content: "DMに入室時の説明を送信しました。",
+				content: SUCCESS_MESSAGES.DEBUG_DM_SENT,
 				flags: MessageFlags.Ephemeral,
 			});
 		} catch (err) {
-			Sentry.captureException(err);
+			ErrorHandler.handle(err, interaction);
 		}
 	},
 };
