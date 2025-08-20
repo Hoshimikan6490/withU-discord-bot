@@ -11,7 +11,7 @@ const { EMBED_COLORS } = require("../lib/config/constants");
 require("dotenv").config({ quiet: true });
 
 module.exports = async (client, message) => {
-	// botからのメッセージを無視
+	// BOTからのメッセージを無視
 	if (message.author.bot) return;
 	// DMでのメッセージを無視
 	if (message.channel.type === ChannelType.DM) return;
@@ -96,7 +96,7 @@ module.exports = async (client, message) => {
 										await reaction.users.remove(client.user.id);
 									}
 								} catch (err) {
-									ErrorHandler.logError(err, "removing bot reactions");
+									ErrorHandler.logError(err, "removing BOT reactions");
 								}
 							}, 5000);
 						}) //メッセージを公開できたらリアクションをする

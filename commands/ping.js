@@ -6,7 +6,7 @@ const ErrorHandler = require("../lib/monitoring/errorHandler");
 module.exports = {
 	command: new SlashCommandBuilder()
 		.setName("ping")
-		.setDescription("BotのPingを測定します。"),
+		.setDescription("BOTのPingを測定します。"),
 
 	run: async (client, interaction) => {
 		try {
