@@ -1,7 +1,7 @@
 // for using sentry
 require("../lib/instrument");
-const Sentry = require("@sentry/node");
 const { SlashCommandBuilder } = require("discord.js");
+const ErrorHandler = require("../lib/errorHandler");
 
 module.exports = {
 	command: new SlashCommandBuilder()
@@ -22,7 +22,7 @@ module.exports = {
 				}ms\`.`
 			);
 		} catch (err) {
-			Sentry.captureException(err);
+			ErrorHandler.handle(err, interaction);
 		}
 	},
 };

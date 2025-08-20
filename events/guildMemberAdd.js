@@ -1,7 +1,7 @@
 // for using sentry
 require("../lib/instrument");
-const Sentry = require("@sentry/node");
 const joinedMemberGuide = require("../lib/joinedMemberGuide");
+const ErrorHandler = require("../lib/errorHandler");
 
 module.exports = async (client, member) => {
 	// BOTが参加した場合は何もしない
@@ -18,6 +18,6 @@ module.exports = async (client, member) => {
 			components: [guildJoinContinue],
 		});
 	} catch (err) {
-		Sentry.captureException(err);
+		ErrorHandler.logError(err, "guildMemberAdd");
 	}
 };
