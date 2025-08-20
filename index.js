@@ -1,8 +1,12 @@
 // for using sentry
-require("./lib/instrument");
+require("./lib/monitoring/instrument");
 
 const fs = require("fs");
 const { Client, GatewayIntentBits } = require("discord.js");
+const express = require("express");
+const ErrorHandler = require("./lib/monitoring/errorHandler");
+require("dotenv").config({ quiet: true });
+
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -12,10 +16,8 @@ const client = new Client({
 		GatewayIntentBits.MessageContent,
 	],
 });
-const express = require("express");
+
 const app = express();
-require("dotenv").config({ quiet: true });
-const Sentry = require("@sentry/node");
 
 //機密情報取得
 const token = process.env.bot_token;
@@ -29,10 +31,9 @@ app.listen(PORT, () => {
 	console.log(`Running on http://localhost:${PORT}`);
 });
 
-//コマンドをBOTに適応させる準備
 client.commands = [];
 fs.readdir("./commands", (err, files) => {
-	if (err) Sentry.captureException(err);
+	if (err) ErrorHandler.logError(err, "reading commands directory");
 	files.forEach(async (f) => {
 		try {
 			if (f.endsWith(".js")) {
@@ -42,7 +43,7 @@ fs.readdir("./commands", (err, files) => {
 				console.log(`コマンドの読み込みが完了: ${propsJson.name}`);
 			}
 		} catch (err) {
-			Sentry.captureException(err);
+			ErrorHandler.logError(err, `loading command ${f}`);
 		}
 	});
 });

@@ -26,7 +26,7 @@ npm i
 ```
 2. set environment info like this to '.env' file.
 ```
-# Discord Bot Token
+# Discord BOT Token
 bot_token=YOUR_DISCORD_BOT_TOKEN_HERE
 # 使うDiscordサーバーのID
 activeGuildID=0123456789

@@ -1,17 +1,17 @@
 // for using sentry
-require("../lib/instrument");
-const Sentry = require("@sentry/node");
-
+require("../lib/monitoring/instrument");
 const {
 	ActionRowBuilder,
 	ButtonBuilder,
 	ButtonStyle,
 	ChannelType,
 } = require("discord.js");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
+const { EMBED_COLORS } = require("../lib/config/constants");
 require("dotenv").config({ quiet: true });
 
 module.exports = async (client, message) => {
-	// botからのメッセージを無視
+	// BOTからのメッセージを無視
 	if (message.author.bot) return;
 	// DMでのメッセージを無視
 	if (message.channel.type === ChannelType.DM) return;
@@ -64,7 +64,7 @@ module.exports = async (client, message) => {
 								name: fetchedMessage.author.tag,
 								iconURL: fetchedMessage.author.displayAvatarURL(),
 							},
-							color: 0x4d4df7,
+							color: EMBED_COLORS.INFO,
 							timestamp: new Date(fetchedMessage.createdTimestamp),
 						},
 					],
@@ -96,12 +96,12 @@ module.exports = async (client, message) => {
 										await reaction.users.remove(client.user.id);
 									}
 								} catch (err) {
-									Sentry.captureException(err);
+									ErrorHandler.logError(err, "removing BOT reactions");
 								}
 							}, 5000);
 						}) //メッセージを公開できたらリアクションをする
 						.catch((err) => {
-							Sentry.captureException(err);
+							ErrorHandler.logError(err, "crossposting message");
 						});
 				} else {
 					message.react("❌"); //Botに権限がない場合
@@ -109,6 +109,6 @@ module.exports = async (client, message) => {
 			}
 		}
 	} catch (err) {
-		Sentry.captureException(err);
+		ErrorHandler.logError(err, "messageCreate");
 	}
 };

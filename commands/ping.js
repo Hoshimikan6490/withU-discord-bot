@@ -1,12 +1,12 @@
 // for using sentry
-require("../lib/instrument");
-const Sentry = require("@sentry/node");
+require("../lib/monitoring/instrument");
 const { SlashCommandBuilder } = require("discord.js");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
 
 module.exports = {
 	command: new SlashCommandBuilder()
 		.setName("ping")
-		.setDescription("BotのPingを測定します。"),
+		.setDescription("BOTのPingを測定します。"),
 
 	run: async (client, interaction) => {
 		try {
@@ -22,7 +22,7 @@ module.exports = {
 				}ms\`.`
 			);
 		} catch (err) {
-			Sentry.captureException(err);
+			ErrorHandler.handle(err, interaction);
 		}
 	},
 };

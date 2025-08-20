@@ -1,12 +1,12 @@
 // for using sentry
-require("../lib/instrument");
-const Sentry = require("@sentry/node");
-
+require("../lib/monitoring/instrument");
 const { REST, Routes, ActivityType } = require("discord.js");
-require("dotenv").config({ quiet: true });
 const os = require("node:os");
-const threadKeepAlive = require("../lib/threadKeepAlive");
-const leaveFromUnknownServer = require("../lib/leaveFromUnknownServer");
+const threadKeepAlive = require("../lib/events/threadKeepAlive");
+const leaveFromUnknownServer = require("../lib/events/leaveFromUnknownServer");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
+const { TIME_CONSTANTS } = require("../lib/config/constants");
+require("dotenv").config({ quiet: true });
 
 const token = process.env.bot_token;
 const startupNotificationChannelID = process.env.startupNotificationChannelID;
@@ -20,7 +20,7 @@ module.exports = async (client) => {
 			});
 			console.log("スラッシュコマンドの再読み込みに成功しました。");
 		} catch (err) {
-			Sentry.captureException(err);
+			ErrorHandler.logError(err, "slash command reload");
 			console.log(
 				`❌ スラッシュコマンドの再読み込み時にエラーが発生しました。：\n${err}`
 			);
@@ -36,7 +36,7 @@ module.exports = async (client) => {
 			}で起動中です`,
 			{ type: ActivityType.Listening }
 		);
-	}, 10000);
+	}, TIME_CONSTANTS.ACTIVITY_UPDATE_INTERVAL);
 
 	client.channels.cache
 		.get(startupNotificationChannelID)
@@ -47,7 +47,10 @@ module.exports = async (client) => {
 		);
 
 	// スレッドのKeepAlive
-	setInterval(() => threadKeepAlive(client), 6 * 60 * 60 * 1000); // 6時間ごとの実行
+	setInterval(
+		() => threadKeepAlive(client),
+		TIME_CONSTANTS.THREAD_KEEPALIVE_INTERVAL
+	); // 6時間ごとの実行
 	threadKeepAlive(client); //起動時の実行
 
 	// 許可されていないサーバーから退出する
