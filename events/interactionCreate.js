@@ -1,10 +1,10 @@
 // for using sentry
-require("../lib/instrument");
+require("../lib/monitoring/instrument");
 const { InteractionType } = require("discord.js");
-const { handleSlashCommand } = require("../lib/commandHandlers");
-const { handleButtonInteraction } = require("../lib/buttonHandlers");
-const { handleModalInteraction } = require("../lib/modalHandlers");
-const ErrorHandler = require("../lib/errorHandler");
+const { handleSlashCommand } = require("../lib/handlers/commandHandlers");
+const { handleButtonInteraction } = require("../lib/handlers/buttonHandlers");
+const { handleModalInteraction } = require("../lib/handlers/modalHandlers");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
 require("dotenv").config({ quiet: true });
 
 module.exports = async (client, interaction) => {

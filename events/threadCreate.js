@@ -1,7 +1,7 @@
 // for using sentry
-require("../lib/instrument");
+require("../lib/monitoring/instrument");
 const { ChannelType, MessageFlags } = require("discord.js");
-const ErrorHandler = require("../lib/errorHandler");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
 require("dotenv").config({ quiet: true });
 
 module.exports = async (client, thread) => {

@@ -1,13 +1,13 @@
 // for using sentry
-require("../lib/instrument");
+require("../lib/monitoring/instrument");
 const {
 	ActionRowBuilder,
 	ButtonBuilder,
 	ButtonStyle,
 	ChannelType,
 } = require("discord.js");
-const ErrorHandler = require("../lib/errorHandler");
-const { EMBED_COLORS } = require("../lib/constants");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
+const { EMBED_COLORS } = require("../lib/config/constants");
 require("dotenv").config({ quiet: true });
 
 module.exports = async (client, message) => {

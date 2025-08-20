@@ -1,7 +1,7 @@
 // for using sentry
-require("../lib/instrument");
-const joinedMemberGuide = require("../lib/joinedMemberGuide");
-const ErrorHandler = require("../lib/errorHandler");
+require("../lib/monitoring/instrument");
+const joinedMemberGuide = require("../lib/events/joinedMemberGuide");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
 
 module.exports = async (client, member) => {
 	// BOTが参加した場合は何もしない

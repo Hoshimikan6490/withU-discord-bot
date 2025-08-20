@@ -1,11 +1,11 @@
 // for using sentry
-require("../lib/instrument");
+require("../lib/monitoring/instrument");
 const { REST, Routes, ActivityType } = require("discord.js");
 const os = require("node:os");
-const threadKeepAlive = require("../lib/threadKeepAlive");
-const leaveFromUnknownServer = require("../lib/leaveFromUnknownServer");
-const ErrorHandler = require("../lib/errorHandler");
-const { TIME_CONSTANTS } = require("../lib/constants");
+const threadKeepAlive = require("../lib/events/threadKeepAlive");
+const leaveFromUnknownServer = require("../lib/events/leaveFromUnknownServer");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
+const { TIME_CONSTANTS } = require("../lib/config/constants");
 require("dotenv").config({ quiet: true });
 
 const token = process.env.bot_token;

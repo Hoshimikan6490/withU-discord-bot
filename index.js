@@ -1,10 +1,10 @@
 // for using sentry
-require("./lib/instrument");
+require("./lib/monitoring/instrument");
 
 const fs = require("fs");
 const { Client, GatewayIntentBits } = require("discord.js");
 const express = require("express");
-const ErrorHandler = require("./lib/errorHandler");
+const ErrorHandler = require("./lib/monitoring/errorHandler");
 require("dotenv").config({ quiet: true });
 
 const client = new Client({

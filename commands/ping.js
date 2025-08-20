@@ -1,7 +1,7 @@
 // for using sentry
-require("../lib/instrument");
+require("../lib/monitoring/instrument");
 const { SlashCommandBuilder } = require("discord.js");
-const ErrorHandler = require("../lib/errorHandler");
+const ErrorHandler = require("../lib/monitoring/errorHandler");
 
 module.exports = {
 	command: new SlashCommandBuilder()
