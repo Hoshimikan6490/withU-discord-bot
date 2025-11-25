@@ -1,5 +1,5 @@
 // for using sentry
-require("../lib/monitoring/instrument");
+require('../lib/monitoring/instrument');
 const {
 	ActionRowBuilder,
 	ButtonBuilder,
@@ -7,22 +7,22 @@ const {
 	EmbedBuilder,
 	MessageFlags,
 	SlashCommandBuilder,
-} = require("discord.js");
-const ErrorHandler = require("../lib/monitoring/errorHandler");
+} = require('discord.js');
+const ErrorHandler = require('../lib/monitoring/errorHandler');
 const {
 	ERROR_MESSAGES,
 	SUCCESS_MESSAGES,
 	URLS,
 	EMOJIS,
 	UI_LABELS,
-} = require("../lib/config/constants");
-require("dotenv").config({ quiet: true });
+} = require('../lib/config/constants');
+require('dotenv').config({ quiet: true });
 
 module.exports = {
 	command: new SlashCommandBuilder()
-		.setName("debug")
+		.setName('debug')
 		.setDescription(
-			"入室システムのテスト用のコマンドです。BOTの管理者以外は実行する事が出来ません。"
+			'入室システムのテスト用のコマンドです。BOTの管理者以外は実行する事が出来ません。'
 		),
 
 	run: async (client, interaction) => {
@@ -39,18 +39,18 @@ module.exports = {
 			// 処罰後の連絡先を決める！
 			let guildJoinContinue = new ActionRowBuilder().addComponents(
 				new ButtonBuilder()
-					.setCustomId("guildJoinContinue")
+					.setCustomId('guildJoinContinue')
 					.setEmoji(EMOJIS.ARROW_RIGHT)
 					.setLabel(UI_LABELS.CONTINUE_BUTTON)
 					.setStyle(ButtonStyle.Primary)
 			);
 			let embed1 = new EmbedBuilder()
-				.setTitle("withU サーバーにご参加いただき、ありがとうございます！")
+				.setTitle('withU サーバーにご参加いただき、ありがとうございます！')
 				.setDescription(
-					"本サーバーは、大学生同士の交流から様々なものづくりをしていくことを目標として、東京国際工科専門職大学(IPUT)を中心に複数の大学の学生が集まっているサーバーです。"
+					'本サーバーは、大学生同士の交流から様々なものづくりをしていくことを目標として、東京国際工科専門職大学(IPUT)を中心に複数の大学の学生が集まっているサーバーです。'
 				);
 			let embed2 = new EmbedBuilder()
-				.setTitle("ご参加にあたり注意事項")
+				.setTitle('ご参加にあたり注意事項')
 				.setDescription(
 					`本サーバーでは、安心・安全な環境づくりを目的としてルールを策定しております。これ以降の参加手続きを続ける場合は、以下のルールに同意したものとみなします。
           まあ、一言でまとめてしまえば__「常識ある言動/行動をしろ」というだけ__ですが、言い争いになってからでは遅いので以下のように定めています。
@@ -58,7 +58,7 @@ module.exports = {
           ## [ルールはこちらから確認！](${URLS.RULES_DOCUMENT})
           `
 				);
-			let embed3 = new EmbedBuilder().setTitle("アンケートご協力のお願い")
+			let embed3 = new EmbedBuilder().setTitle('アンケートご協力のお願い')
 				.setDescription(`本サーバーを安全に運用するため、全参加者様に所属団体(学校名や企業名)と本名をご回答いただき、その内容を参加後のサーバー内で参加者同士で閲覧できる状態にしております。なお、こちらの項目の回答は必須であり、回答した時点でサーバー内で参加者同士で互いに閲覧できる状態になることに同意したものとみなします。
       \nまた、基本的にすべてのユーザーに所属先の提示を義務付けていますが、本サーバー内での発言はアナウンスチャンネルなどのwithUとしての発信活動を除き、特に表記をしない場合はすべて個人の発言として扱われます。`);
 

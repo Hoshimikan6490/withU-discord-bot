@@ -1,8 +1,8 @@
 // for using sentry
-require("../lib/monitoring/instrument");
-const { ChannelType, MessageFlags } = require("discord.js");
-const ErrorHandler = require("../lib/monitoring/errorHandler");
-require("dotenv").config({ quiet: true });
+require('../lib/monitoring/instrument');
+const { ChannelType, MessageFlags } = require('discord.js');
+const ErrorHandler = require('../lib/monitoring/errorHandler');
+require('dotenv').config({ quiet: true });
 
 module.exports = async (client, thread) => {
 	try {
@@ -24,6 +24,6 @@ module.exports = async (client, thread) => {
 
 		return message.delete({ timeout: 5000 });
 	} catch (err) {
-		ErrorHandler.logError(err, "threadCreate");
+		ErrorHandler.logError(err, 'threadCreate');
 	}
 };

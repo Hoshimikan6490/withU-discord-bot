@@ -1,17 +1,17 @@
 // for using sentry
-require("../lib/monitoring/instrument");
-const { SlashCommandBuilder } = require("discord.js");
-const ErrorHandler = require("../lib/monitoring/errorHandler");
+require('../lib/monitoring/instrument');
+const { SlashCommandBuilder } = require('discord.js');
+const ErrorHandler = require('../lib/monitoring/errorHandler');
 
 module.exports = {
 	command: new SlashCommandBuilder()
-		.setName("ping")
-		.setDescription("BOTのPingを測定します。"),
+		.setName('ping')
+		.setDescription('BOTのPingを測定します。'),
 
 	run: async (client, interaction) => {
 		try {
 			let sent = await interaction.reply({
-				content: "🔄️　計測中…",
+				content: '🔄️　計測中…',
 			});
 
 			return interaction.editReply(

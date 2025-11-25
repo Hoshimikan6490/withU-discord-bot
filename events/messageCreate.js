@@ -1,14 +1,14 @@
 // for using sentry
-require("../lib/monitoring/instrument");
+require('../lib/monitoring/instrument');
 const {
 	ActionRowBuilder,
 	ButtonBuilder,
 	ButtonStyle,
 	ChannelType,
-} = require("discord.js");
-const ErrorHandler = require("../lib/monitoring/errorHandler");
-const { EMBED_COLORS } = require("../lib/config/constants");
-require("dotenv").config({ quiet: true });
+} = require('discord.js');
+const ErrorHandler = require('../lib/monitoring/errorHandler');
+const { EMBED_COLORS } = require('../lib/config/constants');
+require('dotenv').config({ quiet: true });
 
 module.exports = async (client, message) => {
 	// BOTからのメッセージを無視
@@ -20,11 +20,11 @@ module.exports = async (client, message) => {
 		.permissionsIn(message.channel)
 		.toArray();
 	let conditions = [
-		"ViewChannel",
-		"SendMessages",
-		"ManageMessages",
-		"EmbedLinks",
-		"AttachFiles",
+		'ViewChannel',
+		'SendMessages',
+		'ManageMessages',
+		'EmbedLinks',
+		'AttachFiles',
 	];
 	for (const key in conditions) {
 		if (!myPermissions.includes(conditions[key])) {
@@ -47,12 +47,12 @@ module.exports = async (client, message) => {
 
 				let buttons = new ActionRowBuilder().addComponents(
 					new ButtonBuilder()
-						.setLabel("メッセージを見る")
+						.setLabel('メッセージを見る')
 						.setURL(fetchedMessage.url)
 						.setStyle(ButtonStyle.Link),
 					new ButtonBuilder()
-						.setCustomId("cancel")
-						.setEmoji("🗑️")
+						.setCustomId('cancel')
+						.setEmoji('🗑️')
 						.setStyle(ButtonStyle.Secondary)
 				);
 
@@ -84,7 +84,7 @@ module.exports = async (client, message) => {
 					message
 						.crosspost()
 						.then(() => {
-							message.react("✅");
+							message.react('✅');
 
 							setTimeout(async () => {
 								let botReactions = message.reactions.cache.filter((reaction) =>
@@ -96,19 +96,19 @@ module.exports = async (client, message) => {
 										await reaction.users.remove(client.user.id);
 									}
 								} catch (err) {
-									ErrorHandler.logError(err, "removing BOT reactions");
+									ErrorHandler.logError(err, 'removing BOT reactions');
 								}
 							}, 5000);
 						}) //メッセージを公開できたらリアクションをする
 						.catch((err) => {
-							ErrorHandler.logError(err, "crossposting message");
+							ErrorHandler.logError(err, 'crossposting message');
 						});
 				} else {
-					message.react("❌"); //Botに権限がない場合
+					message.react('❌'); //Botに権限がない場合
 				}
 			}
 		}
 	} catch (err) {
-		ErrorHandler.logError(err, "messageCreate");
+		ErrorHandler.logError(err, 'messageCreate');
 	}
 };

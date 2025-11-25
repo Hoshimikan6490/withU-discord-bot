@@ -1,7 +1,7 @@
 // for using sentry
-require("../lib/monitoring/instrument");
-const joinedMemberGuide = require("../lib/events/joinedMemberGuide");
-const ErrorHandler = require("../lib/monitoring/errorHandler");
+require('../lib/monitoring/instrument');
+const joinedMemberGuide = require('../lib/events/joinedMemberGuide');
+const ErrorHandler = require('../lib/monitoring/errorHandler');
 
 module.exports = async (client, member) => {
 	// BOTが参加した場合は何もしない
@@ -18,6 +18,6 @@ module.exports = async (client, member) => {
 			components: [guildJoinContinue],
 		});
 	} catch (err) {
-		ErrorHandler.logError(err, "guildMemberAdd");
+		ErrorHandler.logError(err, 'guildMemberAdd');
 	}
 };
