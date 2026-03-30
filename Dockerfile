@@ -18,4 +18,4 @@ RUN npm install --omit=dev
 COPY ./ .
 
 # ボットを起動するコマンド
-CMD [ "node", "index.js" ]
+CMD [ "node", "index.js" ,"&&", "npm", "run", "sentry:upload" ]
