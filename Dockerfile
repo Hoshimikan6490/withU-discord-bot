@@ -6,7 +6,7 @@ WORKDIR /home/discord-bot
 # ベースの環境整備
 RUN apt-get update
 RUN apt-get install -y curl sudo
-RUN sudo curl -sL https://deb.nodesource.com/setup_18.x | sudo bash - && sudo apt-get install -y nodejs
+RUN sudo curl -sL https://deb.nodesource.com/setup_24.x | sudo bash - && sudo apt-get install -y nodejs
 
 # パッケージのインストールに必要なファイルだけコンテナにコピー
 COPY ./package*.json ./
