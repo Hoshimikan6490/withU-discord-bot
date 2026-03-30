@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"main": "node index.js && npm run sentry:sourcemaps",
-		"sentry:sourcemaps": "sentry-cli sourcemaps inject --org planet-bot-project --project withu-discord-bot ./index.js && sentry-cli sourcemaps upload --org planet-bot-project --project withu-discord-bot ./index.js"
+		"sentry:sourcemaps": "sentry-cli sourcemaps inject --org planet-bot-project --project withu-discord-bot ./index.js && sentry-cli sourcemaps upload --org planet-bot-project --project withu-discord-bot ./index.js",
+		"docker:up": "docker-compose up -d",
+		"docker:down": "docker-compose down --rmi all --volumes --remove-orphans && docker builder prune -af"
 	},
 	"keywords": [
 		"discord",
