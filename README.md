@@ -29,23 +29,27 @@ npm i
 # Discord BOT Token
 bot_token=YOUR_DISCORD_BOT_TOKEN_HERE
 # 使うDiscordサーバーのID
-activeGuildID=0123456789
+activeGuildID=SERVER_ID_HERE
 # BOTの管理者のDiscordユーザーID
-botOwnerID=0123456789
+botOwnerID=OWNER_ID_HERE
 # memberロールのID
-memberRoleID=0123456789
-# 起動通知用のチャンネルID
-startupNotificationChannelID=0123456789
+memberRoleID=MEMBER_ROLE_ID_HERE
 # 入室手続きのログを表示するチャンネルID
-memberLogChannelID=0123456789
+memberLogChannelID=MEMBER_LOG_CHANNEL_ID_HERE
 # 自己紹介チャンネルのチャンネルID
-selfIntroductionChannelID=0123456789
+selfIntroductionChannelID=SELFINTRODUCTION_CHANNEL_ID_HERE
+## 組織所属の新規参加者の承認要求が送信されるテキストチャンネルのチャンネルID
+adminChannelID=ADMIN_CHANNEL_ID_HERE
 
 # このアプリの起動に使うポートを指定。何も書かないと8000番が使われる。
 PORT=8080
 
 # SentryのDSN(TOKENのようなもの)
-sentryDSN=https://public@sentry.example.com/1
+sentryDSN=YOUR_SENTRY_DSN_HERE
+SENTRY_CRON_MONITOR_SLUG=YOUR_CRON_MONITOR_SLUG_HERE
+
+# Discord BOTのサポートサーバー招待リンク
+supportServer=SUPPORT_SERVER_INVITE_URL_HERE
 ```
 
 # How to run
