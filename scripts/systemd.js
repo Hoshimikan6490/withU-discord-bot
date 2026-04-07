@@ -26,20 +26,37 @@ function ensureRoot() {
 	}
 }
 
+function renderServiceDefinition() {
+	const template = fs.readFileSync(templatePath, 'utf8');
+	return template
+		.replace('{{WORKING_DIRECTORY}}', workingDirectory)
+		.replace('{{PROJECT_ROOT}}', repoRoot);
+}
+
+function syncInstalledServiceDefinition() {
+	const rendered = renderServiceDefinition();
+	const current = fs.existsSync(targetPath)
+		? fs.readFileSync(targetPath, 'utf8')
+		: null;
+
+	if (current !== rendered) {
+		fs.writeFileSync(targetPath, rendered, 'utf8');
+		execFileSync('systemctl', ['daemon-reload'], { stdio: 'inherit' });
+	}
+}
+
 function install() {
 	ensureRoot();
 
 	if (isInstalled()) {
+		syncInstalledServiceDefinition();
 		console.log(
 			`The service is already installed. Start it with: sudo npm run prod:start`,
 		);
 		return;
 	}
 
-	const template = fs.readFileSync(templatePath, 'utf8');
-	const rendered = template
-		.replace('{{WORKING_DIRECTORY}}', workingDirectory)
-		.replace('{{PROJECT_ROOT}}', repoRoot);
+	const rendered = renderServiceDefinition();
 
 	fs.writeFileSync(targetPath, rendered, 'utf8');
 	execFileSync('systemctl', ['daemon-reload'], { stdio: 'inherit' });
@@ -80,11 +97,14 @@ function start() {
 		guidanceForInstallFirst();
 		process.exit(1);
 	}
+	syncInstalledServiceDefinition();
 
 	console.log(
 		'Starting the service... (wait a few seconds for the bot to initialize)',
 	);
-	execFileSync('systemctl', ['start', serviceName], { stdio: 'inherit' });
+	execFileSync('systemctl', ['start', '--now', serviceName], {
+		stdio: 'inherit',
+	});
 	console.log('Service started successfully.');
 }
 
@@ -94,9 +114,12 @@ function stop() {
 		guidanceForInstallFirst();
 		process.exit(1);
 	}
+	syncInstalledServiceDefinition();
 
 	console.log('Stopping the service...');
-	execFileSync('systemctl', ['stop', serviceName], { stdio: 'inherit' });
+	execFileSync('systemctl', ['stop', '--now', serviceName], {
+		stdio: 'inherit',
+	});
 	execFileSync('docker', ['builder', 'prune', '-af'], { stdio: 'inherit' });
 	console.log('Service stopped successfully and Docker builder cache cleared.');
 }
