@@ -4,8 +4,10 @@ require('./lib/monitoring/instrument');
 const fs = require('fs');
 const { Client, GatewayIntentBits } = require('discord.js');
 const express = require('express');
-const ErrorHandler = require('./lib/monitoring/errorHandler');
+const cron = require('node-cron');
 require('dotenv').config({ quiet: true });
+const ErrorHandler = require('./lib/monitoring/errorHandler');
+const { sendSentryCheckIn } = require('./lib/monitoring/cronMonitor');
 
 const client = new Client({
 	intents: [
@@ -22,6 +24,17 @@ const app = express();
 //機密情報取得
 const token = process.env.bot_token;
 const PORT = process.env.PORT ? process.env.PORT : 8000;
+
+// Sentryのヘルスチェックは5分おきに実行
+cron.schedule(
+	'*/5 * * * *',
+	async () => {
+		await sendSentryCheckIn('cron');
+	},
+	{
+		timezone: 'Asia/Tokyo',
+	},
+);
 
 //サイト立ち上げ
 app.get('/', function (req, res) {
