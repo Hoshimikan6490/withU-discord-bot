@@ -49,10 +49,33 @@ sentryDSN=https://public@sentry.example.com/1
 ```
 
 # How to run
+## for development
 use this command.
 ```
 npm run main
 ```
+## for production
+use this command.
+```
+sudo npm run prod:start
+```
+This starts the systemd service, and the service runs docker-compose.
+if you stop it, use this command.
+```
+sudo npm run prod:stop
+```
+This stops the systemd service.
+
+## for production on boot with systemd
+1. run this command on the host after cloning and installing dependencies.
+```bash
+sudo npm run prod:install
+```
+2. if you want to remove the registration later, run this command.
+```bash
+sudo npm run prod:uninstall
+```
+3. after registration, use `sudo npm run prod:start` to start production and `sudo npm run prod:stop` to stop it.
 
 # school name database
 学校名は、https://edu-data.jp/ の情報を使用している。 

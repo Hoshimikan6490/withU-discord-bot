@@ -6,8 +6,10 @@
 	"scripts": {
 		"dev": "node index.js && npm run sentry:upload",
 		"sentry:upload": "sentry-cli sourcemaps inject --org planet-bot-project --project withu-discord-bot ./index.js && sentry-cli sourcemaps upload --org planet-bot-project --project withu-discord-bot ./index.js",
-		"prod": "docker-compose up -d",
-		"prod:down": "docker-compose down --rmi all --volumes --remove-orphans && docker builder prune -af"
+		"prod:start": "node scripts/systemd.js start",
+		"prod:stop": "node scripts/systemd.js stop",
+		"prod:install": "node scripts/systemd.js install",
+		"prod:uninstall": "node scripts/systemd.js uninstall"
 	},
 	"keywords": [
 		"discord",
