@@ -27,8 +27,6 @@ module.exports = async (client) => {
 		}
 	})();
 
-	console.log(`${client.user.username}への接続に成功しました。`);
-
 	setInterval(() => {
 		client.user.setActivity(
 			`Ping値は、${client.ws.ping}ms｜${
