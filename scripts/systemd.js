@@ -80,7 +80,12 @@ function start() {
 		guidanceForInstallFirst();
 		process.exit(1);
 	}
+
+	console.log(
+		'Starting the service... (wait a few seconds for the bot to initialize)',
+	);
 	execFileSync('systemctl', ['start', serviceName], { stdio: 'inherit' });
+	console.log('Service started successfully.');
 }
 
 function stop() {
@@ -89,8 +94,11 @@ function stop() {
 		guidanceForInstallFirst();
 		process.exit(1);
 	}
+
+	console.log('Stopping the service...');
 	execFileSync('systemctl', ['stop', serviceName], { stdio: 'inherit' });
 	execFileSync('docker', ['builder', 'prune', '-af'], { stdio: 'inherit' });
+	console.log('Service stopped successfully and Docker builder cache cleared.');
 }
 
 const command = process.argv[2];
