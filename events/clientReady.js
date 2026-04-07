@@ -9,7 +9,6 @@ const { TIME_CONSTANTS } = require('../lib/config/constants');
 require('dotenv').config({ quiet: true });
 
 const token = process.env.bot_token;
-const startupNotificationChannelID = process.env.startupNotificationChannelID;
 
 module.exports = async (client) => {
 	const rest = new REST({ version: '10' }).setToken(token);
@@ -27,6 +26,8 @@ module.exports = async (client) => {
 		}
 	})();
 
+	console.log(`${client.user.username}への接続に成功しました。`);
+
 	setInterval(() => {
 		client.user.setActivity(
 			`Ping値は、${client.ws.ping}ms｜${
@@ -35,14 +36,6 @@ module.exports = async (client) => {
 			{ type: ActivityType.Listening }
 		);
 	}, TIME_CONSTANTS.ACTIVITY_UPDATE_INTERVAL);
-
-	client.channels.cache
-		.get(startupNotificationChannelID)
-		.send(
-			`${
-				os.type().includes('Windows') ? '開発環境' : '本番環境'
-			}で起動しました！`
-		);
 
 	// スレッドのKeepAlive
 	setInterval(
