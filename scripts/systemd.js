@@ -43,9 +43,10 @@ function install() {
 
 	fs.writeFileSync(targetPath, rendered, 'utf8');
 	execFileSync('systemctl', ['daemon-reload'], { stdio: 'inherit' });
-	execFileSync('systemctl', ['enable', '--now', serviceName], {
-		stdio: 'inherit',
-	});
+	execFileSync('systemctl', ['enable', serviceName], { stdio: 'inherit' });
+	console.log(
+		`Installation completed. Start the service with: sudo npm run prod:start`,
+	);
 }
 
 function uninstall() {
