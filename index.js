@@ -25,9 +25,9 @@ const app = express();
 const token = process.env.bot_token;
 const PORT = process.env.PORT ? process.env.PORT : 8000;
 
-// Sentryのヘルスチェックは5分おきに実行
+// Sentryのヘルスチェックは10分おきに実行
 cron.schedule(
-	'*/5 * * * *',
+	'*/10 * * * *',
 	async () => {
 		await sendSentryCheckIn('cron');
 	},
