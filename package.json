@@ -18,8 +18,8 @@
 	"author": "Hoshimikan6490",
 	"license": "ISC",
 	"dependencies": {
-		"@sentry/node": "^10.53.1",
-		"@sentry/profiling-node": "^10.53.1",
+		"@sentry/node": "^10.58.0",
+		"@sentry/profiling-node": "^10.58.0",
 		"discord.js": "^14.26.4",
 		"dotenv": "^17.4.2",
 		"express": "^5.2.1",
@@ -27,5 +27,8 @@
 	},
 	"devDependencies": {
 		"fs": "^0.0.1-security"
+	},
+	"allowScripts": {
+		"@sentry/node-cpu-profiler@2.4.2": true
 	}
 }
