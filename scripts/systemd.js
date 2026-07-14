@@ -120,6 +120,7 @@ function stop() {
 	execFileSync('systemctl', ['stop', serviceName], {
 		stdio: 'inherit',
 	});
+	console.log('Service stopped successfully.Clearing Docker cache...');
 	execFileSync('docker', ['system', 'prune', '--volumes'], {
 		stdio: 'inherit',
 	});
