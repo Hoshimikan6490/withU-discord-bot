@@ -117,7 +117,7 @@ function stop() {
 	syncInstalledServiceDefinition();
 
 	console.log('Stopping the service...');
-	execFileSync('systemctl', ['stop', '--now', serviceName], {
+	execFileSync('systemctl', ['stop', serviceName], {
 		stdio: 'inherit',
 	});
 	execFileSync('docker', ['system', 'prune', '--volumes'], {
