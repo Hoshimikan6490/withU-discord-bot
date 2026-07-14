@@ -120,8 +120,10 @@ function stop() {
 	execFileSync('systemctl', ['stop', '--now', serviceName], {
 		stdio: 'inherit',
 	});
-	execFileSync('docker', ['builder', 'prune', '-af'], { stdio: 'inherit' });
-	console.log('Service stopped successfully and Docker builder cache cleared.');
+	execFileSync('docker', ['system', 'prune', '--volumes'], {
+		stdio: 'inherit',
+	});
+	console.log('Service stopped successfully and Docker cache cleared.');
 }
 
 const command = process.argv[2];
