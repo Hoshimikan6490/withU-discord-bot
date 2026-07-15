@@ -4,7 +4,7 @@
 	"description": "this repo is discord BOT for withU project.",
 	"main": "index.js",
 	"scripts": {
-		"dev": "node index.js && npm run sentry:upload",
+		"main": "node index.js && npm run sentry:upload",
 		"sentry:upload": "sentry-cli sourcemaps inject --org planet-bot-project --project withu-discord-bot ./index.js && sentry-cli sourcemaps upload --org planet-bot-project --project withu-discord-bot ./index.js",
 		"prod:start": "node scripts/systemd.js start",
 		"prod:stop": "node scripts/systemd.js stop",
@@ -20,7 +20,7 @@
 	"dependencies": {
 		"@sentry/node": "^10.65.0",
 		"@sentry/profiling-node": "^10.65.0",
-		"discord.js": "^14.26.5",
+		"discord.js": "^14.27.0",
 		"dotenv": "^17.4.2",
 		"express": "^5.2.1",
 		"node-cron": "^4.6.0"
