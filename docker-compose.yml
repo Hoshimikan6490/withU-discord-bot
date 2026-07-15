@@ -1,7 +1,10 @@
 services:
   app:
     container_name: withU-management-app
-    build: .
+    build:
+      context: .
     restart: always
+    env_file:
+      - .env
     ports:
-      - '8765:8765'
+      - '${PORT}:${PORT}'
