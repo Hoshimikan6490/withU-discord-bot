@@ -1,7 +1,7 @@
 # withU project management discord BOT
 本コードは、withUプロジェクトのdiscordサーバーのマネジメントを支援するBOTとして作成されました。
 
-# TODO
+# 機能
 - [x] 入室ガイドの仕組み
 - [x] スレッドへの自動参加の仕組み
 - [x] スレッドのkeep aliveの仕組み
